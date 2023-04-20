@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'verified'])->group(function (){
     // everyone can access!
-
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
     // unit only pages URL endpoints
 

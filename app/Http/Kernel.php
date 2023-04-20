@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\DashboardNasabahOnly;
 use App\Http\Middleware\DashboardUnitOnly;
+use App\Http\Middleware\turnstile;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -69,5 +70,8 @@ class Kernel extends HttpKernel
         // Prevent
         'dashboard_unit_only' => DashboardUnitOnly::class,
         'dashboard_nasabah_only' => DashboardNasabahOnly::class,
+
+        // 3rd party service
+        'turnstile' => \App\Http\Middleware\TurnstileCheck::class,
     ];
 }

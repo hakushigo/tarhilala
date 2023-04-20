@@ -13,7 +13,17 @@ use Illuminate\View\View;
 class UserSetupController extends Controller
 {
 
-    public function setup($tipe): View{
+    public function setup($tipe){
+        if(Auth::check()){
+            $id = Auth::getUser()->getAuthIdentifier();
+        }else{
+            $id = -99;
+        }
+
+        if((Unit::where('user_id', $id)->first() != null) || (Nasabah::where('user_id', $id)->first() != null) || (User::find($id)->user_id != null)){
+            return redirect(route('dashboard'));
+        }
+
         return view("auth.setup", [
             "tipe" => $tipe,
             "unit" => Unit::all()->toArray()
@@ -40,7 +50,7 @@ class UserSetupController extends Controller
 
                 // set-up unit
                 // first, let's set the user's account type
-                User::whereId($id)->update(["tipe_akun" => 0]);
+                User::whereId($id)->update(["tipe_akun" => 0, "have_done_setup" => 1]);
 
                 // then, we add row in unit
                 Unit::create([
@@ -66,7 +76,8 @@ class UserSetupController extends Controller
 
                 // set-up nasabah
                 // first, let's set the user's account type
-                User::whereId($id)->update(["tipe_akun" => 1]);
+                // marks it have done setup!
+                User::whereId($id)->update(["tipe_akun" => 1, "have_done_setup" => 1]);
 
                 // then, we add row in nasabah
                 Nasabah::create([

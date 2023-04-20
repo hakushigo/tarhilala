@@ -67,7 +67,7 @@
                 <div class="mt-4">
                     <x-input-label for="nasabah_of" :value="__('Unit yang dipilih')" />
 
-                    <select required name="nasabah_of" class='block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm'>
+                    <select required name="nasabah_of" class='form-select>
                         <!--- there will be list of nasabahs -->
                         @foreach($unit as $u)
                             <option value="{{ $u["id"] }}">{{ $u["nama_unit"]  }}</option>
@@ -82,7 +82,7 @@
         @endswitch
 
         <div class="flex items-center justify-end mt-4">
-            <x-primary-button class="ml-4">
+            <x-primary-button class="btn btn-success fw-bold">
                 {{ "Siapkan akun ".($tipe == 0 ? "unit" : ($tipe == 1 ? "nasabah" : ""))}}
             </x-primary-button>
         </div>
