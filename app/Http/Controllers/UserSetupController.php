@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nasabah;
+use App\Models\saldo;
 use App\Models\Unit;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -80,13 +81,18 @@ class UserSetupController extends Controller
                 User::whereId($id)->update(["tipe_akun" => 1, "have_done_setup" => 1]);
 
                 // then, we add row in nasabah
-                Nasabah::create([
+                $createNasabah = Nasabah::create([
                     'nama_nasabah' => $request->nama_nasabah,
                     'no_rekening' => $request->no_rekening,
                     'alamat_nasabah' => $request->alamat_nasabah,
                     'nik_nasabah' => $request->nik_nasabah,
                     'nasabah_of' => $request->nasabah_of,
                     'user_id' => $id
+                ]);
+
+                saldo::create([
+                    'nasabah_id' => $createNasabah->id,
+                    'saldo' => 0 // for starter let it zero!
                 ]);
 
                 return redirect("/dashboard");

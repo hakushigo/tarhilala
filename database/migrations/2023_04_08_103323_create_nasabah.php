@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('no_rekening');
             $table->string('alamat_nasabah');
             $table->string('nik_nasabah');
-            $table->foreignId('nasabah_of')->references('id')->on('unit');
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('nasabah_of')->references('id')->on('unit')->onDelete('cascade');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('data_sampah', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tipe_sampah')->references('id')->on('tipe_sampah');
+            $table->foreignId('tipe_sampah')->references('id')->on('tipe_sampah')->onDelete('cascade');
             $table->integer('amount'); // in kilograms
-            $table->foreignId('unit_pelapor')->references('id')->on('unit');
+            $table->foreignId('unit_pelapor')->references('id')->on('unit')->onDelete('cascade');
             $table->timestamps();
         });
     }

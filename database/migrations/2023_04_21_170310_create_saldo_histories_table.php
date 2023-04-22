@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('unit', function (Blueprint $table) {
+        Schema::create('saldo_histories', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_unit')->unique();
-            $table->string('alamat_unit');
-            $table->string('kecamatan_unit');
-            $table->boolean('aktif')->default(0);
-            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('saldo_id')->references('id')->on('saldo');
+            $table->enum('method', ['deposit', 'tarik']);
+            $table->double('jumlah_transaksi');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('units');
+        Schema::dropIfExists('saldo_histories');
     }
 };

@@ -3,101 +3,104 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataSampah;
-use Illuminate\Http\Request;
+use App\Models\TipeSampah;
 use App\Models\Unit;
-use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DataSampahController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+    // kategori sampah
+        /** PAGES */
+        function ShowKategoriSampah(){
+            return view(
+                'dashboard.unit.sampah.kategori.home',
+                [
+                    'KategoriQueries' => TipeSampah::get()
+                ]
+            );
+        }
+        function TambahKategoriSampah(){
+            return view(
+                'dashboard.unit.sampah.kategori.tambah'
+            );
+        }
+        function EditKategoriSampah($id){
+            $data = TipeSampah::find($id)->first();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        // get user ID
-        if(Auth::check()){
-            $id = Auth::getUser()->getAuthIdentifier();
-        }else{
-            $id = -99;
+            return view(
+                'dashboard.unit.sampah.kategori.edit',
+                [
+                    'dataLamaSampah' => $data,
+                    'id' => $id
+                ]
+            );
         }
 
-        $IdUnitPelapor = Unit::where(['user_id' => $id])->first();
+        /** ACTIONS */
+        function pushKategoriSampah(Request $request){
+            TipeSampah::create([
+                'nama_sampah' => $request->nama_kategori,
+                'deskripsi_tipe' => $request->deskripsi_kategori
+            ]);
 
-        DataSampah::create([
-            'tipe_sampah' => $request->tipe_sampah,
-            'amount' => $request->jumlah_sampah,
-            'unit_pelapor' => $IdUnitPelapor
-        ])
-    }
+            return redirect(route('sampah.kategori.home'));
+        }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id) : View
-    {
-        $DataSampahTemu = DataSampah::find($id);
+        function updateKategoriSampah(Request $request, $id){
+            $KategoriEdit = TipeSampah::find($id);
 
-        return view(/** data */ null, [
-            "dataSampah" => $DataSampahTemu
-        ]);
-    }
+            $KategoriEdit->nama_sampah = $request->nama_kategori;
+            $KategoriEdit->deskripsi_tipe = $request->deskripsi_kategori;
+            $KategoriEdit->save();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+            return redirect(route('sampah.kategori.home'));
+        }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        function deleteKategoriSampah($id){
+            $KategoriHapus = TipeSampah::find($id)->delete();
+            return redirect(route('sampah.kategori.home'));
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    // sampah
+        /** PAGES */
+        function ShowDataSampah()
+        {
+            // find the userID!
+            $unitID = Unit::where('user_id', Auth::user()->id)->first();
+            $TrashData = DataSampah::where('unit_pelapor', $unitID->id)->get();
+
+            return view(
+                'dashboard.unit.sampah.home',
+                [
+                    'TrashDatas' => $TrashData
+                ]
+            );
+        }
+
+        function SubmitDataSampah(){
+            $Kategoris = TipeSampah::get();
+            return view('dashboard.unit.sampah.tambah',
+            [
+                'TipeSampah' => $Kategoris
+            ]);
+        }
+
+        /** ACTIONS */
+        function pushDataSampah(Request $request){
+            $unitID = Unit::where('user_id', Auth::user()->id)->first();
+            $Buat = DataSampah::create([
+                'tipe_sampah' => $request->tipe_sampah,
+                'amount' => $request->jumlah,
+                'unit_pelapor' => $unitID->id
+            ]);
+
+            return redirect(route('sampah.home'));
+        }
+
+        function deleteDataSampah($id){
+            $HapusDataSampah = DataSampah::find($id)->delete();
+
+            return redirect(route('sampah.home'));
+        }
 }

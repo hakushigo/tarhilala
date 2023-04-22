@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('judul_blog');
             $table->text('content');
             $table->string('image_header_url');
-            $table->foreignId('author')->references('id')->on('unit');
-            $table->foreignId('kategori')->references('id')->on('kategori_blog');
+            $table->foreignId('author')->references('id')->on('unit')->onDelete('cascade');
+            $table->foreignId('kategori')->references('id')->on('kategori_blog')->onDelete('cascade');
             $table->timestamps();
         });
     }

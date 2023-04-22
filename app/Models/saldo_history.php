@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TipeSampah extends Model
+class saldo_history extends Model
 {
     use HasFactory;
-    protected $table = 'tipe_sampah';
-
+    protected $table = 'saldo_histories';
     protected $fillable = [
-        'nama_sampah',
-        'deskripsi_tipe'
+        'saldo_id',
+        'method',
+        'jumlah_transaksi'
     ];
 }

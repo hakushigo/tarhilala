@@ -67,7 +67,7 @@
                 <div class="mt-4">
                     <x-input-label for="nasabah_of" :value="__('Unit yang dipilih')" />
 
-                    <select required name="nasabah_of" class='form-select>
+                    <select required name="nasabah_of" class='form-select'>
                         <!--- there will be list of nasabahs -->
                         @foreach($unit as $u)
                             <option value="{{ $u["id"] }}">{{ $u["nama_unit"]  }}</option>
