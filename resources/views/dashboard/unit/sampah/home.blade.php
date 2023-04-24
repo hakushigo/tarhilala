@@ -16,18 +16,22 @@
                 Waktu data masuk
             </th>
             <th>
+                Waktu terakhir edit
+            </th>
+            <th>
                 Aksi
             </th>
         </tr>
     @forelse($TrashDatas as $data)
         <tr>
-            <td>{{ \App\Models\TipeSampah::find($data->tipe_sampah)->nama_sampah }}</td>
-            <td>{{ $data->amount }}</td>
+            <td>{{ Str::limit(\App\Models\TipeSampah::find($data->tipe_sampah)->nama_sampah, 20, '...') }}</td>
+            <td>{{ $data->amount }} kg </td>
             <td>{{ $data->created_at }}</td>
+            <td>{{ $data->updated_at }}</td>
             <td>
                 <div class="btn-group">
-                    <a href="#" class="btn btn-primary">detail</a>
-                    <a href="#" class="btn btn-warning">edit</a>
+                    <a href="/dashboard/sampah/detail/{{ $data->id }}" class="btn btn-primary">detail</a>
+                    <a href="/dashboard/sampah/edit/{{ $data->id }}" class="btn btn-warning">edit</a>
                     <a href="/dashboard/action/sampah/delete/{{ $data->id }}" class="btn btn-danger">hapus</a>
                 </div>
             </td>

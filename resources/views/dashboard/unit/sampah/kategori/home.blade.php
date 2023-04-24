@@ -18,8 +18,8 @@
         </tr>
     @forelse($KategoriQueries as $data)
         <tr>
-            <td>{{ $data->nama_sampah }}</td>
-            <td>{{ $data->deskripsi_tipe }}</td>
+            <td>{{ Str::limit($data->nama_sampah, 20, '...') }}</td>
+            <td>{{ Str::limit( $data->deskripsi_tipe, 20, '...')  }}</td>
             <td>
                 <div class="btn-group">
                     <a href="/dashboard/action/sampah/kategori/delete/{{ $data->id }}" class="btn btn-danger">hapus</a>

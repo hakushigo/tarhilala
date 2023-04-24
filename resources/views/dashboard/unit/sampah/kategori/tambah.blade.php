@@ -10,11 +10,11 @@
                     @csrf
                     <div class="mb-5">
                         <label for="tipe_sampah" class="form-label">Nama Kategori Sampah</label>
-                        <input type="text" name="nama_kategori" class="form-control">
+                        <input type="text" name="nama_kategori" class="form-control" required>
                     </div>
                     <div class="mb-5">
                         <label for="deskripsi_kategori">Deskripsi Kategori...</label>
-                        <textarea rows="10" name="deskripsi_kategori" class="form-control"></textarea>
+                        <textarea rows="10" name="deskripsi_kategori" class="form-control" required></textarea>
                     </div>
                     <div class="mb-5">
                         <input type="submit" value="catat" class="btn btn-success">

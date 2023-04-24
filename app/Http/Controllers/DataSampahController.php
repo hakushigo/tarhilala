@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DataSampah;
 use App\Models\TipeSampah;
 use App\Models\Unit;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -86,6 +87,17 @@ class DataSampahController extends Controller
             ]);
         }
 
+        function EditDataSampah($id){
+            $Kategoris = TipeSampah::get();
+            $RecentData = DataSampah::find($id)->first() ;
+            return view('dashboard.unit.sampah.edit',
+                [
+                    'id' => $id,
+                    'TipeSampah' => $Kategoris,
+                    'RecentData' => $RecentData
+                ]);
+        }
+
         /** ACTIONS */
         function pushDataSampah(Request $request){
             $unitID = Unit::where('user_id', Auth::user()->id)->first();
@@ -102,5 +114,26 @@ class DataSampahController extends Controller
             $HapusDataSampah = DataSampah::find($id)->delete();
 
             return redirect(route('sampah.home'));
+        }
+
+        function showDetailDataSampah($id){
+            $GetDataSampah = DataSampah::find($id)->first();
+            $GetKategoriDataSampah = TipeSampah::find($GetDataSampah->tipe_sampah)->first();
+
+            return view('dashboard.unit.sampah.detail', [
+                "datasampah" => $GetDataSampah,
+                "datakategori" => $GetKategoriDataSampah
+            ]);
+
+        }
+
+        function updateDataSampah($id, Request $request){
+            $Edit = DataSampah::find($id);
+            $Edit->tipe_sampah = $request->tipe_sampah;
+            $Edit->amount = $request->jumlah;
+
+            $Edit->save();
+
+            return redirect(route("sampah.home"));
         }
 }

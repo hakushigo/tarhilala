@@ -26,26 +26,34 @@ Route::middleware(['auth', 'verified'])->group(function (){
         // sampah
         Route::get('/dashboard/sampah/', [DataSampahController::class, 'ShowDataSampah'])->name('sampah.home');
         Route::get('/dashboard/sampah/tambah', [DataSampahController::class, 'SubmitDataSampah'])->name('sampah.tambah');
-        Route::get('/dashboard/sampah/edit/{id}');
+        Route::get('/dashboard/sampah/edit/{id}', [DataSampahController::class, 'EditDataSampah']);
 
+        // kategori sampah
         Route::get('/dashboard/sampah/kategori/', [DataSampahController::class, 'ShowKategoriSampah'])->name('sampah.kategori.home');
         Route::get('/dashboard/sampah/kategori/tambah', [DataSampahController::class, 'TambahKategoriSampah'])->name('sampah.kategori.tambah');
         Route::get('/dashboard/sampah/kategori/edit/{id}', [DataSampahController::class, 'EditKategoriSampah']);
+        Route::get('/dashboard/sampah/detail/{id}', [DataSampahController::class, 'showDetailDataSampah']);
 
-        // nasabah : uang
-        Route::get('/dashboard/nasabah/saldo/')->name('saldo.home');
-        Route::get('/dashboard/nasabah/saldo/deposit/{id}'); // either deposit or tarik
-        Route::get('/dashboard/nasabah/saldo/tarik/{id}'); // either deposit or tarik
+        // nasabah : saldo
+        Route::get('/dashboard/nasabah/', [\App\Http\Controllers\DataSaldoController::class, 'ShowNasabahLists'])->name('nasabah.list');
+        Route::get('/dashboard/nasabah/detail/{id}', [\App\Http\Controllers\DataSaldoController::class, 'ShowNasabahDetail']);
+        Route::get('/dashboard/saldo/deposit/{id}', [\App\Http\Controllers\DataSaldoController::class, 'ShowDepositForm']); // either deposit or tarik
+        Route::get('/dashboard/saldo/tarik/{id}', [\App\Http\Controllers\DataSaldoController::class, 'ShowTarikForm']); // either deposit or tarik
 
         /** actions */
         // sampah
         Route::post('/dashboard/action/sampah/push', [DataSampahController::class, 'pushDataSampah'])->name('sampah.action.push');
-        Route::post('/dashboard/action/sampah/update/{id}')->name('sampah.action.update');
+        Route::post('/dashboard/action/sampah/update/{id}', [DataSampahController::class, 'updateDataSampah'])->name('sampah.action.update');
         Route::get('/dashboard/action/sampah/delete/{id}', [DataSampahController::class, 'deleteDataSampah'])->name('sampah.action.delete');
 
+        // kategori
         Route::post('/dashboard/action/sampah/kategori/push', [DataSampahController::class, 'pushKategoriSampah'])->name('sampah.kategori.action.push');
         Route::post('/dashboard/action/sampah/kategori/update/{id}', [DataSampahController::class, 'updateKategoriSampah'])->name('sampah.kategori.action.update');
         Route::get('/dashboard/action/sampah/kategori/delete/{id}', [DataSampahController::class, 'deleteKategoriSampah'])->name('sampah.kategori.action.delete');
+
+        // saldo
+        Route::post('/dashboard/saldo/deposit/{id}', [\App\Http\Controllers\DataSaldoController::class, 'DoDeposit']); // either deposit or tarik
+        Route::post('/dashboard/saldo/tarik/{id}', [\App\Http\Controllers\DataSaldoController::class, 'DoTarik']); // either deposit or tarik
     });
 
 });

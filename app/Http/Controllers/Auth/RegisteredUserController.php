@@ -36,15 +36,8 @@ class RegisteredUserController extends Controller
             'tipe_akun' => ['required', 'integer', 'digits_between:0,1']
         ]);
 
-        $user = User::create([
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'tipe_akun' => null // first, we add it as null!
-        ]);
-
-        event(new Registered($user));
-
-        Auth::login($user);
+        $request->session()->put('temp_user_credentials_email', $request->email);
+        $request->session()->put('temp_user_credentials_hashed_password', Hash::make($request->password));
 
         return redirect('/setup/'.($request->tipe_akun));
     }

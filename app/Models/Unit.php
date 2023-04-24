@@ -17,6 +17,4 @@ class Unit extends Model
         'kecamatan_unit',
         'user_id',
     ];
-
-    protected $primaryKey = 'id';
 }

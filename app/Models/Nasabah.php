@@ -19,6 +19,4 @@ class Nasabah extends Model
         'nasabah_of',
         'user_id'
     ];
-
-    protected $primaryKey = 'id';
 }

@@ -6,8 +6,10 @@ use App\Models\Nasabah;
 use App\Models\saldo;
 use App\Models\Unit;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 
@@ -21,9 +23,6 @@ class UserSetupController extends Controller
             $id = -99;
         }
 
-        if((Unit::where('user_id', $id)->first() != null) || (Nasabah::where('user_id', $id)->first() != null) || (User::find($id)->user_id != null)){
-            return redirect(route('dashboard'));
-        }
 
         return view("auth.setup", [
             "tipe" => $tipe,
@@ -32,11 +31,18 @@ class UserSetupController extends Controller
     }
 
     public function finalization(Request $request){
-        if(Auth::check()){
-            $id = Auth::getUser()->getAuthIdentifier();
-        }else{
-            $id = 0;
-        }
+        $user = User::create([
+            'email' => $request->session()->get('temp_user_credentials_email'),
+            'password' => $request->session()->get('temp_user_credentials_hashed_password'),
+            'tipe_akun' => null // first, we add it as null!
+        ]);
+
+        $request->session()->forget(['temp_user_credentials_email', 'temp_user_credentials_hashed_password']);
+        $request->session()->flush();
+
+        event(new Registered($user));
+
+        Auth::login($user);
 
         $tipe = $request->tipe;
 
@@ -51,14 +57,14 @@ class UserSetupController extends Controller
 
                 // set-up unit
                 // first, let's set the user's account type
-                User::whereId($id)->update(["tipe_akun" => 0, "have_done_setup" => 1]);
+                User::whereId($user->id)->update(["tipe_akun" => 0, "have_done_setup" => 1]);
 
                 // then, we add row in unit
                 Unit::create([
                     'nama_unit' => $request->nama_unit,
                     'alamat_unit' => $request->alamat_unit,
                     'kecamatan_unit' => $request->kecamatan_unit,
-                    'user_id' => $id
+                    'user_id' => $user->id
                 ]);
 
                 return redirect("/dashboard");
@@ -78,7 +84,7 @@ class UserSetupController extends Controller
                 // set-up nasabah
                 // first, let's set the user's account type
                 // marks it have done setup!
-                User::whereId($id)->update(["tipe_akun" => 1, "have_done_setup" => 1]);
+                User::whereId($user->id)->update(["tipe_akun" => 1, "have_done_setup" => 1]);
 
                 // then, we add row in nasabah
                 $createNasabah = Nasabah::create([
@@ -87,7 +93,7 @@ class UserSetupController extends Controller
                     'alamat_nasabah' => $request->alamat_nasabah,
                     'nik_nasabah' => $request->nik_nasabah,
                     'nasabah_of' => $request->nasabah_of,
-                    'user_id' => $id
+                    'user_id' => $user->id
                 ]);
 
                 saldo::create([
