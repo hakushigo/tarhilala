@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\KategoriBlog;
 use App\Models\Unit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,21 +16,33 @@ class BlogController extends Controller
      */
     /** pages */
     function NewCategoryForm(){
-
+        return view('dashboard.unit.blog.kategori.add');
     }
     function EditCategoryForm(){
 
     }
 
+    function listCategory(){
+        $data = KategoriBlog::get();
+
+        return view('dashboard.unit.blog.kategori.home', [
+            'DaftarKategori' => $data
+        ]);
+    }
+
     /** actions */
-    function PushCategory(){
-
+    function PushCategory(Request $request){
+        KategoriBlog::create([
+            'nama_kategori' => $request->nama_kategori
+        ]);
     }
-    function UpdateCategory(){
-
+    function UpdateCategory($id, Request $request){
+        KategoriBlog::where('id', $id)->update([
+            'nama_kategori' => $request->nama_kategori
+        ]);
     }
-    function DestroyCategory(){
-
+    function DestroyCategory($id){
+        KategoriBlog::where('id', $id)->delete();
     }
 
     /**
@@ -41,8 +55,7 @@ class BlogController extends Controller
 
     }
 
-    function listBlog($id){
-
+    function listBlog(){
     }
 
     function listBlogPerAuthor($author){
@@ -55,7 +68,7 @@ class BlogController extends Controller
 
     // admin
     function NewBlogForm(){
-
+        return view('.dashboard.unit.blog.write');
     }
     function UpdateBlogForm(){
 
@@ -70,19 +83,41 @@ class BlogController extends Controller
         $judulBlog = $request->judul_blog;
         $content = $request->konten;
         $author = Unit::where('user_id', Auth::user()->id)->first()->id;
-        $author = $request->kategori;
+        $kategori = $request->kategori;
 
         // first we put the file to what we want to!
+        // it will goes to /images/
         $imageFile->storeAs('images', $imageFileName);
 
-        Blog
+        // and then we store the whole thing
+        Blog::create([
+            'judul_blog' => $judulBlog,
+            'content' => $content,
+            'image_header_url' => $imageFileName,
+            'author'  => $author,
+            'kategori' => $kategori
+        ]);
+
+        // back to the blog list!
     }
 
-    function updateBlog($id){
+    function updateBlog($id, Request $request){
+        $judulBlog = $request->judul_blog;
+        $content = $request->konten;
+        $kategori = $request->kategori;
+
+        // and then we store the whole thing
+        Blog::where('id', $id)->update([
+            'judul_blog' => $judulBlog,
+            'content' => $content,
+            'kategori' => $kategori
+        ]);
+
+        // back to the blog list!
 
     }
 
     function destroyBlog($id){
-
+        Blog::where('id', $id)->delete();
     }
 }

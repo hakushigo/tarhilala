@@ -40,13 +40,21 @@ Route::middleware(['auth', 'verified'])->group(function (){
         Route::get('/dashboard/saldo/deposit/{id}', [\App\Http\Controllers\DataSaldoController::class, 'ShowDepositForm']); // either deposit or tarik
         Route::get('/dashboard/saldo/tarik/{id}', [\App\Http\Controllers\DataSaldoController::class, 'ShowTarikForm']); // either deposit or tarik
 
+        // blog
+        Route::get('/dashboard/blog/');
+        Route::get('/dashboard/blog/create', [\App\Http\Controllers\BlogController::class, 'NewBlogForm']);
+
+        // kategori blog
+        Route::get('/dashboard/blog/kategori', [\App\Http\Controllers\BlogController::class, 'listCategory']);
+        Route::get('/dashboard/blog/kategori/tambah', [\App\Http\Controllers\BlogController::class, 'NewCategoryForm']);
+
         /** actions */
         // sampah
         Route::post('/dashboard/action/sampah/push', [DataSampahController::class, 'pushDataSampah'])->name('sampah.action.push');
         Route::post('/dashboard/action/sampah/update/{id}', [DataSampahController::class, 'updateDataSampah'])->name('sampah.action.update');
         Route::get('/dashboard/action/sampah/delete/{id}', [DataSampahController::class, 'deleteDataSampah'])->name('sampah.action.delete');
 
-        // kategori
+        // kategori samopah
         Route::post('/dashboard/action/sampah/kategori/push', [DataSampahController::class, 'pushKategoriSampah'])->name('sampah.kategori.action.push');
         Route::post('/dashboard/action/sampah/kategori/update/{id}', [DataSampahController::class, 'updateKategoriSampah'])->name('sampah.kategori.action.update');
         Route::get('/dashboard/action/sampah/kategori/delete/{id}', [DataSampahController::class, 'deleteKategoriSampah'])->name('sampah.kategori.action.delete');
@@ -54,6 +62,11 @@ Route::middleware(['auth', 'verified'])->group(function (){
         // saldo
         Route::post('/dashboard/saldo/deposit/{id}', [\App\Http\Controllers\DataSaldoController::class, 'DoDeposit']); // either deposit or tarik
         Route::post('/dashboard/saldo/tarik/{id}', [\App\Http\Controllers\DataSaldoController::class, 'DoTarik']); // either deposit or tarik
+
+        // kategori blog
+        Route::post('/dashboard/action/blog/kategori/push', [\App\Http\Controllers\BlogController::class, 'PushCategory'])->name('blog.kategori.action.push');
+        Route::post('/dashboard/action/blog/kategori/update');
+        Route::post('/dashboard/action/blog/kategori/destroy');
     });
 
 });
