@@ -1,6 +1,3 @@
-<link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet" />
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
 @extends('dashboard.component.dashboard')
 @section('dashboard.content')
     <div class="d-flex justify-content-center align-items-center">
@@ -23,27 +20,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        var Font = Quill.import('formats/font');
-        Font.whiteList = ['serif', 'sans-serif', 'monospace']
-
-        var editor = new Quill('#editor', {
-            modules: {
-                toolbar: [
-                    [{header : [1,2,3,4,5,6,false]}],
-                    ['bold', 'italic'],
-                    ['link', 'blockquote', 'code-block', 'image'],
-                    [{ list: 'ordered' }, { list: 'bullet' }],
-                    [{font: ['serif', 'sans-serif', 'monospace']}]
-                ]
-            },
-            placeholder: 'Tulis apa yang anda ingin tulis',
-            theme: 'snow'
-        });
-
-        editor.on('text-change', function (delta, oldData, source){
-            document.querySelector("input[name='content']").value = editor.root.innerHTML;
-        })
-    </script>
 @endsection

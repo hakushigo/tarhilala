@@ -9,24 +9,27 @@
                 Tambah Data Sampah
             </h1>
             <div class="d-flex justify-content-center">
-                <form class="form-group py-5 col-11" method="post" action="{{ route('sampah.action.push') }}">
+                <form class="form-group py-5 col-11" method="post" action="{{ route('blog.action.push') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-5">
                         <label for="jumlah">Judul blog</label>
                         <div class="input-group mt-2">
-                            <input type="text" min="0" name="jumlah" class="form-control" required>
+                            <input type="text" min="0" name="judul_blog" class="form-control" required>
                         </div>
                     </div>
                     <div class="mb-5">
                         <label for="kategori">Kategori Blog</label>
                         <select name="kategori" class="form-select">
-
+                            <option value="">pilih salah satu kategori</option>
+                            @foreach($daftarKategori as $kategori)
+                                <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="mb-5">
-                        <label for="jumlah">Foto header blog</label>
+                        <label for="jumlah">Foto utama blog</label>
                         <div class="input-group mt-2">
-                            <input type="file" min="0" name="jumlah" class="form-control" required>
+                            <input type="file" min="0" name="blog_thumbnail" class="form-control" required>
                         </div>
                     </div>
 
@@ -36,12 +39,12 @@
                         <div class="col-12" id="editor"></div>
 
                         <!--- hidden input to post --->
-                        <input type="hidden" name="content">
+                        <input type="hidden" name="konten">
                     </div>
 
                     <div class="mb-5">
                         <input type="submit" value="catat" class="btn btn-success">
-                        <a href="/dashboard" class="btn btn-secondary">kembali ke dashboard</a>
+                        <a href="{{ route('blog.list') }}" class="btn btn-secondary">kembali ke dashboard</a>
                     </div>
                 </form>
             </div>
@@ -67,7 +70,7 @@
         });
 
         editor.on('text-change', function (delta, oldData, source){
-            document.querySelector("input[name='content']").value = editor.root.innerHTML;
+            document.querySelector("input[name='konten']").value = editor.root.innerHTML;
         })
     </script>
 @endsection

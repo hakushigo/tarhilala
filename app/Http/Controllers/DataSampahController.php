@@ -89,7 +89,7 @@ class DataSampahController extends Controller
 
         function EditDataSampah($id){
             $Kategoris = TipeSampah::get();
-            $RecentData = DataSampah::find($id)->first() ;
+            $RecentData = DataSampah::where('id', $id)->first() ;
             return view('dashboard.unit.sampah.edit',
                 [
                     'id' => $id,
@@ -111,13 +111,13 @@ class DataSampahController extends Controller
         }
 
         function deleteDataSampah($id){
-            $HapusDataSampah = DataSampah::find($id)->delete();
+            $HapusDataSampah = DataSampah::where('id', $id)->delete();
 
             return redirect(route('sampah.home'));
         }
 
         function showDetailDataSampah($id){
-            $GetDataSampah = DataSampah::find($id)->first();
+            $GetDataSampah = DataSampah::where('id', $id)->first();
             $GetKategoriDataSampah = TipeSampah::find($GetDataSampah->tipe_sampah)->first();
 
             return view('dashboard.unit.sampah.detail', [

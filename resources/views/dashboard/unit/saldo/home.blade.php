@@ -29,9 +29,9 @@
                 </td>
                 <td>
                     <div class="btn-group">
-                        <a href="/dashboard/nasabah/detail/{{ $inasabah->id }}" class="btn btn-primary">detail</a>
-                        <a href="/dashboard/saldo/deposit/{{ $inasabah->id }}" class="btn btn-success">deposit saldo</a>
-                        <a href="/dashboard/saldo/tarik/{{ $inasabah->id }}" class="btn btn-danger">tarik saldo</a>
+                        <a href="{{ route('nasabah.detail', ['id' => $inasabah->id]) }}" class="btn btn-primary">detail</a>
+                        <a href="{{ route('nasabah.saldo.deposit', ['id' => $inasabah->id]) }}" class="btn btn-success">deposit saldo</a>
+                        <a href="{{ route('nasabah.saldo.tarik', ['id' => $inasabah->id]) }}" class="btn btn-danger">tarik saldo</a>
                     </div>
                 </td>
             </tr>
