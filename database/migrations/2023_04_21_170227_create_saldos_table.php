@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('saldo', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('nasabah_id')->references('id')->on('nasabah')->unique();
+            $table->foreignId('nasabah_id')->references('id')->on('nasabah')->unique()->onDelete('cascade');
             $table->double('saldo')->default(0);
             $table->timestamps();
         });

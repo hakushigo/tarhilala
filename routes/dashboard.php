@@ -14,11 +14,8 @@ Route::middleware(['auth', 'verified'])->group(function (){
     /** PROFILE STUFFS */
     Route::get('/dashboard/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/dashboard/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/dashboard/profile/entity', [ProfileController::class, 'entityupdate'])->name('entity.update');
     Route::delete('/dashboard/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-
-    // Showing Profil!
-    Route::get('/profil');
 
     // unit only pages URL endpoints
 

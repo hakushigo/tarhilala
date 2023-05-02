@@ -1,16 +1,20 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<section>
+    <header>
+        <h2 class="text-lg font-medium text-gray-900">
+            {{ __('Informasi profil '.$tipe_akun) }}
+        </h2>
 
-    <h1>Mohon melengkapi info akun sebelum melanjutkan</h1> <br>
+        <p class="mt-1 text-sm text-gray-600">
+            {{ __("Silahkan mengubah informasi $tipe_akun anda disini") }}
+        </p>
+    </header>
 
-    <form method="POST" action="/setup">
-        @csrf
+    @switch($user->tipe_akun)
+        @case(0)
+            <form method="post" action="{{ route('entity.update') }}" class="mt-6 space-y-6">
+                @csrf
+                @method('patch')
 
-        <!--- if else based on the data type --->
-        @switch($tipe)
-            @case(0)
-                <!-- You are register as unit! -->
                 <div>
                     <x-input-label for="nama_unit" :value="__('Nama Unit')" />
                     <x-text-input id="nama_unit" class="block mt-1 w-full" type="text" name="nama_unit" required autofocus />
@@ -26,18 +30,18 @@
                     <x-text-input id="kecamatan_unit" class="block mt-1 w-full" type="text" name="kecamatan_unit" required autofocus />
                 </div>
 
-                <input type="hidden" value="0" name="tipe">
 
-                <!-- Remember Me -->
                 <div class="block mt-4">
-                    <label for="remember_me" class="inline-flex items-center">
-                        <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                        <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                    </label>
+                    <x-primary-button class="btn btn-sm btn-success">
+                        {{ __('Ubah Informasi unit!') }}
+                    </x-primary-button>
                 </div>
-                @break
+            </form>
+            @break
+            <form method="post" action="{{ route('entity.update') }}" class="mt-6 space-y-6">
+                @csrf
+                @method('patch')
 
-            @case(1)
                 <div>
                     <x-input-label for="nama_nasabah" :value="__('Nama Nasabah')" />
                     <x-text-input id="nama_nasabah" class="block mt-1 w-full" type="text" name="nama_nasabah" required autofocus />
@@ -58,8 +62,6 @@
                     <x-text-input id="nik_nasabah" class="block mt-1 w-full" type="text" name="nik_nasabah" required autofocus />
                 </div>
 
-                <input type="hidden" value="1" name="tipe">
-
                 <div class="mt-4">
                     <x-input-label for="nasabah_of" :value="__('Unit yang dipilih')" />
 
@@ -70,21 +72,20 @@
                         @endforeach
                     </select>
                 </div>
-                @break
 
-            @default
-                <p>abooga</p>
-                @break
-        @endswitch
+                <div class="block mt-4">
+                    <x-primary-button class="btn btn-sm btn-success">
+                        {{ __('Ubah Informasi unit!') }}
+                    </x-primary-button>
+                </div>
+            </form>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button class="btn btn-success fw-bold">
-                {{ "Siapkan akun ".($tipe == 0 ? "unit" : ($tipe == 1 ? "nasabah" : ""))}}
-            </x-primary-button>
-        </div>
-    </form>
+        @case(1)
 
-    <script>
-        document.getElementById("")
-    </script>
-</x-guest-layout>
+        @break
+
+        @default
+        @break
+    @endswitch
+
+</section>

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('saldo_histories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('saldo_id')->references('id')->on('saldo');
+            $table->foreignId('saldo_id')->references('id')->on('saldo')->onDelete('cascade');
             $table->enum('method', ['deposit', 'tarik']);
             $table->double('jumlah_transaksi');
             $table->timestamps();
