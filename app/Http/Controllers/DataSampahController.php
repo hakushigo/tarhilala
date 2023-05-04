@@ -89,7 +89,7 @@ class DataSampahController extends Controller
 
         function EditDataSampah($id){
             $Kategoris = TipeSampah::get();
-            $RecentData = DataSampah::where('id', $id)->first() ;
+            $RecentData = DataSampah::where('id', $id)->firstOrFail() ;
             return view('dashboard.unit.sampah.edit',
                 [
                     'id' => $id,
@@ -117,7 +117,7 @@ class DataSampahController extends Controller
         }
 
         function showDetailDataSampah($id){
-            $GetDataSampah = DataSampah::where('id', $id)->first();
+            $GetDataSampah = DataSampah::where('id', $id)->firstOrFail();
             $GetKategoriDataSampah = TipeSampah::find($GetDataSampah->tipe_sampah)->first();
 
             return view('dashboard.unit.sampah.detail', [

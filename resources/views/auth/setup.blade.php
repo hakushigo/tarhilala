@@ -55,7 +55,7 @@
 
                 <div class="mt-4">
                     <x-input-label for="nik_nasabah" :value="__('NIK Nasabah')" />
-                    <x-text-input id="nik_nasabah" class="block mt-1 w-full" type="text" name="nik_nasabah" required autofocus />
+                    <x-text-input id="nik_nasabah" class="block mt-1 w-full" type="number" name="nik_nasabah" required autofocus />
                 </div>
 
                 <input type="hidden" value="1" name="tipe">

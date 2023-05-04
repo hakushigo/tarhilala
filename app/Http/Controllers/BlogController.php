@@ -89,7 +89,7 @@ class BlogController extends Controller
     }
     function UpdateBlogForm($id){
         $DaftarKategori = KategoriBlog::get();
-        $DataBlog = Blog::where('id', $id)->first();
+        $DataBlog = Blog::where('id', $id)->firstOrFail();
         return view('dashboard.unit.blog.edit', [
             'daftarKategori' => $DaftarKategori,
             'Blog' => $DataBlog,

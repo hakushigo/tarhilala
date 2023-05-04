@@ -9,7 +9,7 @@
             <a class="nav-link {{ $request->get('page') == "autentikasi" ? "active" : "" }}"  href="?page=autentikasi" >profil autentikasi</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ $request->get('page') == "profil" ? "active" : "" }}" href="?page=profil">profil unit</a>
+            <a class="nav-link {{ $request->get('page') == "profil" ? "active" : "" }}" href="?page=profil">data profil</a>
         </li>
         <li class="nav-item">
             <a class="nav-link {{ $request->get('page') == "password" ? "active" : "" }}" href="?page=password">kata sandi</a>
@@ -28,7 +28,7 @@
                             @include('profile.partials.update-profile-information-form')
                             @break
                         @case('profil')
-                            @include('profile.partials.update-users-entity-form')
+                            @include('profile.partials.update-users-entity-form', ['data' => $data])
                             @break
                         @case('password')
                             @include('profile.partials.update-password-form')

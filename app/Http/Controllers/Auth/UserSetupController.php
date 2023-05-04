@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\Nasabah;
 use App\Models\saldo;
 use App\Models\Unit;
@@ -9,8 +10,6 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\View\View;
 
 
 class UserSetupController extends Controller
@@ -78,7 +77,7 @@ class UserSetupController extends Controller
                     'no_rekening' => ['required', 'integer'],
                     'alamat_nasabah' => ['required', 'string'],
                     'nik_nasabah' => ['required', 'integer'],
-                    'nasabah_of' => ['required', 'integer']
+                    'nasabah_of' => ['required']
                 ]);
 
                 // set-up nasabah
