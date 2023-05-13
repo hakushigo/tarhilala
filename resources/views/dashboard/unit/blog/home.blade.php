@@ -1,7 +1,7 @@
 @extends('dashboard.component.dashboard')
 @section('dashboard.content')
     <div class="d-flex justify-content-between">
-        <h1>daftar nasabah</h1>
+        <h1>daftar blog</h1>
         <a class="btn btn-success" href="{{ route('blog.write') }}">
             Tulis sesuatu
         </a>

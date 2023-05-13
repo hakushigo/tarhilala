@@ -6,7 +6,7 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="col-lg-7 col-md-10 col-sm-12">
             <h1>
-                Tambah Data Sampah
+                ubah data blog {{ $Blog->judul_blog }}
             </h1>
             <div class="d-flex justify-content-center">
                 <form class="form-group py-5 col-11" method="post" action="{{ route('blog.action.update', ['id' => $id]) }}" enctype="multipart/form-data">

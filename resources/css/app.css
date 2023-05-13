@@ -19,3 +19,6 @@ body{
     background-color: var(--bs-danger);
     color : white!important;
 }
+.fast-action{
+    margin : 10px 0;
+}

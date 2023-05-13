@@ -40,6 +40,11 @@ class DataSampahController extends Controller
 
         /** ACTIONS */
         function pushKategoriSampah(Request $request){
+            $request->validate([
+                'nama_kategori' => ['required', 'string'],
+                'deskripsi_kategori' => ['required', 'string']
+            ]);
+
             TipeSampah::create([
                 'nama_sampah' => $request->nama_kategori,
                 'deskripsi_tipe' => $request->deskripsi_kategori
@@ -49,10 +54,16 @@ class DataSampahController extends Controller
         }
 
         function updateKategoriSampah(Request $request, $id){
+            $request->validate([
+                'nama_kategori' => ['required', 'string'],
+                'deskripsi_kategori' => ['required', 'string']
+            ]);
+
             $KategoriEdit = TipeSampah::find($id);
 
             $KategoriEdit->nama_sampah = $request->nama_kategori;
             $KategoriEdit->deskripsi_tipe = $request->deskripsi_kategori;
+
             $KategoriEdit->save();
 
             return redirect(route('sampah.kategori.home'));
@@ -89,6 +100,7 @@ class DataSampahController extends Controller
 
         function EditDataSampah($id){
             $Kategoris = TipeSampah::get();
+
             $RecentData = DataSampah::where('id', $id)->firstOrFail() ;
             return view('dashboard.unit.sampah.edit',
                 [
@@ -101,6 +113,7 @@ class DataSampahController extends Controller
         /** ACTIONS */
         function pushDataSampah(Request $request){
             $unitID = Unit::where('user_id', Auth::user()->id)->first();
+
             $Buat = DataSampah::create([
                 'tipe_sampah' => $request->tipe_sampah,
                 'amount' => $request->jumlah,

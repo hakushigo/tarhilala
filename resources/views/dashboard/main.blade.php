@@ -1,4 +1,153 @@
 @extends('dashboard.component.dashboard')
 @section('dashboard.content')
-    <h1>HI!</h1>
+    @switch(\Illuminate\Support\Facades\Auth::user()->tipe_akun)
+        @case(0)
+
+            <div class="my-2">
+                <h1 class="h2 fw-bold">halo! selamat datang!</h1>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-8 col-md-12 col-sm-12 mb-5">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-4">
+                            <h2 class="h3">informasi <span class="fw-bold">{{ $data_unit->nama_unit }}</span></h2>
+                            <div class="row">
+
+                                <div class="col-lg-6 mt-2">
+                                    <section class="card shadow-sm">
+                                        <div class="card-body d-flex justify-content-between align-items-center">
+                                            <h3 class="h5">jumlah nasabah</h3>
+                                            <p><span class="display-3">{{ $jumlah_nasabah }}</span></p>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="col-lg-6 mt-2">
+                                    <section class="card shadow-sm">
+                                        <div class="card-body d-flex justify-content-between align-items-center">
+                                            <h3 class="h5">jumlah postingan <br> blog</h3>
+                                            <p><span class="display-3">{{ $jumlah_blog }}</span></p>
+                                        </div>
+                                    </section>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 mb-5">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-4">
+                            <h2 class="h3 mb-3">aksi Cepat</h2>
+
+                            <div class="mb-3">
+                                <div class="card shadow">
+                                    <div class="card-body ">
+                                        <p class="fast-action">
+                                            <a href="#" class="link-success">Tambahkan data sampah</a>
+                                        </p>
+                                        <p class="fast-action">
+                                            <a href="#" class="link-success">Tambahkan blog {{ $data_unit->nama_unit }}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="card shadow">
+                                    <div class="card-body ">
+                                        <h3 class="h5 fw-bold">informasi nasabah</h3>
+                                        <hr>
+                                        @forelse($nasabah as $satunasabah)
+                                            <div class="fast-action" class=" d-flex justify-content-between align-items-center">
+                                                <span>{{ $satunasabah->nama_nasabah }}</span> &nbsp;
+                                                <a href="{{ route('nasabah.detail', ['id' => $satunasabah->id]) }}" class="link link-success">lihat detail pengguna</a>
+                                            </div>
+                                        @empty
+                                            <p class="fast-action"><i>anda tidak memiliki nasabah</i></p>
+                                        @endforelse
+                                        <hr>
+                                        <p class="fast-action">
+                                            <a href="{{ route('nasabah.list') }}" class="btn btn-success">
+                                                halaman lengkap nasabah
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        @break
+        @case(1)
+
+            <div class="my-2 text-center">
+                <h1 class="h2 fw-bold">halo! selamat datang!</h1>
+            </div>
+            <div class="row mt-4 d-flex justify-content-center">
+                <div class="col-lg-8 col-md-12 col-sm-12 mb-5">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="p-3">
+                                <h2 class="h3">Informasi anda</h2>
+
+                                <div class="row mt-3">
+
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="card shadow">
+                                            <div class="card-body">
+                                                <h3 class="h6">saldo</h3>
+                                                <p class="h4 fw-bolder">
+                                                    <span>Rp.</span>
+                                                    <span>{{ $data_saldo }},-</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="card shadow">
+                                            <div class="card-body">
+                                                <h3 class="h6">lokasi unit anda</h3>
+                                                <p class="h4 fw-bolder">
+                                                    <span>{{ \App\Models\Unit::where('id', $data_nasabah->nasabah_of)->first()->nama_unit }}</span>
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 mb-5">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="p-3">
+                                <h2 class="h3">Informasi akun anda</h2>
+                                <div class="pt-2">
+                                    <p class="fast-action">
+                                        <span> <b>Tanggal registrasi : </b> </span>
+                                        <span> {{ $waktu_masuk }} </span>
+                                    </p>
+                                    <p class="fast-action">
+                                        <span> <b>Alamat Email : </b> </span>
+                                        <span> {{ \Illuminate\Support\Facades\Auth::user()->email }} </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            @break
+        @default
+
+        @break
+    @endswitch
 @endsection

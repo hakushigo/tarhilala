@@ -22,7 +22,7 @@ Route::middleware(['auth', 'verified'])->group(function (){
     // nasabah only pages URL endpoints
     Route::middleware(['dashboard_nasabah_only'])->group(function (){
         /** pages */
-        Route::get('/dashboard/saldo');
+        Route::get('/dashboard/saldo', [\App\Http\Controllers\DataSaldoController::class, 'ShowSaldoInfo'])->name('nasabah.show.saldo');
     });
 
     Route::middleware(['dashboard_unit_only'])->group(function (){

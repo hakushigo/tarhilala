@@ -36,11 +36,7 @@ class UserSetupController extends Controller
             'tipe_akun' => null // first, we add it as null!
         ]);
 
-        $request->session()->forget(['temp_user_credentials_email', 'temp_user_credentials_hashed_password']);
-        $request->session()->flush();
-
         event(new Registered($user));
-
         Auth::login($user);
 
         $tipe = $request->tipe;
@@ -65,6 +61,8 @@ class UserSetupController extends Controller
                     'kecamatan_unit' => $request->kecamatan_unit,
                     'user_id' => $user->id
                 ]);
+
+                $request->session()->forget(['temp_user_credentials_email', 'temp_user_credentials_hashed_password']);
 
                 return redirect("/dashboard");
 
@@ -99,6 +97,8 @@ class UserSetupController extends Controller
                     'nasabah_id' => $createNasabah->id,
                     'saldo' => 0 // for starter let it zero!
                 ]);
+
+                $request->session()->forget(['temp_user_credentials_email', 'temp_user_credentials_hashed_password']);
 
                 return redirect("/dashboard");
 
