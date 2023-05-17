@@ -15,17 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-        // for the first time, add tarhilala user
-        User::factory()->create([
-            'email' => 'admin@admin',
-            'tipe_akun' => 0, // 0 means unit
-            'password' => Hash::make('admin') // default password, admin!
-        ]);
+        $this->call(InsertAdminInfo::class);
     }
 }

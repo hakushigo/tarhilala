@@ -11,19 +11,19 @@
             @case(0)
                 <!-- You are register as unit! -->
                 <div>
-                    <x-input-label for="nama_unit" :value="__('Nama Unit')" />
+                    <x-input-label for="nama_unit" :value="__('Nama Bank Sampah')" />
                     <x-text-input id="nama_unit" class="block mt-1 w-full" type="text" name="nama_unit" required autofocus />
                     <x-input-error :messages="$errors->get('nama_unit')" class="mt-2" />
                 </div>
 
                 <div class="mt-4">
-                    <x-input-label for="alamat_unit" :value="__('Alamat Unit')" />
+                    <x-input-label for="alamat_unit" :value="__('Alamat Bank Sampah')" />
                     <x-text-input id="alamat_unit" class="block mt-1 w-full" type="text" name="alamat_unit" required autofocus />
                     <x-input-error :messages="$errors->get('alamat_unit')" class="mt-2" />
                 </div>
 
                 <div class="mt-4">
-                    <x-input-label for="kecamatan_unit" :value="__('Nama kecamatan Unit')" />
+                    <x-input-label for="kecamatan_unit" :value="__('Nama kecamatan Bank Sampah')" />
                     <x-text-input id="kecamatan_unit" class="block mt-1 w-full" type="text" name="kecamatan_unit" required autofocus />
                     <x-input-error :messages="$errors->get('kecamatan_unit')" class="mt-2" />
                 </div>

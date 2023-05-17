@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('nik_nasabah');
             $table->foreignId('nasabah_of')->references('id')->on('unit')->onDelete('cascade');
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->boolean('aktif')->default(0);
             $table->timestamps();
         });
     }

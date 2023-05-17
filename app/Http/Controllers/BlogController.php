@@ -143,20 +143,22 @@ class BlogController extends Controller
         ]);
 
         // change the photo if the imagefile is filled
-        if($imageFile->isValid()){
-            // first remove the file
-            Storage::disk('imageStorage')->delete($blog->first()->image_header_url);
+        if($request->hasFile('blog_thumbnail')){
+            if($imageFile->isValid()){
+                // first remove the file
+                Storage::disk('imageStorage')->delete($blog->first()->image_header_url);
 
-            // and... we uplaad the new one
-            $imageFileName = Str::random(40).".".$imageFile->extension();
-            Storage::disk('imageStorage')->put($imageFileName, $imageFile->getContent());
+                // and... we uplaad the new one
+                $imageFileName = Str::random(40).".".$imageFile->extension();
+                Storage::disk('imageStorage')->put($imageFileName, $imageFile->getContent());
 
-            // and push the new name
-            $blog->update([
-                'image_header_url' => $imageFileName
-            ]);
+                // and push the new name
+                $blog->update([
+                    'image_header_url' => $imageFileName
+                ]);
 
-            redirect(route('blog.list'));
+                redirect(route('blog.list'));
+            }
         }
 
         return redirect(route('blog.list'));

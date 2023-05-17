@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nama_unit')->unique();
             $table->string('alamat_unit');
             $table->string('kecamatan_unit');
-            $table->boolean('aktif')->default(0);
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->boolean('aktif')->default(0);
             $table->timestamps();
         });
     }

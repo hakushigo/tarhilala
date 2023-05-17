@@ -109,7 +109,7 @@
                                     <div class="col-md-6 col-lg-6">
                                         <div class="card shadow">
                                             <div class="card-body">
-                                                <h3 class="h6">lokasi unit anda</h3>
+                                                <h3 class="h6">bank sampah anda</h3>
                                                 <p class="h4 fw-bolder">
                                                     <span>{{ \App\Models\Unit::where('id', $data_nasabah->nasabah_of)->first()->nama_unit }}</span>
                                                 </p>
@@ -144,10 +144,92 @@
                 </div>
             </div>
 
+            @break
+
+            @case('2')
+
+            <div class="my-2 text-center">
+                <h1 class="h2 fw-bold">halo! administrator!</h1>
+            </div>
+            <div class="row mt-4 d-flex justify-content-center">
+                <div class="col-lg-8 col-md-12 col-sm-12 mb-5">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="p-3">
+                                <h2 class="h5">Manajemen pengguna</h2>
+
+                                <div class="row mt-3">
+
+                                    <div class="col-md-6 col-lg-6">
+                                            <div class="card shadow">
+                                                <div class="card-body">
+                                                    <p class="m-0 text-center">
+                                                        <a href="{{ route('man.nasabah.list') }}" class="fw-bold link-success">
+                                                            {{ __('nasabah') }}
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-6">
+                                        <a class="el-link" href="#">
+                                            <div class="card shadow">
+                                                <div class="card-body">
+                                                    <p class="m-0 text-center">
+                                                        <a href="{{ route('man.unit.list') }}" class="fw-bold link-success">
+                                                            {{ __('bank sampah') }}
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-12 col-sm-12 mb-5">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="p-3">
+                                <h2 class="h5">Statistik Pengguna</h2>
+
+                                <div class="row mt-3">
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="card shadow">
+                                            <div class="card-body">
+                                                <h3 class="h6">{{ __('Jumlah pengguna Nasabah') }}</h3>
+                                                <p class="m-0 ">
+                                                    <span class="fw-bolder">{{ \App\Models\Nasabah::where('aktif', 1)->count() }}</span> pengguna aktif dari <span class="fw-bolder">{{ \App\Models\Nasabah::all()->count() }}</span> pengguna
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="card shadow">
+                                            <div class="card-body">
+                                                <h3 class="h6">{{ __('Jumlah pengguna Bank Sampah') }}</h3>
+                                                <p class="m-0 ">
+                                                    <span class="fw-bolder">{{ \App\Models\Unit::where('aktif', 1)->count() }}</span> pengguna aktif dari <span class="fw-bolder">{{ \App\Models\Unit::all()->count() }}</span> pengguna
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             @break
         @default
-
         @break
     @endswitch
 @endsection

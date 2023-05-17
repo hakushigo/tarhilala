@@ -40,7 +40,7 @@
                         @break
                     @case(1)
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="/dashboard/saldo">Histori Saldo anda</a>
+                            <a class="nav-link" href="/dashboard/saldo">Sejarah Saldo anda</a>
                         </li>
 
                     @break

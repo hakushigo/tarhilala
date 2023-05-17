@@ -8,7 +8,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class DashboardNasabahOnly
+class DashboardAdminOnly
 {
     /**
      * Handle an incoming request.
@@ -19,14 +19,16 @@ class DashboardNasabahOnly
      */
     public function handle(Request $request, Closure $next)
     {
-        $user = Auth::user();
-
-        if((Nasabah::where('user_id', $user->id)->first() == null) || ($user->tipe_akun != 1)){
-            // yeeted back to the home dashboard page if you are not a nasabah
-            return redirect(route('dashboard'));
-//            return redirect(route('dashboard'));
+        if(Auth::check()){
+            $id = Auth::getUser()->getAuthIdentifier();
         }else{
+            $id = 0;
+        }
+
+        if((Auth::user()->tipe_akun == 2 && Auth::user()->id == 99)){
             return $next($request);
+        }else{
+            return redirect(route('dashboard'));
         }
     }
 }

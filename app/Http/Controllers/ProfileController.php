@@ -23,7 +23,7 @@ class ProfileController extends Controller
             'request' => $request
         ];
 
-        if($request->get('page') == 'profil'){
+        if($request->get('page') == 'profil' && !(Auth::user()->id == 99 && Auth::user()->tipe_akun == 2)){
             switch(Auth::user()->tipe_akun){
                 case 0 :
                     $tipe_akun = "unit";

@@ -33,7 +33,7 @@
                     <div class="mb-5">
                         <label>Foto utama blog baru</label>
                         <div class="input-group mt-2">
-                            <input type="file" min="0" name="blog_thumbnail" class="form-control" required>
+                            <input type="file" min="0" name="blog_thumbnail" class="form-control">
                         </div>
                     </div>
 
@@ -74,6 +74,8 @@
             placeholder: 'Tulis apa yang anda ingin tulis',
             theme: 'snow'
         });
+
+        document.querySelector("input[name='konten']").value = editor.root.innerHTML;
 
         editor.on('text-change', function (delta, oldData, source){
             document.querySelector("input[name='konten']").value = editor.root.innerHTML;
