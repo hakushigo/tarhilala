@@ -27,10 +27,18 @@
                                 oleh administrator sistem sebelum anda dapat menggunakan
                                 akun anda.
                             </p>
+                            <div class="d-flex align-content-center justify-content-around col-12">
                                 <form class="m-0" action="{{ route('logout') }}" method="post">
                                     @csrf
-                                    <button type="submit" class="btn btn-success">Logout</button>
+                                    <button type="submit" class="btn btn-danger">Logout</button>
                                 </form>
+
+                                <span>atau</span>
+
+                                <a href="{{ route('dashboard') }}" class="btn btn-success"><small>
+                                        periksa ke dashboard
+                                    </small> </a>
+                            </div>
                         @else
                             <h1 class="h2">;)</h1>
                             <hr>

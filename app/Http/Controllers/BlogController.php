@@ -63,7 +63,13 @@ class BlogController extends Controller
     /** pages */
     // public
     function showBlog($id){
+        $dataBlog = Blog::where('id', $id)->first();
 
+        return view('.homepage.blog.view', [
+            'blog' => $dataBlog,
+            'author' => Unit::where('id', $dataBlog->author)->first()->nama_unit,
+            'category' => KategoriBlog::where('id', $dataBlog->kategori)->first()->nama_kategori
+        ]);
     }
 
     function listBlog(){

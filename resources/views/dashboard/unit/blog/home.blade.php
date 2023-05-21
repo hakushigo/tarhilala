@@ -34,7 +34,7 @@
                 </td>
                 <td>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-primary">lihat</a>
+                        <a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="btn btn-primary">lihat</a>
                         <a href="{{ route('blog.edit', ['id' => $blog->id])  }}" class="btn btn-warning">edit</a>
                         <a href="{{ route('blog.action.destroy', ['id' => $blog->id]) }}" class="btn btn-danger">hapus</a>
                     </div>
