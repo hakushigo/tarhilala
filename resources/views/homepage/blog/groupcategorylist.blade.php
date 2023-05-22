@@ -25,7 +25,7 @@
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-center align-items-center">
-                <h2 class="my-2 mx-0">{!! $title !!}</h2>
+                <h2 class="my-2 mx-0 text-center">{!! $title !!}</h2>
             </div>
         </div>
     </section><!-- Breadcrumbs Section -->
@@ -34,32 +34,25 @@
 
     <section class="section my-5">
         <div class="container">
-            <div class="row mb-5">
+            <div class="row m-3">
 
-                @forelse($blogs as $blog)
+                @forelse($categories as $category)
 
-                    <div class="col-md-4 mb-5">
-                        <div class="post-entry px-2">
-                            <a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="d-block mb-4">
-                                <img src="{{ url('/images').'/'.$blog->image_header_url }}" alt="Image" class="img-fluid">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="post-entry mx-4">
+                            <a href="{{ route('blog.by.category', ['selected' => $category->id]) }}">
+                                <div class="card shadow text-black">
+                                    <div class="card-body pt-4 text-center">
+                                        <h2 class="h5 fw-bold">{{ $category->nama_kategori }}</h2>
+                                    </div>
+                                </div>
                             </a>
-
-                            <div class="post-text">
-                                <a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="h5 fw-bold text-black">{{ $blog->judul_blog }}</a>
-                                <span class="post-meta">oleh <span class="fw-normal text-black">{{ \App\Models\Unit::where('id', $blog->author)->first()->nama_unit }}</span> </span>
-                                <p><small><a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="readmore">Selengkapnya...</a></small></p>
-                            </div>
                         </div>
                     </div>
 
                 @empty
+                    <h1>empty</h1>
                 @endforelse
-            </div>
-
-            <div class="row">
-                <div class="col-12 text-center">
-                    {{ $blogs->links() }}
-                </div>
             </div>
 
         </div>

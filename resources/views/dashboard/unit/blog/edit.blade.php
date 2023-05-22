@@ -19,7 +19,7 @@
                     </div>
                     <div class="mb-5">
                         <label for="kategori">Kategori Blog</label>
-                        <select name="kategori" class="form-select">
+                        <select required name="kategori" class="form-select">
                             <option value="">pilih salah satu kategori</option>
                             @foreach($daftarKategori as $kategori)
                                 <option {{ $Blog->kategori == $kategori->id ? "selected" : "" }} value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>

@@ -12,6 +12,7 @@ class TipeSampah extends Model
 
     protected $fillable = [
         'nama_sampah',
-        'deskripsi_tipe'
+        'deskripsi_tipe',
+        'unit_id'
     ];
 }

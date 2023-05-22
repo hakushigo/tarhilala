@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_sampah')->unique();
             $table->text('deskripsi_tipe');
+            $table->foreignId('unit_id')->references('id')->on('unit');
             $table->timestamps();
         });
     }

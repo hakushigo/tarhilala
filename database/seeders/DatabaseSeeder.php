@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(InsertAdminInfo::class);
+        $this->call(HomepageConfigTemplateKV::class);
     }
 }

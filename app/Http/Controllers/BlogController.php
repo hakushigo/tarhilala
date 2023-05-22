@@ -29,7 +29,7 @@ class BlogController extends Controller
     }
 
     function listCategory(){
-        $data = KategoriBlog::get();
+        $data = KategoriBlog::where('unit_id', (Unit::where('user_id', Auth::user()->id)->first()->id) )->get();
 
         return view('dashboard.unit.blog.kategori.home', [
             'DaftarKategori' => $data
@@ -39,7 +39,8 @@ class BlogController extends Controller
     /** actions */
     function PushCategory(Request $request){
         KategoriBlog::create([
-            'nama_kategori' => $request->nama_kategori
+            'nama_kategori' => $request->nama_kategori,
+            'unit_id' => Unit::where('user_id', Auth::user()->id)->first()->id
         ]);
 
         return redirect(route('blog.kategori.home'));
@@ -63,7 +64,7 @@ class BlogController extends Controller
     /** pages */
     // public
     function showBlog($id){
-        $dataBlog = Blog::where('id', $id)->first();
+        $dataBlog = Blog::where('id', $id)->firstOrFail();
 
         return view('.homepage.blog.view', [
             'blog' => $dataBlog,
@@ -73,28 +74,71 @@ class BlogController extends Controller
     }
 
     function listBlog(){
-        $daftarBlog = Blog::get();
+
+        $currentUnitID = Unit::where('user_id', Auth::user()->id)->first()->id;
+
+        $daftarBlog = Blog::where('author', $currentUnitID)->get();
         return view('dashboard.unit.blog.home',[
             'daftarBlog' => $daftarBlog
         ]);
     }
 
-    function listBlogPerAuthor($author){
+    function HomepageListBlog(){
+        return view('.homepage.blog.all', [
+            'title' => 'Daftar Cerita Kami',
+            'blogs' => Blog::simplePaginate(15),
+        ]);
     }
 
-    function listBlogPerCategory($category){
+    function HomepageListBlogPerAuthor(Request $request){
+        if($request->has('selected')){
+            $blog = Blog::where('author', $request->input('selected'));
 
+            if($blog->count() > 0){
+                return view('.homepage.blog.groupedperauthor', [
+                    'title' => 'Daftar Cerita dari <b>'.Unit::where('id', $request->input('selected'))->first()->nama_unit.'</b>',
+                    'blogs' => $blog->get(),
+                ]);
+            }
+        }
+
+        return view('.homepage.blog.groupauthorlist', [
+            'title' => 'Mau mencari cerita dari siapa hari ini?',
+            'authors' => Unit::whereIn('id', function ($query){
+                $query->select('author')->from('blog');
+            })->get()
+        ]);
+    }
+
+    function HomepageListBlogPerCategory(Request $request){
+        if($request->has('selected')){
+            $blog = Blog::where('kategori', $request->input('selected'));
+
+            if($blog->count() > 0){
+                return view('.homepage.blog.groupedpercategory', [
+                    'title' => 'Cerita dalam <b>'.KategoriBlog::where('id', $request->input('selected'))->first()->nama_kategori.'<b>',
+                    'blogs' => $blog->get(),
+                ]);
+            }
+        }
+
+        return view('.homepage.blog.groupcategorylist', [
+            'title' => 'Mau mencari cerita dari siapa hari ini?',
+            'categories' => KategoriBlog::whereIn('id', function ($query){
+                $query->select('kategori')->from('blog');
+            })->get()
+        ]);
     }
 
     // admin
     function NewBlogForm(){
-        $DaftarKategori = KategoriBlog::get();
+        $DaftarKategori = KategoriBlog::where('unit_id', Unit::where('user_id', Auth::user()->id)->first()->id)->get();
         return view('.dashboard.unit.blog.write', [
             'daftarKategori' => $DaftarKategori
         ]);
     }
     function UpdateBlogForm($id){
-        $DaftarKategori = KategoriBlog::get();
+        $DaftarKategori = KategoriBlog::where('unit_id', Unit::where('user_id', Auth::user()->id)->first()->id)->get();;
         $DataBlog = Blog::where('id', $id)->firstOrFail();
         return view('dashboard.unit.blog.edit', [
             'daftarKategori' => $DaftarKategori,
@@ -172,8 +216,11 @@ class BlogController extends Controller
     }
 
     function DestroyBlog($id){
+
+        $currentUnitID = Unit::where('user_id', Auth::user()->id)->firstOrFail()->id;
         $blog = Blog::where('id', $id);
-        if($blog->exists()){
+
+        if($blog->exists() && ($blog->first()->author == $currentUnitID)){
             Storage::disk('imageStorage')->delete($blog->first()->image_header_url);
             $blog->delete();
         }

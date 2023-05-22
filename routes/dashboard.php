@@ -27,6 +27,11 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function (){
             Route::get('/details/{id}', [\App\Http\Controllers\AdminManageUnit::class, 'DetailUnit'])->name('man.unit.detail');
             Route::get('/activate/{id}', [\App\Http\Controllers\AdminManageUnit::class, 'ActivateUnit'])->name('man.unit.activate');
         });
+
+        Route::prefix('man/homepage')->group(function (){
+            Route::get('/'); // ini untuk formulir
+            Route::post('/push'); // ini untuk ngepush update
+        });
     });
 
     Route::middleware(['check_activated_account'])->group(function (){

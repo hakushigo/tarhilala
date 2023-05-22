@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('homepageconfig', function (Blueprint $table) {
-            $table->string('configname')->primary();
+        Schema::create('homepage_config', function (Blueprint $table) {
+            $table->string('key')->primary();
             $table->text('value');
         });
     }

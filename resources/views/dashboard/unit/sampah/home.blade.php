@@ -38,7 +38,7 @@
         </tr>
         @empty
         <tr>
-            <td colspan="3" style="text-align: center">
+            <td colspan="5" style="text-align: center">
                 <p>Belum ada catatan sampah!</p>
             </td>
         </tr>

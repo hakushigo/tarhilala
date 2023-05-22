@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@php use App\Models\Unit; @endphp
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,11 +7,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Blog</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 
     @vite(['resources/css/style.css'])
 </head>
@@ -41,25 +44,26 @@
                     <div class="col-md-4 mb-5">
                         <div class="post-entry px-2">
                             <a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="d-block mb-4">
-                                <img src="{{ url('/images').'/'.$blog->image_header_url }}" alt="Image" class="img-fluid">
+                                <img src="{{ url('/images').'/'.$blog->image_header_url }}" alt="Image"
+                                     class="img-fluid">
                             </a>
 
                             <div class="post-text">
-                                <a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="h5 fw-bold text-black">{{ $blog->judul_blog }}</a>
-                                <span class="post-meta">oleh <span class="fw-normal text-black">{{ \App\Models\Unit::where('id', $blog->author)->first()->nama_unit }}</span> </span>
-                                <p><small><a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="readmore">Selengkapnya...</a></small></p>
+                                <a href="{{ route('blog.view', ['id' => $blog->id]) }}"
+                                   class="h5 fw-bold text-black">{{ $blog->judul_blog }}</a>
+                                <span class="post-meta">oleh <span
+                                        class="fw-normal text-black">{{ Unit::where('id', $blog->author)->first()->nama_unit }}</span> </span>
+                                <p><small><a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="readmore">Selengkapnya...</a></small>
+                                </p>
                             </div>
                         </div>
                     </div>
 
                 @empty
+                    <div style="height: max-content" class="d-flex justify-content-center align-content-center">
+                        miami
+                    </div>
                 @endforelse
-            </div>
-
-            <div class="row">
-                <div class="col-12 text-center">
-                    {{ $blogs->links() }}
-                </div>
             </div>
 
         </div>

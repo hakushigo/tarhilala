@@ -57,8 +57,6 @@
 
 </main><!-- End #main -->
 
-
-
 <script src="../js/glightbox.min.js"></script>
 <script src="../js/bootstrap.bundle.min.js"></script>
 <script src="../js/swiper-bundle.min.js"></script>
