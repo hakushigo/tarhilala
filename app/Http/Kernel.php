@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\DashboardAdminOnly;
 use App\Http\Middleware\DashboardNasabahOnly;
 use App\Http\Middleware\DashboardUnitOnly;
 use App\Http\Middleware\turnstile;
@@ -67,9 +68,13 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
-        // Prevent
+        // Prevent someone access the other
         'dashboard_unit_only' => DashboardUnitOnly::class,
         'dashboard_nasabah_only' => DashboardNasabahOnly::class,
+        'dashboard_admin_only' => DashboardAdminOnly::class,
+
+        // prevent access if the account is not activated by the administrator
+        'check_activated_account' => \App\Http\Middleware\CheckAccountActivated::class,
 
         // 3rd party service
         'turnstile' => \App\Http\Middleware\TurnstileCheck::class,

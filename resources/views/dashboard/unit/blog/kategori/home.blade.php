@@ -1,7 +1,9 @@
-
 @extends('dashboard.component.dashboard')
 @section('dashboard.content')
-    <h1>daftar nasabah</h1>
+    <div class="d-flex justify-content-between">
+        <h1>daftar kategori blog</h1>
+        <a href="/dashboard/blog/kategori/tambah" class="btn btn-success">Tambah kategori Blog</a>
+    </div>
     <table class="table mt-4">
         <tr>
             <th>
@@ -16,13 +18,17 @@
                 <td>{{ $kategori->nama_kategori }}</td>
                 <td>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-primary">Edit</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
+                        <a href="{{ route('blog.kategori.edit', ['id' => $kategori->id]) }}" class="btn btn-primary">edit</a>
+                        <a href="{{ route('blog.kategori.action.destroy', ['id' => $kategori->id ]) }}" class="btn btn-danger">hapus</a>
                     </div>
                 </td>
             </tr>
         @empty
-            <h1>there's no nasabah here</h1>
+            <tr>
+               <td rowspan="2" style="text-align: center">
+                   <p>tidak ada kategori blog disini</p>
+               </td>
+            </tr>
         @endforelse
     </table>
 @endsection

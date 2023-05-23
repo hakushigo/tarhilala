@@ -19,7 +19,6 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('tipe_akun')->nullable();
-            $table->boolean('have_done_setup')->default(0); //
             $table->rememberToken();
             $table->timestamps();
         });

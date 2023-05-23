@@ -28,7 +28,7 @@
                         <input value="{{ $nasabah->created_at }}" class="form-control" disabled>
                     </div>
                     <div class="mb-5">
-                        <a href="{{ route('nasabah.list') }}" class="btn btn-secondary">kembali ke data sampah</a>
+                        <a href="{{ url()->previous() }}" class="btn btn-secondary">kembali ke data sampah</a>
                     </div>
                 </div>
             </div>

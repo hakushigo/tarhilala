@@ -19,13 +19,9 @@ class DashboardUnitOnly
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check()){
-            $id = Auth::getUser()->getAuthIdentifier();
-        }else{
-            $id = 0;
-        }
+        $user = Auth::user();
 
-        if((Unit::where('user_id', $id)->first() == null) || (User::find($id)->tipe_akun != 0)){
+        if((Unit::where('user_id', $user->id)->first() == null) || $user->tipe_akun != 0){
             return redirect(route('dashboard'));
         }else{
             return $next($request);

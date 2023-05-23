@@ -14,7 +14,16 @@ class DataSaldoController extends Controller
 {
     // untuk nasabah
     function ShowSaldoInfo(){
+        $idNasabah = Nasabah::where('user_id', Auth::user()->id)->first()->id;
+        // get saldo information
+        $saldo = saldo::where('nasabah_id', $idNasabah)->first();
+        $saldoHistory = saldo_history::where('saldo_id', $saldo->id)->get();
 
+        return view('.dashboard.nasabah.saldohistories',
+        [
+            'saldo' => $saldo->saldo,
+            'saldoHistory' => $saldoHistory
+        ]);
     }
 
     // untuk unit

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\Nasabah;
 use App\Models\saldo;
 use App\Models\Unit;
@@ -9,8 +10,6 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\View\View;
 
 
 class UserSetupController extends Controller
@@ -31,19 +30,6 @@ class UserSetupController extends Controller
     }
 
     public function finalization(Request $request){
-        $user = User::create([
-            'email' => $request->session()->get('temp_user_credentials_email'),
-            'password' => $request->session()->get('temp_user_credentials_hashed_password'),
-            'tipe_akun' => null // first, we add it as null!
-        ]);
-
-        $request->session()->forget(['temp_user_credentials_email', 'temp_user_credentials_hashed_password']);
-        $request->session()->flush();
-
-        event(new Registered($user));
-
-        Auth::login($user);
-
         $tipe = $request->tipe;
 
         switch($tipe){
@@ -55,9 +41,21 @@ class UserSetupController extends Controller
                     'kecamatan_unit' => ['required', 'string']
                 ]);
 
+
+                // set up user
+                $user = User::create([
+                    'email' => $request->session()->get('temp_user_credentials_email'),
+                    'password' => $request->session()->get('temp_user_credentials_hashed_password'),
+                    'tipe_akun' => null // first, we add it as null!
+                ]);
+
+                event(new Registered($user));
+                Auth::login($user);
+
+
                 // set-up unit
                 // first, let's set the user's account type
-                User::whereId($user->id)->update(["tipe_akun" => 0, "have_done_setup" => 1]);
+                User::whereId($user->id)->update(["tipe_akun" => 0]);
 
                 // then, we add row in unit
                 Unit::create([
@@ -66,6 +64,8 @@ class UserSetupController extends Controller
                     'kecamatan_unit' => $request->kecamatan_unit,
                     'user_id' => $user->id
                 ]);
+
+                $request->session()->forget(['temp_user_credentials_email', 'temp_user_credentials_hashed_password']);
 
                 return redirect("/dashboard");
 
@@ -78,13 +78,22 @@ class UserSetupController extends Controller
                     'no_rekening' => ['required', 'integer'],
                     'alamat_nasabah' => ['required', 'string'],
                     'nik_nasabah' => ['required', 'integer'],
-                    'nasabah_of' => ['required', 'integer']
+                    'nasabah_of' => ['required']
                 ]);
+
+                // set up user
+                $user = User::create([
+                    'email' => $request->session()->get('temp_user_credentials_email'),
+                    'password' => $request->session()->get('temp_user_credentials_hashed_password'),
+                    'tipe_akun' => null // first, we add it as null!
+                ]);
+
+                event(new Registered($user));
+                Auth::login($user);
 
                 // set-up nasabah
                 // first, let's set the user's account type
-                // marks it have done setup!
-                User::whereId($user->id)->update(["tipe_akun" => 1, "have_done_setup" => 1]);
+                User::whereId($user->id)->update(["tipe_akun" => 1]);
 
                 // then, we add row in nasabah
                 $createNasabah = Nasabah::create([
@@ -100,6 +109,8 @@ class UserSetupController extends Controller
                     'nasabah_id' => $createNasabah->id,
                     'saldo' => 0 // for starter let it zero!
                 ]);
+
+                $request->session()->forget(['temp_user_credentials_email', 'temp_user_credentials_hashed_password']);
 
                 return redirect("/dashboard");
 

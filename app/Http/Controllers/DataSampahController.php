@@ -17,7 +17,7 @@ class DataSampahController extends Controller
             return view(
                 'dashboard.unit.sampah.kategori.home',
                 [
-                    'KategoriQueries' => TipeSampah::get()
+                    'KategoriQueries' => TipeSampah::where('unit_id', Unit::where('user_id', Auth::user()->id)->first()->id )->get()
                 ]
             );
         }
@@ -27,7 +27,7 @@ class DataSampahController extends Controller
             );
         }
         function EditKategoriSampah($id){
-            $data = TipeSampah::find($id)->first();
+            $data = TipeSampah::where('id', $id)->first();
 
             return view(
                 'dashboard.unit.sampah.kategori.edit',
@@ -40,19 +40,31 @@ class DataSampahController extends Controller
 
         /** ACTIONS */
         function pushKategoriSampah(Request $request){
+            $request->validate([
+                'nama_kategori' => ['required', 'string'],
+                'deskripsi_kategori' => ['required', 'string']
+            ]);
+
             TipeSampah::create([
                 'nama_sampah' => $request->nama_kategori,
-                'deskripsi_tipe' => $request->deskripsi_kategori
+                'deskripsi_tipe' => $request->deskripsi_kategori,
+                'unit_id' =>  Unit::where('user_id', Auth::user()->id)->first()->id
             ]);
 
             return redirect(route('sampah.kategori.home'));
         }
 
         function updateKategoriSampah(Request $request, $id){
+            $request->validate([
+                'nama_kategori' => ['required', 'string'],
+                'deskripsi_kategori' => ['required', 'string']
+            ]);
+
             $KategoriEdit = TipeSampah::find($id);
 
             $KategoriEdit->nama_sampah = $request->nama_kategori;
             $KategoriEdit->deskripsi_tipe = $request->deskripsi_kategori;
+
             $KategoriEdit->save();
 
             return redirect(route('sampah.kategori.home'));
@@ -80,7 +92,7 @@ class DataSampahController extends Controller
         }
 
         function SubmitDataSampah(){
-            $Kategoris = TipeSampah::get();
+            $Kategoris = TipeSampah::where('unit_id', Unit::where('user_id', Auth::user()->id)->first()->id )->get();
             return view('dashboard.unit.sampah.tambah',
             [
                 'TipeSampah' => $Kategoris
@@ -88,8 +100,9 @@ class DataSampahController extends Controller
         }
 
         function EditDataSampah($id){
-            $Kategoris = TipeSampah::get();
-            $RecentData = DataSampah::find($id)->first() ;
+            $Kategoris = TipeSampah::where('unit_id', Unit::where('user_id', Auth::user()->id)->first()->id )->get();
+
+            $RecentData = DataSampah::where('id', $id)->firstOrFail() ;
             return view('dashboard.unit.sampah.edit',
                 [
                     'id' => $id,
@@ -101,6 +114,7 @@ class DataSampahController extends Controller
         /** ACTIONS */
         function pushDataSampah(Request $request){
             $unitID = Unit::where('user_id', Auth::user()->id)->first();
+
             $Buat = DataSampah::create([
                 'tipe_sampah' => $request->tipe_sampah,
                 'amount' => $request->jumlah,
@@ -111,13 +125,13 @@ class DataSampahController extends Controller
         }
 
         function deleteDataSampah($id){
-            $HapusDataSampah = DataSampah::find($id)->delete();
+            $HapusDataSampah = DataSampah::where('id', $id)->delete();
 
             return redirect(route('sampah.home'));
         }
 
         function showDetailDataSampah($id){
-            $GetDataSampah = DataSampah::find($id)->first();
+            $GetDataSampah = DataSampah::where('id', $id)->firstOrFail();
             $GetKategoriDataSampah = TipeSampah::find($GetDataSampah->tipe_sampah)->first();
 
             return view('dashboard.unit.sampah.detail', [

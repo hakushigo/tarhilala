@@ -13,7 +13,7 @@
                     <x-input-label for="tipe_akun" :value="__('tipe akun')" />
 
                     <select name="tipe_akun" class='form-select'>
-                        <option value="0">Unit</option>
+                        <option value="0">Bank Sampah</option>
                         <option value="1">Nasabah</option>
                     </select>
                 </div>

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('kategori_blog', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kategori');
+            $table->foreignId('unit_id')->references('id')->on('unit');
             $table->timestamps();
         });
     }

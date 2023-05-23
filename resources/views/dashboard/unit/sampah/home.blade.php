@@ -30,15 +30,15 @@
             <td>{{ $data->updated_at }}</td>
             <td>
                 <div class="btn-group">
-                    <a href="/dashboard/sampah/detail/{{ $data->id }}" class="btn btn-primary">detail</a>
-                    <a href="/dashboard/sampah/edit/{{ $data->id }}" class="btn btn-warning">edit</a>
-                    <a href="/dashboard/action/sampah/delete/{{ $data->id }}" class="btn btn-danger">hapus</a>
+                    <a href="{{ route('sampah.detail', ['id' => $data->id]) }}" class="btn btn-primary">detail</a>
+                    <a href="{{ route('sampah.edit', ['id' => $data->id]) }}" class="btn btn-warning">edit</a>
+                    <a href="{{ route('sampah.action.delete', ['id' => $data->id]) }}" class="btn btn-danger">hapus</a>
                 </div>
             </td>
         </tr>
         @empty
         <tr>
-            <td colspan="3" style="text-align: center">
+            <td colspan="5" style="text-align: center">
                 <p>Belum ada catatan sampah!</p>
             </td>
         </tr>
