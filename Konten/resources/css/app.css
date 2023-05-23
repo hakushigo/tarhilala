@@ -1,0 +1,27 @@
+body{
+    min-height: 100vh!important;
+}
+.font-sans {
+    font-family: 'DM Sans', Arial, sans-serif!important;
+}
+.navbar-toggler {
+    font-size: var( --bs-body-font-size);
+    border: none!important;
+}
+.highlight-warn{
+    background: #ffeca878;
+    color: orange;
+    padding: 15px 20px;
+    border: 2px solid yellow;
+    border-radius: 5px;
+}
+.danger-tab .active {
+    background-color: var(--bs-danger);
+    color : white!important;
+}
+.fast-action{
+    margin : 10px 0;
+}
+.el-link{
+    text-decoration: none;
+}
