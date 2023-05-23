@@ -15,21 +15,21 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function (){
     Route::patch('profile/entity', [ProfileController::class, 'entityUpdate'])->name('entity.update');
     Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::middleware(['dashboard_admin_only'])->group(function (){
-        Route::prefix('man/nasabah')->group(function (){
+    Route::middleware(['dashboard_admin_only'])->prefix('man')->group(function (){
+        Route::prefix('nasabah')->group(function (){
             Route::get('/', [\App\Http\Controllers\AdminManageNasabah::class, 'ListNasabah'])->name('man.nasabah.list');
             Route::get('/details/{id}', [\App\Http\Controllers\AdminManageNasabah::class, 'DetailNasabah'])->name('man.nasabah.detail');
             Route::get('/activate/{id}', [\App\Http\Controllers\AdminManageNasabah::class, 'ActivateNasabah'])->name('man.nasabah.activate');
         });
 
-        Route::prefix('man/unit')->group(function (){
+        Route::prefix('unit')->group(function (){
             Route::get('/', [\App\Http\Controllers\AdminManageUnit::class, 'ListUnit'])->name('man.unit.list');
             Route::get('/details/{id}', [\App\Http\Controllers\AdminManageUnit::class, 'DetailUnit'])->name('man.unit.detail');
             Route::get('/activate/{id}', [\App\Http\Controllers\AdminManageUnit::class, 'ActivateUnit'])->name('man.unit.activate');
         });
 
-        Route::prefix('man/homepage')->group(function (){
-            Route::get('/'); // ini untuk formulir
+        Route::prefix('homepage')->group(function (){
+            Route::get('/', [\App\Http\Controllers\HomepageController::class, 'ShowEditHomepage']); // ini untuk formulir
             Route::post('/push'); // ini untuk ngepush update
         });
     });

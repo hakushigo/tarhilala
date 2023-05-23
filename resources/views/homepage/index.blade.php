@@ -26,8 +26,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <h1>{{ __("ini judul") }}</h1>
-                <h2>{{ __("ini subjudul") }}</h2>
+                <h1>{{ $jh }}</h1>
+                <h2>{{ $sjh }}</h2>
                 <div>
                 </div>
             </div>
@@ -44,15 +44,15 @@
 
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
                     <div class="content">
-                        <h2>{{ __("Subjudul Konten-1") }}</h2>
+                        <h2>{{ $jk1 }}</h2>
                         <p>
-                            {{ __("Subjudul konten-2") }}
+                            {{ $sjk1 }}
                         </p>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center justify-content-center">
-                    <img src="/images/static/2.png" class="img-fluid" alt="">
+                    <img src="/images/homepage/{{ $gk1 }}" class="img-fluid" alt="">
                 </div>
 
             </div>
@@ -65,32 +65,32 @@
         <div class="container">
 
             <header class="section-header">
-                <p>{{ __("title of these") }}</p>
+                <p>{{ $jk2 }}</p>
             </header>
 
             <div class="row">
 
                 <div class="col-lg-4">
                     <div class="box">
-                        <img src="/images/static/3.jpg" class="img-fluid" alt="">
-                        <h3>{{ __("subtitle 2a") }}</h3>
-                        <p>{{ __("lorem ipsum whatever") }}</p>
+                        <img src="/images/homepage/{{ $gk2sa }}" class="img-fluid" alt="">
+                        <h3>{{ $jk2sa }}</h3>
+                        <p>{{ $sjk2sa }}</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 mt-4 mt-lg-0">
                     <div class="box">
-                        <img src="/images/static/4.jpg" class="img-fluid" alt="">
-                        <h3>{{ __("subtitle 2b") }}</h3>
-                        <p>{{ __("lorem ipsum whatever") }}</p>
+                        <img src="/images/homepage/{{ $gk2sb }}" class="img-fluid" alt="">
+                        <h3>{{ $jk2sb }}</h3>
+                        <p>{{ $sjk2sb }}</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 mt-4 mt-lg-0">
                     <div class="box">
-                        <img src="/images/static/5.jpg" class="img-fluid" alt="">
-                        <h3>{{ __("subtitle 2a") }}</h3>
-                        <p>{{ __("lorem ipsum whatever") }}</p>
+                        <img src="/images/homepage/{{ $gk2sc }}" class="img-fluid" alt="">
+                        <h3>{{ $jk2sc }}</h3>
+                        <p>{{ $sjk2sc }}</p>
                     </div>
                 </div>
 
@@ -105,9 +105,8 @@
         <div class="container">
 
             <header class="section-header">
-                <p>
-                    <span class="fw-light">{{ __("cerita") }}</span>
-                    <span class="fw-bold">{{ __("kami") }}</span>
+                <p class="fw-bold">
+                    {{ $jdb }}
                 </p>
             </header>
 
@@ -117,7 +116,7 @@
 
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <a href="#" class="card blog-item shadow">
-                                <img class="card-img" src="/images/static/4.jpg">
+                                <img class="card-img" src="/images/homepage/4.jpg">
                                 <div class="card-body">
                                     <h3 class="h4 fw-bolder">pelatihan pembuangan sampah yang baik dan benar ke kampung bikini bottom oleh bank sampah chum bucket</h3>
                                     <br>
