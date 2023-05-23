@@ -30,7 +30,7 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function (){
 
         Route::prefix('homepage')->group(function (){
             Route::get('/', [\App\Http\Controllers\HomepageController::class, 'ShowEditHomepage']); // ini untuk formulir
-            Route::post('/push'); // ini untuk ngepush update
+            Route::post('/push', [\App\Http\Controllers\HomepageController::class, 'pushHomepageUpdate']); // ini untuk ngepush update
         });
     });
 
