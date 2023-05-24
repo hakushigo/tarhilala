@@ -16,6 +16,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/public/images
 /app-homepage-template
-!/public/images/homepage

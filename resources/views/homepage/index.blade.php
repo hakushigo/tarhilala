@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center justify-content-center">
-                    <img src="/images/homepage/{{ $gk1 }}" class="img-fluid" alt="">
+                    <img src="/homepage/{{ $gk1 }}" class="img-fluid" alt="">
                 </div>
 
             </div>
@@ -72,7 +72,7 @@
 
                 <div class="col-lg-4">
                     <div class="box">
-                        <img src="/images/homepage/{{ $gk2sa }}" class="img-fluid" alt="">
+                        <img src="/homepage/{{ $gk2sa }}" class="img-fluid" alt="">
                         <h3>{{ $jk2sa }}</h3>
                         <p>{{ $sjk2sa }}</p>
                     </div>
@@ -80,7 +80,7 @@
 
                 <div class="col-lg-4 mt-4 mt-lg-0">
                     <div class="box">
-                        <img src="/images/homepage/{{ $gk2sb }}" class="img-fluid" alt="">
+                        <img src="/homepage/{{ $gk2sb }}" class="img-fluid" alt="">
                         <h3>{{ $jk2sb }}</h3>
                         <p>{{ $sjk2sb }}</p>
                     </div>
@@ -88,7 +88,7 @@
 
                 <div class="col-lg-4 mt-4 mt-lg-0">
                     <div class="box">
-                        <img src="/images/homepage/{{ $gk2sc }}" class="img-fluid" alt="">
+                        <img src="/homepage/{{ $gk2sc }}" class="img-fluid" alt="">
                         <h3>{{ $jk2sc }}</h3>
                         <p>{{ $sjk2sc }}</p>
                     </div>
@@ -116,7 +116,7 @@
 
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <a href="#" class="card blog-item shadow">
-                                <img class="card-img" src="/images/homepage/4.jpg">
+                                <img class="card-img" src="/homepage/4.jpg">
                                 <div class="card-body">
                                     <h3 class="h4 fw-bolder">pelatihan pembuangan sampah yang baik dan benar ke kampung bikini bottom oleh bank sampah chum bucket</h3>
                                     <br>

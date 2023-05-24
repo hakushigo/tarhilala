@@ -33,7 +33,7 @@
                     <div class="mb-5">
                         <p>
                             <span>Gambar Konten 1 Saat Ini</span><br>
-                            <img src="{{ __('/images/homepage/'.$gk1) }}" height="200px">
+                            <img src="{{ __('/homepage/'.$gk1) }}" height="200px">
                         </p>
                         <input type="file" min="0" name="gambar_konten_1" class="form-control">
                     </div>
@@ -48,7 +48,7 @@
                     <div class="mb-5">
                         <p>
                             <span>Gambar Konten 2 bagian pertama Saat Ini</span><br>
-                            <img src="{{ __('/images/homepage/'.$gk2sa) }}" height="200px">
+                            <img src="{{ __('/homepage/'.$gk2sa) }}" height="200px">
                         </p>
                         <input type="file" min="0" name="gambar_konten_2_sub_a" class="form-control">
                     </div>
@@ -65,7 +65,7 @@
                     <div class="mb-5">
                         <p>
                             <span>Gambar Konten 2 bagian kedua Saat Ini</span><br>
-                            <img src="{{ __('/images/homepage/'.$gk2sb) }}" height="200px">
+                            <img src="{{ __('/homepage/'.$gk2sb) }}" height="200px">
                         </p>
                         <input type="file" min="0" name="gambar_konten_2_sub_b" class="form-control">
                     </div>
@@ -82,7 +82,7 @@
                     <div class="mb-5">
                         <p>
                             <span>Gambar Konten 2 bagian ketiga Saat Ini</span><br>
-                            <img src="{{ __('/images/homepage/'.$gk2sc) }}" height="200px">
+                            <img src="{{ __('/homepage/'.$gk2sc) }}" height="200px">
                         </p>
                         <input type="file" min="0" name="gambar_konten_2_sub_c" class="form-control">
                     </div>
