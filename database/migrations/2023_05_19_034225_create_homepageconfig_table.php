@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('homepage_config', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->text('value');
+            $table->timestamps();
         });
     }
 
