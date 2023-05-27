@@ -28,7 +28,7 @@ p {
 # Sections
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 80px 0;
   overflow: hidden;
 }
 
@@ -95,129 +95,6 @@ section {
   opacity: 1;
 }
 
-    /*--------------------------------------------------------------
-    # Header
-    --------------------------------------------------------------*/
-    .header.header-scrolled a{
-    color: black;
-    }
-
-    /*--------------------------------------------------------------
-    # Navigation Menu
-    --------------------------------------------------------------*/
-    /**
-    * Desktop Navigation
-    */
-
-    /**
-    * Mobile Navigation
-    */
-    .mobile-nav-toggle {
-    color: #000 ;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-    line-height: 0;
-    transition: 0.5s;
-    }
-
-    .mobile-nav-toggle.bi-x {
-    color: #fff;
-    }
-
-    @media (max-width: 991px) {
-    .mobile-nav-toggle {
-        display: block;
-    }
-
-    .navbar ul {
-        display: none;
-    }
-    }
-
-    .navbar-mobile {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(204, 215, 235, 0.9);
-    transition: 0.3s;
-    }
-
-    .navbar-mobile .mobile-nav-toggle {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    }
-
-    .navbar-mobile ul {
-    display: block;
-    position: absolute;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
-    padding: 10px 0;
-    border-radius: 10px;
-    background-color: #fff;
-    overflow-y: auto;
-    transition: 0.3s;
-    }
-
-    .navbar-mobile a,
-    .navbar-mobile a:focus {
-    padding: 10px 20px;
-    font-size: 15px;
-    color: #000;
-    }
-
-    .navbar-mobile a:hover,
-    .navbar-mobile .active,
-    .navbar-mobile li:hover>a {
-    color: #4EAD8B;
-    }
-
-    .navbar-mobile .getstarted,
-    .navbar-mobile .getstarted:focus {
-    margin: 15px;
-    }
-
-    .navbar-mobile .dropdown ul {
-    position: static;
-    display: none;
-    margin: 10px 20px;
-    padding: 10px 0;
-    z-index: 99;
-    opacity: 1;
-    visibility: visible;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    }
-
-    .navbar-mobile .dropdown ul li {
-    min-width: 200px;
-    }
-
-    .navbar-mobile .dropdown ul a {
-    padding: 10px 20px;
-    }
-
-    .navbar-mobile .dropdown ul a i {
-    font-size: 12px;
-    }
-
-    .navbar-mobile .dropdown ul a:hover,
-    .navbar-mobile .dropdown ul .active:hover,
-    .navbar-mobile .dropdown ul li:hover>a {
-    color: #4EAD8B;
-    }
-
-    .navbar-mobile .dropdown>.dropdown-active {
-    display: block;
-    }
-
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -277,7 +154,7 @@ section {
 }
 
 .values .box img {
-  padding: 30px 50px;
+  padding: 40px 40px;
   transition: 0.5s;
   transform: scale(1.1);
 }
@@ -287,10 +164,6 @@ section {
   color: #0b7435;
   font-weight: 700;
   margin-bottom: 18px;
-}
-
-.values .box:hover {
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
 }
 
 .values .box:hover img {
@@ -495,8 +368,6 @@ section {
   margin-bottom: 30px;
 }
 
-
-
 .footer .footer-top .footer-info .logo span {
   font-size: 30px;
   font-weight: 300;
@@ -607,4 +478,15 @@ body.layout-4 .card,body.layout-4 .article
     color: black;
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     bottom: 10px;
+}
+.first-content-image{
+    height: 300px;
+    width: auto;
+}
+
+.second-content-images{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    object-position: center;
 }

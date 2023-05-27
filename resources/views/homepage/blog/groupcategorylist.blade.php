@@ -58,12 +58,8 @@
         </div>
 
     </section>
-    @include('.homepage.common.footer')
-
 </main><!-- End #main -->
-<script src="../js/main1.js">
-</script>
-
+@include('.homepage.common.footer')
 </body>
 
 </html>

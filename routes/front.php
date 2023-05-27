@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [\App\Http\Controllers\HomepageController::class, 'showHomepage']);
+Route::get('/', [\App\Http\Controllers\HomepageController::class, 'showHomepage'])->name('homepage');
 
 Route::prefix('blog')->group(function (){
 

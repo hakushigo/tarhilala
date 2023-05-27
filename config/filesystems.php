@@ -49,6 +49,11 @@ return [
             'root' => public_path().'/images'
         ],
 
+        'homepageImages' => [
+            'driver' => 'local',
+            'root' => public_path().'/homepage'
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

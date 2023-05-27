@@ -103,7 +103,7 @@
 
 
                     <div class="mb-5">
-                        <label for="judul_brand_footer">Judul Brand Footer</label>
+                        <label for="judul_brand_footer">Judul Footer</label>
                         <input type="text" value="{{ $jbf }}" min="0" name="judul_brand_footer" class="form-control" required>
                     </div>
                     <div class="mb-5">

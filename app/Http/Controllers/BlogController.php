@@ -46,9 +46,12 @@ class BlogController extends Controller
         return redirect(route('blog.kategori.home'));
     }
     function UpdateCategory($id, Request $request){
-        KategoriBlog::where('id', $id)->update([
-            'nama_kategori' => $request->nama_kategori
-        ]);
+        $kategori = KategoriBlog::where('id', $id);
+        if($kategori->first()->unit_id == Unit::where('user_id', Auth::user()->id)->first()->id){
+            $kategori->update([
+                'nama_kategori' => $request->nama_kategori
+            ]);
+        }
 
         return redirect(route('blog.kategori.home'));
     }
