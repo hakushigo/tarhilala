@@ -68,7 +68,7 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function (){
             // nasabah : saldo
             Route::prefix('nasabah')->group(function (){
                 Route::get('/', [\App\Http\Controllers\DataSaldoController::class, 'ShowNasabahLists'])->name('nasabah.list');
-                Route::get('nasabah/detail/{id}', [\App\Http\Controllers\DataSaldoController::class, 'ShowNasabahDetail'])->name('nasabah.detail');
+                Route::get('detail/{id}', [\App\Http\Controllers\DataSaldoController::class, 'ShowNasabahDetail'])->name('nasabah.detail');
             });
 
             Route::prefix('saldo')->group(function (){

@@ -35,31 +35,49 @@
 
     <section class="section my-5">
         <div class="container">
-            <div class="row mb-5">
+            <div class="mb-5">
 
-                @forelse($blogs as $blog)
-
-                    <div class="col-md-4 mb-5">
-                        <div class="post-entry px-2">
-                            <a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="d-block mb-4">
-                                <img src="{{ url('/images').'/'.$blog->image_header_url }}" alt="Image" class="img-fluid">
-                            </a>
-
+                @forelse($units as $unit)
+                    <div class="d-flex justify-content-center align-content-center col-12">
+                        <div class="post-entry px-2 col-lg-6 col-md-10 col-sm-12">
                             <div class="post-text">
-                                <a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="h5 fw-bold text-black">{{ $blog->judul_blog }}</a>
-                                <span class="post-meta">oleh <span class="fw-normal text-black">{{ \App\Models\Unit::where('id', $blog->author)->first()->nama_unit }}</span> </span>
-                                <p><small><a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="readmore">Selengkapnya...</a></small></p>
+                                <h1 class="h2">{{ $unit->nama_unit }}</h1>
+                                <br>
+                                <ul style="list-style: none">
+                                    <li>
+                                        <h2 class="h5">alamat bank sampah</h2>
+                                        <p>{{ $unit->alamat_unit }}</p>
+                                    </li>
+                                    <li>
+                                        <h2 class="h5">kecamatan asal bank sampah</h2>
+                                        <p>{{ $unit->kecamatan_unit }}</p>
+                                    </li>
+                                    <li class="pt-4">
+                                        <p>
+                                            <small>
+                                                <i>lihat cerita mereka <a href="{{ route('blog.by.author', ['selected' => $unit->id]) }}">disini</a></i>
+                                            </small>
+                                        </p>
+                                    </li>
+                                </ul>
+                                <hr class="mt-5">
                             </div>
                         </div>
                     </div>
-
                 @empty
+                    <div class="d-flex justify-content-center align-content-center col-12">
+                        <div class="post-entry px-2 col-lg-6 col-md-10 col-sm-12">
+                            <div class="post-text">
+                                <h1>tidak ada</h1>
+                            </div>
+                        </div>
+                    </div>
                 @endforelse
             </div>
 
             <div class="row">
                 <div class="col-12 text-center">
-                    {{ $blogs->links() }}
+                    {{ $units->links() }}
                 </div>
             </div>
 

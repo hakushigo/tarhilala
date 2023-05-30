@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomepageController::class, 'showHomepage'])->name('homepage');
+Route::get('/units', [\App\Http\Controllers\HomepageController::class, 'showBankSampahInfos'])->name('publicunitlist');
 
 Route::prefix('blog')->group(function (){
 
@@ -15,7 +16,6 @@ Route::prefix('blog')->group(function (){
     });
 
     Route::get('/', [\App\Http\Controllers\BlogController::class, 'HomepageListBlog'])->name('blog.all');
-
     Route::get('/view/{id}', [\App\Http\Controllers\BlogController::class, 'showBlog'])->name('blog.view');
 
 });

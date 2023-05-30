@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row gy-4" style="justify-content: space-around">
                 <div class="col-lg-5 col-md-12 footer-info">
-                    <a href="index.html" class="logo d-flex align-items-center">
+                    <a href="{{ route('homepage') }}" class="logo d-flex align-items-center">
                         <span>{{ \App\Models\Homepage::find('judul_brand_footer')->value }}</span>
                     </a>
                     <p>{{ \App\Models\Homepage::find('subjudul_brand_footer')->value }}</p>
@@ -18,7 +18,6 @@
                         <strong>Nomor Telepon:</strong> {{ \App\Models\Homepage::find('profil_footer_nophone')->value }}<br>
                         <strong>Email:</strong> {{ \App\Models\Homepage::find('profil_footer_alamat_email')->value }}<br>
                     </p>
-
                 </div>
 
             </div>

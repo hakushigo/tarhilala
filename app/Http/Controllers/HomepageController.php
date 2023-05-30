@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Homepage;
+use App\Models\Unit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -52,6 +53,15 @@ class HomepageController extends Controller
         return view('.homepage.index', array_merge($homepage_data, [
             'currentBlog' => $currentBlog
         ]));
+    }
+
+    function showBankSampahInfos(){
+        $daftarUnit = Unit::where('aktif', 1)->simplePaginate(5);
+
+        return view('.homepage.unitlists', [
+            'title' => 'Daftar Bank Sampah dalam website ini',
+            'units' => $daftarUnit
+        ]);
     }
 
     function ShowEditHomepage(){

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-        <a class="navbar-brand">{{ \App\Models\Homepage::find('judul_website')->value }}</a>
+        <a class="navbar-brand" href="{{ route('homepage') }}">{{ \App\Models\Homepage::find('judul_website')->value }}</a>
 
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="dropdown-toggle"></span>
@@ -11,10 +11,10 @@
                     <a class="nav-link" href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Daftar Bank Sampah</a>
+                    <a class="nav-link" href="{{ route('publicunitlist') }}">Daftar Bank Sampah</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ route('blog.all') }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Blog
                     </a>
                     <ul class="dropdown-menu">
