@@ -22,7 +22,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased">
-<div class="min-h-screen bg-gray-100">
+<div class="min-h-screen">
 
     <!-- Page Heading -->
     <header class="shadow">
@@ -30,13 +30,14 @@
     </header>
 
     <!-- Page Content -->
-    <main class="container">
-        <div class="my-5">
-                <div>
+    <main class="container bg-white shadow-lg">
+        <div class="dashboard-content">
+                <div class="p-4">
                     @yield('dashboard.content')
                 </div>
         </div>
     </main>
+
 </div>
 </body>
 </html>

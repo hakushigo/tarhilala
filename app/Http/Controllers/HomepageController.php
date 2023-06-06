@@ -53,7 +53,7 @@ class HomepageController extends Controller
         return view('.homepage.index', array_merge($homepage_data, [
             'currentBlog' => $currentBlog
         ]));
-    }
+    }  
 
     function showBankSampahInfos(){
         $daftarUnit = Unit::where('aktif', 1)->simplePaginate(5);
