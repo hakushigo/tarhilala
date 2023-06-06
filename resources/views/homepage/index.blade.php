@@ -2,116 +2,234 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>{{ $jw }}</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    @vite(['resources/css/welcome.css'])
+  <title>{{ $jw }}</title>
+  <link href="{{ asset('bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('bootstrap/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
-
 @include('.homepage.common.header')
 
-<section id="hero" class="hero d-flex align-items-center">
+  <section id="hero" class="hero d-flex align-items-center">
 
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <h1>{{ $jh }}</h1>
-                <h2>{{ $sjh }}</h2>
-                <div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1>{{ $jh }}</h1>
+          <h2>{{ $sjh }}</h2>
+          <div>
+          </div>
         </div>
+        <div class="col-lg-6 hero-img">
+          <img src="/homepage/{{ $gk }}" class="img-fluid" alt="">
+        </div>
+      </div>
     </div>
 
-</section>
+  </section>
 
-<main id="main">
+  <main id="main">
     <section id="about" class="about">
 
-        <div class="container">
-            <div class="text-center row gx-0">
+      <div class="container">
+        <div class="row gx-0">
 
-                <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <div class="content">
-                        <h2>{{ $jk1 }}</h2>
-                        <p>
-                            {{ $sjk1 }}
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-items-center justify-content-center">
-                    <img src="/homepage/{{ $gk1 }}" class="img-fluid first-content-image" alt="">
-                </div>
-
+          <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <div class="content">
+              <h3>{{ $jk1 }}</h3>
+              <h2>{{ $sjk1 }}</h2>
+              <p>
+                {{ $sjk1sa }}
+              </p>
             </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center">
+            <img src="/homepage/{{ $gk1 }}" class="img-fluid" alt="">
+          </div>
+
         </div>
+      </div>
 
     </section>
 
     <section id="values" class="values">
 
-        <div class="container">
+      <div class="container">
 
-            <header class="section-header">
-                <p>{{ $jk2 }}</p>
-            </header>
+        <header class="section-header">
+          <h2>{{ $jk2a }}</h2>
+          <p> {{ $jk2b }} </p>
+        </header>
 
-            <div class="row">
+        <div class="row">
 
-                <div class="col-lg-4">
-                    <div class="box">
-                        <img src="/homepage/{{ $gk2sa }}" class="img-fluid second-content-images" alt="">
-                        <h3>{{ $jk2sa }}</h3>
-                        <p>{{ $sjk2sa }}</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4 mt-lg-0">
-                    <div class="box">
-                        <img src="/homepage/{{ $gk2sb }}" class="img-fluid second-content-images" alt="">
-                        <h3>{{ $jk2sb }}</h3>
-                        <p>{{ $sjk2sb }}</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4 mt-lg-0">
-                    <div class="box">
-                        <img src="/homepage/{{ $gk2sc }}" class="img-fluid second-content-images" alt="">
-                        <h3>{{ $jk2sc }}</h3>
-                        <p>{{ $sjk2sc }}</p>
-                    </div>
-                </div>
-
+          <div class="col-lg-4">
+            <div class="box">
+              <img src="/homepage/{{ $gk2sa }}" class="img-fluid" alt="">
+              <h3>{{ $jk2sa }}</h3>
+              <p>{{ $sjk2sa }}</p>
             </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box">
+              <img src="/homepage/{{ $gk2sb }}" class="img-fluid" alt="">
+              <h3>{{ $jk2sb }}</h3>
+              <p>{{ $sjk2sb }}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box">
+              <img src="/homepage/{{ $gk2sc }}" class="img-fluid" alt="">
+              <h3>{{ $jk2sc }}</h3>
+              <p>{{ $sjk2sc }}</p>
+            </div>
+          </div>
 
         </div>
+
+      </div>
 
     </section>
 
     <section id="features" class="features">
 
+      <div class="container">
+
+        <header class="section-header">
+          <p>{{ $jk3 }}</p>
+        </header>
+
+        <div class="row">
+
+          <div class="d-flex">
+            <div class="row align-self-center gy-4">
+
+              <div class="col-md-6">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>{{ $jk3sa }}</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>{{ $jk3sb }}</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>{{ $jk3sc }}</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>{{ $jk3sd }}</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>{{ $jk3se }}</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>{{ $jk3sf }}</h3>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      </div>
+
+    </section>
+
+    <section id="services" class="services sections-bg">
+      <div class="container">
+
+        <div class="section-header">
+          <p>{{ $jk4 }}</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item  position-relative">
+              <h3>{{ $jk4sa }}</h3>
+              <p>{{ $sk4sa }}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <h3>{{ $jk4sb }}</h3>
+              <p>{{ $sk4sb }}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <h3>{{ $jk4sc }}</h3>
+              <p>{{ $sk4sc }}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <h3>{{ $jk4sd }}</h3>
+              <p>{{ $sk4sd }}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <h3>{{ $jk4se }}</h3>
+              <p>{{ $sk4se }}</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <h3>{{ $jk4sf }}</h3>
+              <p>{{ $sk4sf }}</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section>
         <div class="container">
-
-            <header class="section-header">
-                <p class="fw-bold">
-                    {{ $jdb }}
-                </p>
-            </header>
-
-            <div class="row text-center">
+            <div class="section-header">
+          <p>{{ $jdb }}</p>
+        </div>
+        <div class="row text-center">
 
                     <div class="row align-self-center gy-4">
 
@@ -129,7 +247,7 @@
                             </div>
                         @empty
                             <div class="col-lg-4 col-md-6 col-sm-12">
-                                <a href="#" class="card blog-item shadow">
+                                <a href="#" class="card blog-item shadow" style="color:black">
                                     <div class="card-body">
                                         <h3 class="h4 fw-bolder">kami belum memiliki cerita</h3>
                                         <p>
@@ -143,20 +261,16 @@
                     </div>
 
             </div>
-
-        </div>
-
-        </div>
-        </div>
-
-        </div>
-
+            </div>
     </section>
 
-</main>
+  </main>
 
 @include('.homepage.common.footer')
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+ <script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 

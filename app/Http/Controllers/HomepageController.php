@@ -17,12 +17,15 @@ class HomepageController extends Controller
             'jw' => Homepage::find('judul_website')->value,
             'jh' => Homepage::find('judul_header')->value,
             'sjh' => Homepage::find('subjudul_header')->value,
+            'gk' => Homepage::find('gambar_konten')->value,
 
             'jk1' => Homepage::find('judul_konten_1')->value,
             'sjk1' => Homepage::find('subjudul_konten_1')->value,
+            'sjk1sa' => Homepage::find('subjudul_konten_1_sub_a')->value,
             'gk1' => Homepage::find('gambar_konten_1')->value,
 
-            'jk2' => Homepage::find('judul_konten_2')->value,
+            'jk2a' => Homepage::find('judul_konten_2_a')->value,
+            'jk2b' => Homepage::find('judul_konten_2_b')->value,
 
             'gk2sa' => Homepage::find('gambar_konten_2_sub_a')->value,
             'jk2sa' => Homepage::find('judul_konten_2_sub_a')->value,
@@ -35,6 +38,28 @@ class HomepageController extends Controller
             'gk2sc' => Homepage::find('gambar_konten_2_sub_c')->value,
             'jk2sc' => Homepage::find('judul_konten_2_sub_c')->value,
             'sjk2sc' => Homepage::find('subjudul_konten_2_sub_c')->value,
+
+            'jk3' => Homepage::find('judul_konten_3')->value,
+            'jk3sa' => Homepage::find('judul_konten_3_sub_a')->value,
+            'jk3sb' => Homepage::find('judul_konten_3_sub_b')->value,
+            'jk3sc' => Homepage::find('judul_konten_3_sub_c')->value,
+            'jk3sd' => Homepage::find('judul_konten_3_sub_d')->value,
+            'jk3se' => Homepage::find('judul_konten_3_sub_e')->value,
+            'jk3sf' => Homepage::find('judul_konten_3_sub_f')->value,
+
+            'jk4' => Homepage::find('judul_konten_4')->value,
+            'jk4sa' => Homepage::find('judul_konten_4_sub_a')->value,
+            'sk4sa' => Homepage::find('sub_konten_4_sub_a')->value,
+            'jk4sb' => Homepage::find('judul_konten_4_sub_b')->value,
+            'sk4sb' => Homepage::find('sub_konten_4_sub_b')->value,
+            'jk4sc' => Homepage::find('judul_konten_4_sub_c')->value,
+            'sk4sc' => Homepage::find('sub_konten_4_sub_c')->value,
+            'jk4sd' => Homepage::find('judul_konten_4_sub_d')->value,
+            'sk4sd' => Homepage::find('sub_konten_4_sub_d')->value,
+            'jk4se' => Homepage::find('judul_konten_4_sub_e')->value,
+            'sk4se' => Homepage::find('sub_konten_4_sub_e')->value,
+            'jk4sf' => Homepage::find('judul_konten_4_sub_f')->value,
+            'sk4sf' => Homepage::find('sub_konten_4_sub_f')->value,
 
             'jdb' => Homepage::find('judul_daftar_blog')->value,
 
@@ -91,11 +116,43 @@ class HomepageController extends Controller
         if ($request->input('subjudul_konten_1') != "") {
             Homepage::where('id', 'subjudul_konten_1')->update(['value' => $request->input('subjudul_konten_1')]);
         }
-
-        // Group 4
-        if ($request->input('judul_konten_2') != "") {
-            Homepage::where('id', 'judul_konten_2')->update(['value' => $request->input('judul_konten_2')]);
+        if ($request->input('subjudul_konten_1_sub_a') != "") {
+            Homepage::where('id', 'subjudul_konten_1_sub_a')->update(['value' => $request->input('subjudul_konten_1_sub_a')]);
         }
+
+        //Group 4
+        if ($request->input('judul_konten_2_a') != "") {
+            Homepage::where('id', 'judul_konten_2_a')->update(['value' => $request->input('judul_konten_2_a')]);
+        }
+        if ($request->input('judul_konten_2_b') != "") {
+            Homepage::where('id', 'judul_konten_2_b')->update(['value' => $request->input('judul_konten_2_b')]);
+        }
+
+        //Group 4a
+        if ($request->input('judul_konten_3') != "") {
+            Homepage::where('id', 'judul_konten_3')->update(['value' => $request->input('judul_konten_3')]);
+        }
+        if ($request->input('judul_konten_3_sub_a') != "") {
+            Homepage::where('id', 'judul_konten_3_sub_a')->update(['value' => $request->input('judul_konten_3_sub_a')]);
+        }
+        if ($request->input('judul_konten_3_sub_b') != "") {
+            Homepage::where('id', 'judul_konten_3_sub_b')->update(['value' => $request->input('judul_konten_3_sub_b')]);
+        }
+        if ($request->input('judul_konten_3_sub_c') != "") {
+            Homepage::where('id', 'judul_konten_3_sub_c')->update(['value' => $request->input('judul_konten_3_sub_c')]);
+        }
+        if ($request->input('judul_konten_3_sub_d') != "") {
+            Homepage::where('id', 'judul_konten_3_sub_d')->update(['value' => $request->input('judul_konten_3_sub_d')]);
+        }
+        if ($request->input('judul_konten_3_sub_e') != "") {
+            Homepage::where('id', 'judul_konten_3_sub_e')->update(['value' => $request->input('judul_konten_3_sub_e')]);
+        }
+        if ($request->input('judul_konten_3_sub_f') != "") {
+            Homepage::where('id', 'judul_konten_3_sub_f')->update(['value' => $request->input('judul_konten_3_sub_f')]);
+        }
+
+
+        // Group 5
         if ($request->input('judul_konten_2_sub_a') != "") {
             Homepage::where('id', 'judul_konten_2_sub_a')->update(['value' => $request->input('judul_konten_2_sub_a')]);
         }
@@ -103,7 +160,49 @@ class HomepageController extends Controller
             Homepage::where('id', 'subjudul_konten_2_sub_a')->update(['value' => $request->input('subjudul_konten_2_sub_a')]);
         }
 
-        // Group 5
+        // Group 5a
+        if ($request->input('judul_konten_4') != "") {
+            Homepage::where('id', 'judul_konten_4')->update(['value' => $request->input('judul_konten_4')]);
+        }
+        if ($request->input('judul_konten_4_sub_a') != "") {
+            Homepage::where('id', 'judul_konten_4_sub_a')->update(['value' => $request->input('judul_konten_4_sub_a')]);
+        }
+        if ($request->input('sub_konten_4_sub_a') != "") {
+            Homepage::where('id', 'sub_konten_4_sub_a')->update(['value' => $request->input('sub_konten_4_sub_a')]);
+        }
+        if ($request->input('judul_konten_4_sub_b') != "") {
+            Homepage::where('id', 'judul_konten_4_sub_b')->update(['value' => $request->input('judul_konten_4_sub_b')]);
+        }
+        if ($request->input('sub_konten_4_sub_b') != "") {
+            Homepage::where('id', 'sub_konten_4_sub_b')->update(['value' => $request->input('sub_konten_4_sub_b')]);
+        }
+        if ($request->input('judul_konten_4_sub_c') != "") {
+            Homepage::where('id', 'judul_konten_4_sub_c')->update(['value' => $request->input('judul_konten_4_sub_c')]);
+        }
+        if ($request->input('sub_konten_4_sub_c') != "") {
+            Homepage::where('id', 'sub_konten_4_sub_c')->update(['value' => $request->input('sub_konten_4_sub_c')]);
+        }
+        if ($request->input('judul_konten_4_sub_d') != "") {
+            Homepage::where('id', 'judul_konten_4_sub_d')->update(['value' => $request->input('judul_konten_4_sub_d')]);
+        }
+        if ($request->input('sub_konten_4_sub_d') != "") {
+            Homepage::where('id', 'sub_konten_4_sub_d')->update(['value' => $request->input('sub_konten_4_sub_d')]);
+        }
+        if ($request->input('judul_konten_4_sub_e') != "") {
+            Homepage::where('id', 'judul_konten_4_sub_e')->update(['value' => $request->input('judul_konten_4_sub_e')]);
+        }
+        if ($request->input('sub_konten_4_sub_e') != "") {
+            Homepage::where('id', 'sub_konten_4_sub_e')->update(['value' => $request->input('sub_konten_4_sub_e')]);
+        }
+        if ($request->input('judul_konten_4_sub_f') != "") {
+            Homepage::where('id', 'judul_konten_4_sub_f')->update(['value' => $request->input('judul_konten_4_sub_f')]);
+        }
+        if ($request->input('sub_konten_4_sub_f') != "") {
+            Homepage::where('id', 'sub_konten_4_sub_f')->update(['value' => $request->input('sub_konten_4_sub_f')]);
+        }
+
+
+        // Group 6
         if ($request->input('judul_konten_2_sub_b') != "") {
             Homepage::where('id', 'judul_konten_2_sub_b')->update(['value' => $request->input('judul_konten_2_sub_b')]);
         }
@@ -111,7 +210,7 @@ class HomepageController extends Controller
             Homepage::where('id', 'subjudul_konten_2_sub_b')->update(['value' => $request->input('subjudul_konten_2_sub_b')]);
         }
 
-        // Group 6
+        // Group 7
         if ($request->input('judul_konten_2_sub_c') != "") {
             Homepage::where('id', 'judul_konten_2_sub_c')->update(['value' => $request->input('judul_konten_2_sub_c')]);
         }
@@ -143,6 +242,19 @@ class HomepageController extends Controller
             Homepage::where('id', 'profil_footer_alamat_email')->update(['value' => $request->input('profil_footer_alamat_email')]);
         }
 
+        if ($request->hasFile('gambar_konten')) {
+
+            $imagefile = $request->file('gambar_konten');
+
+            if ($imagefile->isValid()) {
+                Storage::disk('homepageImages')->delete($this->GetHomepageDatas()['gk']);
+
+                $imageFileName = Str::random(40) . "." . $imagefile->extension();
+                Storage::disk('homepageImages')->put($imageFileName, $imagefile->getContent());
+
+                Homepage::where('id', 'gambar_konten')->update(['value' => $imageFileName]);
+            }
+        }
 
         if ($request->hasFile('gambar_konten_1')) {
 

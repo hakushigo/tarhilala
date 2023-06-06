@@ -1,29 +1,26 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container">
-        <a class="navbar-brand" href="{{ route('homepage') }}">{{ \App\Models\Homepage::find('judul_website')->value }}</a>
+<header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="dropdown-toggle"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('homepage') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('publicunitlist') }}">Daftar Bank Sampah</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Blog
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('blog.by.category') }}">Daftar Kategori Blog</a></li>
-                        <li><a class="dropdown-item" href="{{ route('blog.by.author') }}">Daftar Penulis Blog</a></li>
-                        <li><a class="dropdown-item" href="{{ route('blog.all') }}">Semua Blog</a></li>
-                    </ul>
-                </li>
+      <a href="{{ route('homepage') }}" class="logo d-flex align-items-center">
+        <span>{{ \App\Models\Homepage::find('judul_website')->value }}</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="{{ route('homepage') }}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('publicunitlist') }}">Daftar Bank Sampah</a></li>
+          <li class="dropdown"><a href="{{ route('blog.all') }}"><span>Blog</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{ route('blog.by.category') }}">Daftar Kategori Blog</a></li>
+              <li><a href="{{ route('blog.by.author') }}">Daftar Penulis Blog</a></li>
+              <li><a href="{{ route('blog.all') }}">Semua Blog</a></li>
             </ul>
-        </div>
+          </li>
+          <li><a class="getstarted scrollto" href="{{ route('login') }}">Masuk</a></li>
+          <li><a class="getstarted scrollto" href="{{ route('register') }}">Daftar</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
     </div>
-</nav>
+  </header>
