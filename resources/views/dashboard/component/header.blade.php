@@ -44,6 +44,11 @@
                         </li>
 
                     @break
+                    @case(2)
+                        <li class="nav-item">
+                            <a href="{{ route('admin.homepage.update.form') }}" class="nav-link">Ubah Halaman Depan</a>
+                        </li>
+                    @break
                 @endswitch
                 <li class="nav-item">
                     <a href="{{ route('profile.edit') }}" class="nav-link">Profil Anda</a>

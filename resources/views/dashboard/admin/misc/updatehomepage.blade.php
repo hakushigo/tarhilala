@@ -20,6 +20,13 @@
                         <label for="subjudul_header">Subjudul Header</label>
                         <input type="text" value="{{ $sjh }}" min="0" name="subjudul_header" class="form-control" required>
                     </div>
+                    <div class="mb-5">
+                        <p>
+                            <span>Gambar Konten Saat Ini</span><br>
+                            <img src="{{ __('/homepage/'.$gk) }}" height="200px">
+                        </p>
+                        <input type="file" min="0" name="gambar_konten" class="form-control">
+                    </div>
 
 
                     <div class="mb-5">
@@ -31,6 +38,10 @@
                         <input type="text" value="{{ $sjk1 }}" min="0" name="subjudul_konten_1" class="form-control" required>
                     </div>
                     <div class="mb-5">
+                        <label for="subjudul_konten_1_sub_a">Subjudul Konten 1 Sub a</label>
+                        <input type="text" value="{{ $sjk1sa }}" min="0" name="subjudul_konten_1_sub_a" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
                         <p>
                             <span>Gambar Konten 1 Saat Ini</span><br>
                             <img src="{{ __('/homepage/'.$gk1) }}" height="200px">
@@ -40,8 +51,12 @@
 
 
                     <div class="mb-5">
-                        <label for="judul_konten_2">Judul Konten 2</label>
-                        <input type="text" value="{{ $jk2 }}" min="0" name="judul_konten_2" class="form-control" required>
+                        <label for="judul_konten_2_a">Judul Konten 2 a</label>
+                        <input type="text" value="{{ $jk2a }}" min="0" name="judul_konten_2_a" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_2_b">Judul Konten 2 b</label>
+                        <input type="text" value="{{ $jk2b }}" min="0" name="judul_konten_2_b" class="form-control" required>
                     </div>
 
 
@@ -93,6 +108,90 @@
                     <div class="mb-5">
                         <label for="subjudul_konten_2_sub_c">Subjudul Konten bagian ketiga</label>
                         <input type="text" value="{{ $sjk2sc }}" min="0" name="subjudul_konten_2_sub_c" class="form-control" required>
+                    </div>
+
+
+                    <div class="mb-5">
+                        <label for="judul_konten_3">Judul Konten bagian keempat</label>
+                        <input type="text" value="{{ $jk3 }}" min="0" name="judul_konten_3" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_3_sub_a">Subjudul Konten bagian keempat a</label>
+                        <input type="text" value="{{ $jk3sa }}" min="0" name="judul_konten_3_sub_a" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_3_sub_b">Subjudul Konten bagian keempat b</label>
+                        <input type="text" value="{{ $jk3sb }}" min="0" name="judul_konten_3_sub_b" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_3_sub_c">Subjudul Konten bagian keempat c</label>
+                        <input type="text" value="{{ $jk3sc }}" min="0" name="judul_konten_3_sub_c" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_3_sub_d">Subjudul Konten bagian keempat d</label>
+                        <input type="text" value="{{ $jk3sd }}" min="0" name="judul_konten_3_sub_d" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_3_sub_e">Subjudul Konten bagian keempat e</label>
+                        <input type="text" value="{{ $jk3se }}" min="0" name="judul_konten_3_sub_e" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_3_sub_f">Subjudul Konten bagian keempat f</label>
+                        <input type="text" value="{{ $jk3sf }}" min="0" name="judul_konten_3_sub_f" class="form-control" required>
+                    </div>
+
+
+                    <div class="mb-5">
+                        <label for="judul_konten_4">Judul Konten bagian kelima</label>
+                        <input type="text" value="{{ $jk4 }}" min="0" name="judul_konten_4" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_4_sub_a">Subjudul Konten bagian kelima a</label>
+                        <input type="text" value="{{ $jk4sa }}" min="0" name="judul_konten_4_sub_a" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="sub_konten_4_sub_a">Sub Konten bagian kelima a</label>
+                        <input type="text" value="{{ $sk4sa }}" min="0" name="sub_konten_4_sub_a" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_4_sub_b">Subjudul Konten bagian kelima b</label>
+                        <input type="text" value="{{ $jk4sb }}" min="0" name="judul_konten_4_sub_b" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="sub_konten_4_sub_b">Sub Konten bagian kelima b</label>
+                        <input type="text" value="{{ $sk4sb }}" min="0" name="sub_konten_4_sub_b" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_4_sub_c">Subjudul Konten bagian kelima c</label>
+                        <input type="text" value="{{ $jk4sc }}" min="0" name="judul_konten_4_sub_c" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="sub_konten_4_sub_c">Sub Konten bagian kelima c</label>
+                        <input type="text" value="{{ $sk4sc }}" min="0" name="sub_konten_4_sub_c" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_4_sub_d">Subjudul Konten bagian kelima d</label>
+                        <input type="text" value="{{ $jk4sd }}" min="0" name="judul_konten_4_sub_d" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="sub_konten_4_sub_d">Sub Konten bagian kelima d</label>
+                        <input type="text" value="{{ $sk4sd }}" min="0" name="sub_konten_4_sub_d" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_4_sub_e">Subjudul Konten bagian kelima e</label>
+                        <input type="text" value="{{ $jk4se }}" min="0" name="judul_konten_4_sub_e" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="sub_konten_4_sub_e">Sub Konten bagian kelima e</label>
+                        <input type="text" value="{{ $sk4se }}" min="0" name="sub_konten_4_sub_e" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="judul_konten_4_sub_f">Subjudul Konten bagian kelima f</label>
+                        <input type="text" value="{{ $jk4sf }}" min="0" name="judul_konten_4_sub_f" class="form-control" required>
+                    </div>
+                    <div class="mb-5">
+                        <label for="sub_konten_4_sub_f">Sub Konten bagian kelima f</label>
+                        <input type="text" value="{{ $sk4sf }}" min="0" name="sub_konten_4_sub_f" class="form-control" required>
                     </div>
 
 

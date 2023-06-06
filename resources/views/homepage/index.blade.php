@@ -7,8 +7,8 @@
 
   <title>{{ $jw }}</title>
   <link href="{{ asset('bootstrap/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('bootstrap/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
+  <link href="{{ asset('bootstrap/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 
 </head>
 
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="col-lg-6 hero-img">
-          <img src="img/1.png" class="img-fluid" alt="">
+          <img src="/homepage/{{ $gk }}" class="img-fluid" alt="">
         </div>
       </div>
     </div>
@@ -41,16 +41,16 @@
 
           <div class="col-lg-6 d-flex flex-column justify-content-center">
             <div class="content">
-              <h3>HI TEMAN TARHILALA</h3>
-              <h2>Yuk, mari kita bergabung untuk menabung sampah di bank sampah! Dengan menabung sampah, kita bisa membantu mengurangi jumlah sampah di lingkungan sekitar kita dan memberikan kontribusi positif bagi lingkungan serta bumi yang kita tempati.</h2>
+              <h3>{{ $jk1 }}</h3>
+              <h2>{{ $sjk1 }}</h2>
               <p>
-                Dengan menabung sampah, kita dapat membantu mendorong pengelolaan sampah yang lebih efektif dan berkelanjutan, sehingga sampah-sampah yang seharusnya berakhir di tempat pembuangan akhir dapat diolah menjadi bahan baku yang berguna untuk industri lainnya. Jadi, mari kita bersama-sama menjadi bagian dari solusi untuk mengatasi masalah sampah dan menjaga lingkungan kita agar tetap bersih dan sehat. Ayo, mulai menabung sampah di bank sampah sekarang juga!
+                {{ $sjk1sa }}
               </p>
             </div>
           </div>
 
           <div class="col-lg-6 d-flex align-items-center">
-            <img src="img/2.png" class="img-fluid" alt="">
+            <img src="/homepage/{{ $gk1 }}" class="img-fluid" alt="">
           </div>
 
         </div>
@@ -63,8 +63,8 @@
       <div class="container">
 
         <header class="section-header">
-          <h2>3R</h2>
-          <p> {{ $jk2 }} </p>
+          <h2>{{ $jk2a }}</h2>
+          <p> {{ $jk2b }} </p>
         </header>
 
         <div class="row">
@@ -104,8 +104,7 @@
       <div class="container">
 
         <header class="section-header">
-          <h2>Sampah ?</h2>
-          <p>Jenis - Jenis Sampah</p>
+          <p>{{ $jk3 }}</p>
         </header>
 
         <div class="row">
@@ -116,42 +115,42 @@
               <div class="col-md-6">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
-                  <h3>Sampah organik</h3>
+                  <h3>{{ $jk3sa }}</h3>
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
-                  <h3>Sampah kertas</h3>
+                  <h3>{{ $jk3sb }}</h3>
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
-                  <h3>Sampah plastik</h3>
+                  <h3>{{ $jk3sc }}</h3>
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
-                  <h3>Sampah logam</h3>
+                  <h3>{{ $jk3sd }}</h3>
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
-                  <h3>Sampah kaca</h3>
+                  <h3>{{ $jk3se }}</h3>
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
-                  <h3>Sampah elektronik</h3>
+                  <h3>{{ $jk3sf }}</h3>
                 </div>
               </div>
 
@@ -173,50 +172,50 @@
       <div class="container">
 
         <div class="section-header">
-          <p>Mekanisme Bank Sampah</p>
+          <p>{{ $jk4 }}</p>
         </div>
 
         <div class="row gy-4">
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item  position-relative">
-              <h3>1. Memilah sampah</h3>
-              <p>Pisahkan sampah yang dapat didaur ulang dari sampah yang tidak dapat didaur ulang. Misalnya, pisahkan sampah organik, sampah plastik, sampah kertas, sampah logam, dan sebagainya.</p>
+              <h3>{{ $jk4sa }}</h3>
+              <p>{{ $sk4sa }}</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item position-relative">
-              <h3>2. Membersihkan Sampah</h3>
-              <p>Sebelum mengirim sampah ke bank sampah, pastikan untuk membersihkannya terlebih dahulu, terutama untuk sampah organik yang mudah membusuk.</p>
+              <h3>{{ $jk4sb }}</h3>
+              <p>{{ $sk4sb }}</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item position-relative">
-              <h3>3. Memilah Berdasarkan Jenis</h3>
-              <p>Setelah membersihkan sampah, pisahkan lagi berdasarkan jenisnya. Misalnya, pisahkan botol plastik dari kantong plastik. Hal ini juga akan memudahkan proses daur ulang sampah.</p>
+              <h3>{{ $jk4sc }}</h3>
+              <p>{{ $sk4sc }}</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item position-relative">
-              <h3>4. Mengompres Sampah</h3>
-              <p>Jika memungkinkan, sebaiknya mengompres sampah terlebih dahulu agar ukuran sampah menjadi lebih kecil dan mudah untuk ditransportasi karena sampah yang sudah dikompresi akan meminimalkan kemungkinan tumpahan dan kebocoran saat diangkut.</p>
+              <h3>{{ $jk4sd }}</h3>
+              <p>{{ $sk4sd }}</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item position-relative">
-              <h3>5. Menghubungi Bank Sampah</h3>
-              <p>Sebelum mengirim sampah ke bank sampah, pastikan untuk menghubungi pihak bank sampah terlebih dahulu. Hal ini penting untuk mengetahui jenis sampah yang diterima dan jam operasionalnya agar proses pengiriman sampah berjalan dengan lancar.</p>
+              <h3>{{ $jk4se }}</h3>
+              <p>{{ $sk4se }}</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="service-item position-relative">
-              <h3>6. Pemberian insentif</h3>
-              <p>Setelah sampah diterima oleh pihak bank sampah maka sampah akan ditimbang dan dicatat, setelah itu akan diberikan insentif berupa uang atau hadiah sebagai bentuk apresiasi atas partisipasi mereka dalam program pengelolaan sampah yang baik</p>
+              <h3>{{ $jk4sf }}</h3>
+              <p>{{ $sk4sf }}</p>
             </div>
           </div>
 
@@ -224,6 +223,47 @@
 
       </div>
     </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+          <p>{{ $jdb }}</p>
+        </div>
+        <div class="row text-center">
+
+                    <div class="row align-self-center gy-4">
+
+                        @forelse($currentBlog as $Blog)
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <a href="{{ route('blog.view', ['id' => $Blog->id]) }}" target="_blank" class="mx-3 my-5 card blog-item shadow">
+                                    <img class="card-img" src="/images/{{ $Blog->image_header_url }}">
+                                    <div class="card-body">
+                                        <h3 class="h4 fw-bolder">{{ $Blog->judul_blog }}</h3>
+                                        <p>
+                                            <small class="font-italic mt-4"><i>oleh</i> <b>{{ \App\Models\Unit::where('id', $Blog->author)->first()->nama_unit }}</b> <i>dalam</i> <b>{{ \App\Models\KategoriBlog::where('id', $Blog->kategori)->first()->nama_kategori }}</b></small>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        @empty
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <a href="#" class="card blog-item shadow" style="color:black">
+                                    <div class="card-body">
+                                        <h3 class="h4 fw-bolder">kami belum memiliki cerita</h3>
+                                        <p>
+                                            Mohon menunggu, akan datang di masa depan!
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+
+                        @endforelse
+                    </div>
+
+            </div>
+            </div>
+    </section>
+
   </main>
 
 @include('.homepage.common.footer')
