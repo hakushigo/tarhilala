@@ -8,8 +8,7 @@
     <title>Blog</title>
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/bootstrap-icons.css" rel="stylesheet">
-    <link href="css/welcome.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    @vite(['resources/css/welcome.css', 'resources/css/style.css'])
 
 </head>
 
@@ -36,7 +35,7 @@
 
                 @forelse($blogs as $blog)
 
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-6 col-sm-12 col-lg-4 mb-5">
                         <div class="post-entry px-2">
                             <a href="{{ route('blog.view', ['id' => $blog->id]) }}" class="d-block mb-4">
                                 <img src="{{ url('/images').'/'.$blog->image_header_url }}" alt="Image" class="img-fluid">

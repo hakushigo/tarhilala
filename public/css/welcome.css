@@ -668,7 +668,6 @@ section {
 .card .card-header,.card .card-body,.card .card-footer
 {
   background-color: transparent;
-  padding: 8px 25px;
 }
 
 .card .card-header h4
@@ -677,6 +676,10 @@ section {
   line-height: 28px;
   padding-right: 10px;
   margin-bottom: 0;
+}
+
+.card-body p {
+    color: black;
 }
 
 .btn

@@ -8,14 +8,16 @@
   <title>{{ $jw }}</title>
   <link href="{{ asset('bootstrap/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('bootstrap/bootstrap-icons.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 
+    @vite('resources/css/welcome.css')
 </head>
 
 <body>
 @include('.homepage.common.header')
 
-  <section id="hero" class="hero d-flex align-items-center">
+  <section id="hero" class="hero d-flex align-items-center" style="
+              background-image: linear-gradient(to left, rgba(245, 246, 252, 0), var(--bs-green) 30%), url('/homepage/{{ $gk }}');
+        ">
 
     <div class="container">
       <div class="row">
@@ -24,9 +26,6 @@
           <h2>{{ $sjh }}</h2>
           <div>
           </div>
-        </div>
-        <div class="col-lg-6 hero-img">
-          <img src="/homepage/{{ $gk }}" class="img-fluid" alt="">
         </div>
       </div>
     </div>
@@ -39,6 +38,10 @@
       <div class="container">
         <div class="row gx-0">
 
+            <div class="col-lg-6 d-flex align-items-center d-flex justify-content-center">
+                <img src="/homepage/{{ $gk1 }}" class="img-fluid col-6 py-5" alt="">
+            </div>
+
           <div class="col-lg-6 d-flex flex-column justify-content-center">
             <div class="content">
               <h3>{{ $jk1 }}</h3>
@@ -47,10 +50,6 @@
                 {{ $sjk1sa }}
               </p>
             </div>
-          </div>
-
-          <div class="col-lg-6 d-flex align-items-center">
-            <img src="/homepage/{{ $gk1 }}" class="img-fluid" alt="">
           </div>
 
         </div>
@@ -231,12 +230,12 @@
         </div>
         <div class="row text-center">
 
-                    <div class="row align-self-center gy-4">
+                    <div class="row align-self-center gy-4 text-center d-flex justify-content-center">
 
                         @forelse($currentBlog as $Blog)
-                            <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="col-lg-4 col-md-6 col-sm-12" align="center">
                                 <a href="{{ route('blog.view', ['id' => $Blog->id]) }}" target="_blank" class="mx-3 my-5 card blog-item shadow">
-                                    <img class="card-img" src="/images/{{ $Blog->image_header_url }}">
+                                    <img class="card-img front-blog-cases" src="/images/{{ $Blog->image_header_url }}">
                                     <div class="card-body">
                                         <h3 class="h4 fw-bolder">{{ $Blog->judul_blog }}</h3>
                                         <p>

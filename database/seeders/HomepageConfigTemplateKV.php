@@ -16,6 +16,10 @@ class HomepageConfigTemplateKV extends Seeder
      */
     public function run()
     {
+        // purge the data first
+        Homepage::truncate();
+
+        // and insert the datas
         Homepage::insert([
             ['id' => 'judul_website', 'value' => 'Tarhilala'],
             ['id' => 'judul_header', 'value' => 'Selamat datang di Bank Sampah TARHILALA'],

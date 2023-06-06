@@ -18,11 +18,16 @@ class InsertAdminInfo extends Seeder
      */
     public function run()
     {
-        User::create([
-            'id' => 99,
-            'email' => 'admin@admin.com',
-            'tipe_akun' => 2,
-            'password' => Hash::make('admin')
-        ]);
+        // insert again
+        if( User::where('id', 99)->first() == null ){
+
+            User::create([
+                'id' => 99,
+                'email' => 'admin@admin.com',
+                'tipe_akun' => 2,
+                'password' => Hash::make('admin')
+            ]);
+
+        }
     }
 }

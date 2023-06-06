@@ -8,8 +8,7 @@
     <title>Blog</title>
     <link href="{{ asset('bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('bootstrap/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    @vite(['resource/css/welcome.css', 'resource/css/style.css'])
 
 </head>
 

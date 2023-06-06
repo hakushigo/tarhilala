@@ -43,10 +43,10 @@
                                 <div class="card shadow">
                                     <div class="card-body ">
                                         <p class="fast-action">
-                                            <a href="#" class="link-success">Tambahkan data sampah</a>
+                                            <a href="{{ route('sampah.tambah') }}" class="link-success">Tambahkan data sampah</a>
                                         </p>
                                         <p class="fast-action">
-                                            <a href="#" class="link-success">Tambahkan blog {{ $data_unit->nama_unit }}</a>
+                                            <a href="{{ route('blog.write') }}" class="link-success">Tambahkan blog {{ $data_unit->nama_unit }}</a>
                                         </p>
                                     </div>
                                 </div>
