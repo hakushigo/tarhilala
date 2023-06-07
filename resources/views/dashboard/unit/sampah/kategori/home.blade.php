@@ -31,7 +31,7 @@
         @empty
             <tr>
                 <td colspan="3" style="text-align: center">
-                    <p>Belum ada kategori sampah didalam sistem</p>
+                    <p>tidak ada kategori sampah</p>
                 </td>
             </tr>
         @endforelse

@@ -36,7 +36,11 @@
                 </td>
             </tr>
         @empty
-            <h1>there's no nasabah here</h1>
+            <tr>
+                <td colspan="4" class="text-center">
+                    <p>tidak ada nasabah disini</p>
+                </td>
+            </tr>
         @endforelse
     </table>
 @endsection
