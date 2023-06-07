@@ -7,8 +7,8 @@
                 <h1 class="h2 fw-bold">halo! selamat datang!</h1>
             </div>
             <div class="row mt-4">
-                <div class="col-lg-8 col-md-12 col-sm-12 mb-5">
-                    <div class="card shadow-lg">
+                <div class="mb-5">
+                    <div class="card shadow-sm">
                         <div class="card-body p-4">
                             <h2 class="h3">informasi <span class="fw-bold">{{ $data_unit->nama_unit }}</span></h2>
                             <div class="row">
@@ -33,14 +33,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 mb-5">
-                    <div class="card shadow-lg">
+
+                    <div class="card shadow-sm mt-4">
                         <div class="card-body p-4">
                             <h2 class="h3 mb-3">aksi Cepat</h2>
 
                             <div class="mb-3">
-                                <div class="card shadow">
+                                <div class="card shadow-sm">
                                     <div class="card-body ">
                                         <p class="fast-action">
                                             <a href="{{ route('sampah.tambah') }}" class="link-success">Tambahkan data sampah</a>
@@ -53,7 +52,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <div class="card shadow">
+                                <div class="card shadow-sm">
                                     <div class="card-body ">
                                         <h3 class="h5 fw-bold">informasi nasabah</h3>
                                         <hr>
@@ -76,18 +75,19 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
         @break
         @case(1)
 
-            <div class="my-2 text-center">
+            <div class="my-2">
                 <h1 class="h2 fw-bold">halo! selamat datang!</h1>
             </div>
             <div class="row mt-4 d-flex justify-content-center">
-                <div class="col-lg-8 col-md-12 col-sm-12 mb-5">
-                    <div class="card shadow">
+                <div class="mb-5">
+                    <div class="card shadow-sm">
                         <div class="card-body">
                             <div class="p-3">
                                 <h2 class="h3">Informasi anda</h2>
@@ -95,7 +95,7 @@
                                 <div class="row mt-3">
 
                                     <div class="col-md-6 col-lg-6">
-                                        <div class="card shadow">
+                                        <div class="card shadow-sm">
                                             <div class="card-body">
                                                 <h3 class="h6">saldo</h3>
                                                 <p class="h4 fw-bolder">
@@ -107,7 +107,7 @@
                                     </div>
 
                                     <div class="col-md-6 col-lg-6">
-                                        <div class="card shadow">
+                                        <div class="card shadow-sm">
                                             <div class="card-body">
                                                 <h3 class="h6">bank sampah anda</h3>
                                                 <p class="h4 fw-bolder">
@@ -123,8 +123,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-12 col-sm-12 mb-5">
-                    <div class="card shadow">
+                <div class="mb-5">
+                    <div class="card shadow-sm">
                         <div class="card-body">
                             <div class="p-3">
                                 <h2 class="h3">Informasi akun anda</h2>
@@ -148,12 +148,12 @@
 
             @case('2')
 
-            <div class="my-2 text-center">
+            <div class="my-2">
                 <h1 class="h2 fw-bold">halo! administrator!</h1>
             </div>
             <div class="row mt-4 d-flex justify-content-center">
-                <div class="col-lg-8 col-md-12 col-sm-12 mb-5">
-                    <div class="card shadow">
+                <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
+                    <div class="card shadow-sm">
                         <div class="card-body">
                             <div class="p-3">
                                 <h2 class="h5">Manajemen pengguna</h2>
@@ -161,7 +161,7 @@
                                 <div class="row mt-3">
 
                                     <div class="col-md-6 col-lg-6">
-                                            <div class="card shadow">
+                                            <div class="card shadow-sm">
                                                 <div class="card-body">
                                                     <p class="m-0 text-center">
                                                         <a href="{{ route('man.nasabah.list') }}" class="fw-bold link-success">
@@ -174,7 +174,7 @@
 
                                     <div class="col-md-6 col-lg-6">
                                         <a class="el-link" href="#">
-                                            <div class="card shadow">
+                                            <div class="card shadow-sm">
                                                 <div class="card-body">
                                                     <p class="m-0 text-center">
                                                         <a href="{{ route('man.unit.list') }}" class="fw-bold link-success">
@@ -192,15 +192,15 @@
                     </div>
                 </div>
 
-                <div class="col-lg-8 col-md-12 col-sm-12 mb-5">
-                    <div class="card shadow">
+                <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
+                    <div class="card shadow-sm">
                         <div class="card-body">
                             <div class="p-3">
                                 <h2 class="h5">Statistik Pengguna</h2>
 
                                 <div class="row mt-3">
                                     <div class="col-md-6 col-lg-6">
-                                        <div class="card shadow">
+                                        <div class="card shadow-sm">
                                             <div class="card-body">
                                                 <h3 class="h6">{{ __('Jumlah pengguna Nasabah') }}</h3>
                                                 <p class="m-0 ">
@@ -211,7 +211,7 @@
                                     </div>
 
                                     <div class="col-md-6 col-lg-6">
-                                        <div class="card shadow">
+                                        <div class="card shadow-sm">
                                             <div class="card-body">
                                                 <h3 class="h6">{{ __('Jumlah pengguna Bank Sampah') }}</h3>
                                                 <p class="m-0 ">

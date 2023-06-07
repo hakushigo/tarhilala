@@ -20,8 +20,8 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="font-sans antialiased">
-<div class="min-h-screen">
+<body class="font-sans antialiased d-flex justify-content-center">
+<div class="dash-wrapper">
 
     <!-- Page Heading -->
     <header class="shadow">
@@ -29,11 +29,14 @@
     </header>
 
     <!-- Page Content -->
-    <main class="container bg-white shadow-lg">
-        <div class="dashboard-content">
-                <div class="p-4">
+    <main class="bg-white shadow-lg main-content d-flex">
+        @include('dashboard.component.sidebar')
+        <div class="flex-grow-1">
+            <div class="p-3">
+                <div class="dashboard-content">
                     @yield('dashboard.content')
                 </div>
+            </div>
         </div>
     </main>
 

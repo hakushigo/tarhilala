@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-success navbar-expand-lg main-nav">
-    <div class="container">
-        <a href="/dashboard" class="navbar-brand fw-semibold">
+    <div class="container-fluid">
+        <a href="/dashboard" class="navbar-brand">
             Dashboard {{ config('app.name') }}
         </a>
 
@@ -9,7 +9,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
 
-            <ul class="navbar-nav  ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav top ms-auto mb-2 mb-lg-0">
                 @switch(Illuminate\Support\Facades\Auth::user()->tipe_akun)
                     @case(0)
                         <li class="nav-item dropdown">
