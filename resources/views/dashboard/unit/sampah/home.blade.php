@@ -2,7 +2,7 @@
 @section('dashboard.content')
     <div>
         <div class="d-flex justify-content-between">
-            <h1 class="h2 fw-bold">Log catatan sampah</h1>
+            <h1 class="h2 fw-bold">Data Sampah</h1>
             <a href="{{ route('sampah.tambah') }}" class="btn btn-success">catat sampah masuk</a></div>
     </div>
     <div>

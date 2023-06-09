@@ -845,3 +845,8 @@ a:hover {
 .portfolio-details .portfolio-description p {
     padding: 0;
 }
+img.blog-header-img {
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}

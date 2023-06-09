@@ -4,7 +4,7 @@
 @extends('dashboard.component.dashboard')
 @section('dashboard.content')
     <div class="d-flex justify-content-center align-items-center">
-        <div class="col-lg-7 col-md-10 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
             <h1>
                 Tulis blog
             </h1>
@@ -36,7 +36,9 @@
                     <div class="mb-5">
                         <label for="jumlah" class="mb-2">Konten blog</label>
                         <!-- Create the editor container -->
-                        <div class="col-12" id="editor"></div>
+                        <div style="height: 500px">
+                            <div class="col-12" id="editor"></div>
+                        </div>
 
                         <!--- hidden input to post --->
                         <input type="hidden" name="konten">

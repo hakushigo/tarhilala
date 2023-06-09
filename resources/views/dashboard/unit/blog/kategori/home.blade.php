@@ -1,7 +1,7 @@
 @extends('dashboard.component.dashboard')
 @section('dashboard.content')
     <div class="d-flex justify-content-between">
-        <h1>daftar kategori blog</h1>
+        <h1>Daftar Kategori Blog</h1>
         <a href="/dashboard/blog/kategori/tambah" class="btn btn-success">Tambah kategori Blog</a>
     </div>
     <table class="table mt-4">

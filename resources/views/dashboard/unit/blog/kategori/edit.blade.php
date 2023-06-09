@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="col-lg-7 col-md-10 col-sm-12">
             <h1>
-                Ubah kategori postingan blog
+                Edit Kategori Blog
             </h1>
             <div class="d-flex justify-content-center">
                 <form class="form-group py-5 col-11" method="post" action="{{ route('blog.kategori.action.update', ['id' => $id]) }}">

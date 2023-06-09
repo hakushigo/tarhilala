@@ -1,9 +1,9 @@
 @extends('dashboard.component.dashboard')
 @section('dashboard.content')
     <div class="d-flex justify-content-center align-items-center">
-        <div class="col-lg-7 col-md-10 col-sm-12">
+        <div class="col-12">
             <h1>
-                formulir deposit
+                Deposit Saldo
             </h1>
             <div class="d-flex justify-content-center">
                 <form class="form-group py-5 col-11" method="post" action="/dashboard/saldo/deposit/{{$id}}">

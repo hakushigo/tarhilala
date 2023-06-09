@@ -4,13 +4,13 @@
         @case(0)
 
             <div class="my-2">
-                <h1 class="h2 fw-bold">halo! selamat datang!</h1>
+                <h1 class="h2 fw-bold">Halo! Selamat Datang!</h1>
             </div>
             <div class="row mt-4">
                 <div class="mb-5">
                     <div class="card shadow-sm">
                         <div class="card-body p-4">
-                            <h2 class="h3">informasi <span class="fw-bold">{{ $data_unit->nama_unit }}</span></h2>
+                            <h2 class="h3">Informasi <span class="fw-bold">{{ $data_unit->nama_unit }}</span></h2>
                             <div class="row">
 
                                 <div class="col-lg-6 mt-2">
@@ -83,21 +83,21 @@
         @case(1)
 
             <div class="my-2">
-                <h1 class="h2 fw-bold">halo! selamat datang!</h1>
+                <h1 class="h2 fw-bold">Halo! Selamat Datang!</h1>
             </div>
             <div class="row mt-4 d-flex justify-content-center">
                 <div class="mb-5">
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <div class="p-3">
-                                <h2 class="h3">Informasi anda</h2>
+                                <h2 class="h3">Informasi Anda</h2>
 
                                 <div class="row mt-3">
 
                                     <div class="col-md-6 col-lg-6">
                                         <div class="card shadow-sm">
                                             <div class="card-body">
-                                                <h3 class="h6">saldo</h3>
+                                                <h3 class="h6">jumlah saldo saat ini</h3>
                                                 <p class="h4 fw-bolder">
                                                     <span>Rp.</span>
                                                     <span>{{ $data_saldo }},-</span>
@@ -109,7 +109,7 @@
                                     <div class="col-md-6 col-lg-6">
                                         <div class="card shadow-sm">
                                             <div class="card-body">
-                                                <h3 class="h6">bank sampah anda</h3>
+                                                <h3 class="h6">Anda merupakan nasabah dari</h3>
                                                 <p class="h4 fw-bolder">
                                                     <span>{{ \App\Models\Unit::where('id', $data_nasabah->nasabah_of)->first()->nama_unit }}</span>
                                                 </p>
@@ -127,7 +127,7 @@
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <div class="p-3">
-                                <h2 class="h3">Informasi akun anda</h2>
+                                <h2 class="h3">Detail Akun Anda</h2>
                                 <div class="pt-2">
                                     <p class="fast-action">
                                         <span> <b>Tanggal registrasi : </b> </span>
@@ -149,7 +149,7 @@
             @case('2')
 
             <div class="my-2">
-                <h1 class="h2 fw-bold">halo! administrator!</h1>
+                <h1 class="h2 fw-bold">Halo Administrator!</h1>
             </div>
             <div class="row mt-4 d-flex justify-content-center">
                 <div class="col-lg-12 col-md-12 col-sm-12 mb-5">

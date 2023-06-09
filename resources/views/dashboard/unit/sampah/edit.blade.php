@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="col-lg-7 col-md-10 col-sm-12">
             <h1>
-                perbarui data Sampah
+                Edit Data Sampah
             </h1>
             <div class="d-flex justify-content-center">
                 <form class="form-group py-5 col-11" method="post" action="/dashboard/action/sampah/update/{{$id}}">

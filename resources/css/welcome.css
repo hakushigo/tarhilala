@@ -1,13 +1,10 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
 
 body {
-    font-size: 16px;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Plus Jakarta Sans' ,'Raleway', 'Segoe UI', arial;
 }
 
 h1 {
@@ -67,7 +64,6 @@ section {
     line-height: 42px;
     font-weight: 700;
     color: #000;
-    font-family: 'Times New Roman';
 }
 
 @media (max-width: 768px) {
@@ -133,7 +129,6 @@ section {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
-    font-family: "Nunito", sans-serif;
     margin-top: 3px;
 }
 
@@ -165,7 +160,6 @@ section {
     align-items: center;
     justify-content: space-between;
     padding: 10px 0 10px 30px;
-    font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 700;
     color: #fff;
@@ -391,14 +385,12 @@ section {
     font-size: 48px;
     font-weight: 700;
     color: #fff;
-    font-family: Garamond, serif;
 }
 
 .hero h2 {
     color: #dacdcd;
     margin: 15px 0 0 0;
     font-size: 26px;
-    font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 
@@ -483,6 +475,10 @@ section {
     padding: 30px 50px;
     transition: 0.5s;
     transform: scale(1.1);
+    height: 300px;
+    width: 500px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .values .box h3 {
@@ -527,7 +523,6 @@ section {
 .counts .count-box p {
     padding: 0;
     margin: 0;
-    font-family: "Nunito", sans-serif;
     font-size: 14px;
 }
 
@@ -636,14 +631,12 @@ section {
     font-weight: 300;
     letter-spacing: 1px;
     color: #2f4a42;
-    font-family: "Nunito", sans-serif;
     margin-top: 3px;
 }
 
 .footer .footer-top .footer-info p {
     font-size: 14px;
     margin-bottom: 0;
-    font-family: "Nunito", sans-serif;
 }
 
 .footer .footer-top h4 {
@@ -670,7 +663,6 @@ section {
 .card .card-header,.card .card-body,.card .card-footer
 {
     background-color: transparent;
-    padding: 8px 25px;
 }
 
 .card .card-header h4
@@ -700,14 +692,6 @@ section {
 .btn-primary:active,.btn-primary:hover,.btn-primary.disabled:active,.btn-primary.disabled:hover
 {
     background-color: #467265 !important;
-}
-
-body
-{
-    background-color: #fff;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: 'Raleway', 'Segoe UI', arial;
 }
 
 .login-brand

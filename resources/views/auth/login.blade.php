@@ -21,31 +21,26 @@
                     </div>
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4>Login</h4>
+                            <h4>Masuk</h4>
                         </div>
                         <div class="card-body">
                                 <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate>
                                     @csrf
                                     <div class="text-align-left">
-                                        <x-input-label for="email" :value="__('Email')" />
+                                        <x-input-label for="email" :value="__('Alamat Surel')" />
                                         <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" class="mt-2" />
                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                     </div><br>
                                     <div class="form-group">
-                                        <x-input-label for="password" :value="__('Password')" />
+                                        <x-input-label for="password" :value="__('Kata Sandi')" />
                                         <x-text-input id="password" type="password" name="password" required autocomplete="current-password" class="mt-2" />
                                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                                            <label class="custom-control-label" for="remember-me">{{ __('Remember me') }}</label>
+                                            <label class="custom-control-label" for="remember-me">{{ __('Ingat Saya') }}</label>
                                         </div>
-                                        @if (Route::has('password.request'))
-                                            <a class="underline text-sm hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}" style="color: blue;">
-                                                {{ __('Forgot your password?') }}
-                                            </a>
-                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
@@ -53,7 +48,7 @@
                                         </button>
                                     </div>
                                     <div class="mt-5 text-muted text-center">
-                                        Don't have an account? <a href="{{ route('register') }}" style="color:blue">Create One</a>
+                                        Tidak memiliki akun? <a href="{{ route('register') }}" style="color:blue">Registrasi disini!</a>
                                     </div>
                                 </form>
                             </div>

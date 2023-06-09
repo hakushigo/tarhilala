@@ -1,6 +1,6 @@
 @extends('dashboard.component.dashboard')
 @section('dashboard.content')
-    <h1>daftar nasabah</h1>
+    <h1>Daftar Nasabah</h1>
     <table class="table mt-4">
         <tr>
             <th>

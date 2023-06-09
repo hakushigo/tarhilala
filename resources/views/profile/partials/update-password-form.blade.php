@@ -1,11 +1,11 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Perbarui kata sandi') }}
+            {{ __('Perbarui Kata Sandi') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Silahkan mengubah kata sandi akun anda! ') }}
+            {{ __('Silahkan mengubah kata sandi akun anda disini! ') }}
             <br>
         </p>
         <p class="highlight-warn">
@@ -36,7 +36,7 @@
         </div>
 
         <div class="flex items-center mt-4">
-            <x-primary-button>{{ __('perbarui kata sandi') }}</x-primary-button>
+            <x-primary-button>{{ __('Perbarui') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
                 <p
@@ -45,7 +45,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600"
-                >{{ __('telah diperbarui!.') }}</p>
+                >{{ __('Telah Diperbarui!.') }}</p>
             @endif
         </div>
     </form>

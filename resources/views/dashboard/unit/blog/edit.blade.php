@@ -4,9 +4,10 @@
 @extends('dashboard.component.dashboard')
 @section('dashboard.content')
     <div class="d-flex justify-content-center align-items-center">
-        <div class="col-lg-7 col-md-10 col-sm-12">
-            <h1>
-                ubah data blog {{ $Blog->judul_blog }}
+        <div class="col-lg-12 col-md-12 col-sm-12 pt-1">
+            <h1 class="h2 text-center">
+                Ubah Isi Blog
+                <span class="fw-bold">"{{ $Blog->judul_blog }}"</span>
             </h1>
             <div class="d-flex justify-content-center">
                 <form class="form-group py-5 col-11" method="post" action="{{ route('blog.action.update', ['id' => $id]) }}" enctype="multipart/form-data">
@@ -40,8 +41,10 @@
                     <div class="mb-5">
                         <label class="mb-2">Konten blog</label>
                         <!-- Create the editor container -->
-                        <div class="col-12" id="editor">
-                            {!! $Blog->content !!}
+                        <div style="height: 500px">
+                            <div class="col-12" id="editor">
+                                {!! $Blog->content !!}
+                            </div>
                         </div>
 
                         <!--- hidden input to post --->

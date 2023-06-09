@@ -4,7 +4,7 @@
         <div class="card-body p-4">
             <div class="d-flex justify-content-between">
                 <h1 class="h2 fw-bold">
-                    Sejarah saldo anda
+                    Riwayat Saldo Anda
                 </h1>
                 <div class="text-right">
                     <h3 class="h6">

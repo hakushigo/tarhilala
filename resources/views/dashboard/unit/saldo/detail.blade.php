@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="col-lg-7 col-md-10 col-sm-12">
             <h1 >
-                <span class="h4"> Informasi nasabah :</span> <br>{{ explode(" ", $nasabah->nama_nasabah)[0] }}
+                <span class="h4"> Informasi Nasabah </span> <br>{{ explode(" ", $nasabah->nama_nasabah)[0] }}
             </h1>
             <div class="d-flex justify-content-center">
                 <div class="form-group py-5 col-11">

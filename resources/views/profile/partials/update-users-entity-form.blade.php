@@ -1,7 +1,7 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Informasi profil '.$tipe_akun) }}
+            {{ __('Informasi Profil '.ucfirst($tipe_akun)) }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
@@ -65,7 +65,7 @@
 
                 <div class="block mt-4">
                     <x-primary-button class="btn btn-sm btn-success">
-                        {{ __('Ubah Informasi unit!') }}
+                        {{ __('Simpan Perubahan!') }}
                     </x-primary-button>
                 </div>
             </form>

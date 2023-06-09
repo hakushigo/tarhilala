@@ -22,19 +22,19 @@
                     </div>
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4>Register</h4>
+                            <h4>Registrasi akun</h4>
                         </div>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                         <div class="card-body">
                             <form method="POST">
                                 <div class="form-group">
-                                    <x-input-label for="email" :value="__('Email')" />
+                                    <x-input-label for="email" :value="__('Alamat Surel')" />
                                     <x-text-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autocomplete="username" />
                                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                 </div>
                                 <div class="form-group">
-                                    <x-input-label for="tipe_akun" :value="__('tipe akun')"/>
+                                    <x-input-label for="tipe_akun" :value="__('Tipe Akun')"/>
                                     <select name="tipe_akun" class='form-control selectric'>
                                     <option value="0">Bank Sampah</option>
                                     <option value="1">Nasabah</option>
@@ -43,7 +43,7 @@
 
                                 <div class="row">
                                     <div class="form-group col-6">
-                                        <x-input-label for="password" :value="__('Password')" class="d-block"/>
+                                        <x-input-label for="password" :value="__('Kata Sandi')" class="d-block"/>
                                             <x-text-input id="password" class="form-control pwstrength" data-indicator="pwindicator"
                                                 type="password"
                                                 name="password"
@@ -51,7 +51,7 @@
                                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                     </div>
                                     <div class="form-group col-6">
-                                        <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                                        <x-input-label for="password_confirmation" :value="__('Konfirmasi Kata Sandi')" />
                                         <x-text-input id="password_confirmation" class="form-control"
                                                     type="password"
                                                     name="password_confirmation" required autocomplete="new-password" />
@@ -64,13 +64,13 @@
 
                                 <div class="d-flex justify-content-between mt-3">
                                     <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}" style="color:blue">
-                                        {{ __('Already registered?') }}
+                                        {{ __('Sudah memiliki akun?') }}
                                     </a>
                                 </div><br>
 
                                 <div class="form-group">
                                      <x-primary-button class="btn btn-primary btn-lg btn-block">
-                                        {{ __('Register') }}
+                                        {{ __('Registrasi') }}
                                     </x-primary-button>
                                 </div>
                             </form>

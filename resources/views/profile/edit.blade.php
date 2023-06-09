@@ -64,7 +64,7 @@
 
                         @default
                             <h2 class="text-lg font-medium text-gray-900">
-                                {{ __('Selamat datang di halaman profil!') }}
+                                {{ __('Selamat Datang di Halaman Profil!') }}
                             </h2>
 
                             <p class="mt-1 text-sm text-gray-600">
