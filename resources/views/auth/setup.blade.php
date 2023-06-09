@@ -1,8 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.auth.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
+</head>
+
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <h1>Mohon melengkapi info akun sebelum melanjutkan</h1> <br>
+    <div class="login-brand">
+        <img src="{{ asset('img/logo.png') }}" alt="logo" width="100" class="shadow-light rounded-circle">
+    </div>
+
+    <div  class="card-header">
+        <h4>Mohon melengkapi info akun sebelum melanjutkan</h4> <br>
+    </div>
 
     <form method="POST" action="/setup">
         @csrf
@@ -10,21 +28,21 @@
         @switch($tipe)
             @case(0)
                 <!-- You are register as unit! -->
-                <div>
+                <div class="form-group">
                     <x-input-label for="nama_unit" :value="__('Nama Bank Sampah')" />
-                    <x-text-input id="nama_unit" class="block mt-1 w-full" type="text" name="nama_unit" required autofocus />
+                    <x-text-input id="nama_unit" class="form-control" type="text" name="nama_unit" required autofocus />
                     <x-input-error :messages="$errors->get('nama_unit')" class="mt-2" />
                 </div>
 
-                <div class="mt-4">
+                <div class="form-group">
                     <x-input-label for="alamat_unit" :value="__('Alamat Bank Sampah')" />
-                    <x-text-input id="alamat_unit" class="block mt-1 w-full" type="text" name="alamat_unit" required autofocus />
+                    <x-text-input id="alamat_unit" class="form-control" type="text" name="alamat_unit" required autofocus />
                     <x-input-error :messages="$errors->get('alamat_unit')" class="mt-2" />
                 </div>
 
-                <div class="mt-4">
+                <div class="form-group">
                     <x-input-label for="kecamatan_unit" :value="__('Nama kecamatan Bank Sampah')" />
-                    <x-text-input id="kecamatan_unit" class="block mt-1 w-full" type="text" name="kecamatan_unit" required autofocus />
+                    <x-text-input id="kecamatan_unit" class="form-control" type="text" name="kecamatan_unit" required autofocus />
                     <x-input-error :messages="$errors->get('kecamatan_unit')" class="mt-2" />
                 </div>
 
@@ -40,27 +58,27 @@
                 @break
 
             @case(1)
-                <div>
+                <div class="form-group">
                     <x-input-label for="nama_nasabah" :value="__('Nama Nasabah')" />
-                    <x-text-input id="nama_nasabah" class="block mt-1 w-full" type="text" name="nama_nasabah" required autofocus />
+                    <x-text-input id="nama_nasabah" class="form-control" type="text" name="nama_nasabah" required autofocus />
                     <x-input-error :messages="$errors->get('nama_nasabah')" class="mt-2" />
                 </div>
 
-                <div class="mt-4">
+                <div class="form-group">
                     <x-input-label for="no_rekening" :value="__('Nomor Rekening Nasabah')" />
-                    <x-text-input id="no_rekening" class="block mt-1 w-full" type="number" name="no_rekening" required autofocus />
+                    <x-text-input id="no_rekening" class="form-control" type="number" name="no_rekening" required autofocus />
                     <x-input-error :messages="$errors->get('no_rekening')" class="mt-2" />
                 </div>
 
-                <div class="mt-4">
+                <div class="form-group">
                     <x-input-label for="alamat_nasabah" :value="__('Alamat Nasabah')" />
-                    <x-text-input id="alamat_nasabah" class="block mt-1 w-full" type="text" name="alamat_nasabah" required autofocus />
+                    <x-text-input id="alamat_nasabah" class="form-control" type="text" name="alamat_nasabah" required autofocus />
                     <x-input-error :messages="$errors->get('alamat_nasabah')" class="mt-2" />
                 </div>
 
-                <div class="mt-4">
+                <div class="form-group">
                     <x-input-label for="nik_nasabah" :value="__('NIK Nasabah')" />
-                    <x-text-input id="nik_nasabah" class="block mt-1 w-full" type="number" name="nik_nasabah" required autofocus />
+                    <x-text-input id="nik_nasabah" class="form-control" type="number" name="nik_nasabah" required autofocus />
                     <x-input-error :messages="$errors->get('nik_nasabah')" class="mt-2" />
                 </div>
 

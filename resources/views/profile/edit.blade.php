@@ -6,19 +6,19 @@
             <a class="nav-link  {{ $request->get('page') == "" || $request->get('page') == "home" ? "active" : "" }}" href="?page=">Home</a>
         </a>
         <li class="nav-item">
-            <a class="nav-link {{ $request->get('page') == "autentikasi" ? "active" : "" }}"  href="?page=autentikasi" >profil autentikasi</a>
+            <a class="nav-link {{ $request->get('page') == "autentikasi" ? "active" : "" }}"  href="?page=autentikasi" >Profil Autentikasi</a>
         </li>
         @if( \Illuminate\Support\Facades\Auth::user()->tipe_akun != 2 || \Illuminate\Support\Facades\Auth::user()->id != 99)
             <li class="nav-item">
-                <a class="nav-link {{ $request->get('page') == "profil" ? "active" : "" }}" href="?page=profil">data profil</a>
+                <a class="nav-link {{ $request->get('page') == "profil" ? "active" : "" }}" href="?page=profil">Data Profil</a>
             </li>
         @endif
         <li class="nav-item">
-            <a class="nav-link {{ $request->get('page') == "password" ? "active" : "" }}" href="?page=password">kata sandi</a>
+            <a class="nav-link {{ $request->get('page') == "password" ? "active" : "" }}" href="?page=password">Kata Sandi</a>
         </li>
         @if( \Illuminate\Support\Facades\Auth::user()->tipe_akun != 2 || \Illuminate\Support\Facades\Auth::user()->id != 99)
             <li class="nav-item">
-                <a class="nav-link text-danger {{ $request->get('page') == "hapusakun" ? "active fw-bold" : "" }}" href="?page=hapusakun">hapus akun <i class="bi bi-exclamation-triangle"></i></a>
+                <a class="nav-link text-danger {{ $request->get('page') == "hapusakun" ? "active fw-bold" : "" }}" href="?page=hapusakun">Hapus Akun <i class="bi bi-exclamation-triangle"></i></a>
             </li>
         @endif
     </ul>

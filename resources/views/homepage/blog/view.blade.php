@@ -19,7 +19,7 @@
 @include('homepage.common.header')
 
 <main id="main">
-        <div class="container">
+        <div class="container" id="view">
             <img class="col-12 blog-header-img" src="{{ url('/images').'/'.$blog->image_header_url }}">
             <div class="py-5 container text-left col-lg-7 col-md-10 col-md-12">
                 <h1 class="blog-header-title">

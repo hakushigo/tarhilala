@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.auth.css') }}">
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 </head>
-<body>
 <body class="layout-4">
 
 <div id="app">

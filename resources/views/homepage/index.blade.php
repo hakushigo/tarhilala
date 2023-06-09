@@ -238,9 +238,9 @@
                                 <a href="{{ route('blog.view', ['id' => $Blog->id]) }}" target="_blank" class="mx-3 my-5 card blog-item shadow">
                                     <img class="card-img" src="/images/{{ $Blog->image_header_url }}">
                                     <div class="card-body">
-                                        <h3 class="h4 fw-bolder">{{ $Blog->judul_blog }}</h3>
+                                        <h5 class="h6 fw-bolder" style="color: black">{{ $Blog->judul_blog }}</h5>
                                         <p>
-                                            <small class="font-italic mt-4"><i>oleh</i> <b>{{ \App\Models\Unit::where('id', $Blog->author)->first()->nama_unit }}</b> <i>dalam</i> <b>{{ \App\Models\KategoriBlog::where('id', $Blog->kategori)->first()->nama_kategori }}</b></small>
+                                            <small class="font-italic mt-4" style="color: black"><i>oleh</i> <b>{{ \App\Models\Unit::where('id', $Blog->author)->first()->nama_unit }}</b> <i>dalam</i> <b>{{ \App\Models\KategoriBlog::where('id', $Blog->kategori)->first()->nama_kategori }}</b></small>
                                         </p>
                                     </div>
                                 </a>

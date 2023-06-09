@@ -1,7 +1,7 @@
-<nav class="navbar navbar-dark bg-success navbar-expand-lg main-nav">
+<nav class="navbar navbar-dark main-nav navbar-expand-lg" style="background-color: #2F4A42;">
     <div class="container">
         <a href="/dashboard" class="navbar-brand fw-semibold">
-            Dashboard {{ config('app.name') }}
+            Dashboard
         </a>
 
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +56,7 @@
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
-                        <button type="submit" class="nav-link">Logout</button>
+                        <button type="submit" class="nav-link">Keluar</button>
                     </form>
                 </li>
             </ul>
