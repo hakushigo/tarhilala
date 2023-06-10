@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Daftar Unit</title>
+    <title>Daftar Bank Sampah dalam website ini</title>
     <link href="{{ asset('bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('bootstrap/bootstrap-icons.css') }}" rel="stylesheet">
 
