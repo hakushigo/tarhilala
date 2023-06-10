@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Blog</title>
+    <title>Daftar Unit</title>
     <link href="{{ asset('bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('bootstrap/bootstrap-icons.css') }}" rel="stylesheet">
-    @vite(['resource/css/welcome.css', 'resource/css/style.css'])
 
+    @vite('resources/css/welcome.css')
 </head>
 
 <body>
