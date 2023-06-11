@@ -9,6 +9,7 @@
   <link href="{{ asset('bootstrap/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('bootstrap/bootstrap-icons.css') }}" rel="stylesheet">
   <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.26.3/dist/apexcharts.min.js"></script>
 
 </head>
 
@@ -17,18 +18,19 @@
 
   <section id="hero" class="hero d-flex align-items-center">
 
+    <div class="carousel-item active" style="background-image: url(img/home.jpg)">
+      <div class="carousel-container">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
+        <div class="d-flex flex-column justify-content-center">
           <h1>{{ $jh }}</h1>
           <h2>{{ $sjh }}</h2>
           <div>
           </div>
         </div>
-        <div class="col-lg-6 hero-img">
-          <img src="/homepage/{{ $gk }}" class="img-fluid" alt="">
-        </div>
       </div>
+    </div>
+    </div>
     </div>
 
   </section>
@@ -168,6 +170,20 @@
 
     </section>
 
+    <section id="statistic" class="statistic">
+        <div class="container">
+            <div class="section-header">
+                <p>Laporan Sampah</p>
+            </div>
+
+            <div class="row gy-4">
+                 @include('homepage.chart.chart')
+              <div id="chart"></div>
+            </div>
+
+        </div>
+    </section>
+
     <section id="services" class="services sections-bg">
       <div class="container">
 
@@ -271,6 +287,9 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
  <script src="{{ asset('js/main.js') }}"></script>
+ <script src="{{ asset('js/chart.js') }}"></script>
+
+
 
 </body>
 

@@ -52,7 +52,7 @@
                                     <li class="pt-4">
                                         <p>
                                             <small>
-                                                <i>lihat cerita mereka <a href="{{ route('blog.by.author', ['selected' => $unit->id]) }}">disini</a></i>
+                                                <i>lihat cerita mereka <a href="{{ route('blog.by.author', ['selected' => $unit->id]) }}" style="color:blue">disini</a></i>
                                             </small>
                                         </p>
                                     </li>

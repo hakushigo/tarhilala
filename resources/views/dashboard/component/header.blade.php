@@ -40,7 +40,7 @@
                         @break
                     @case(1)
                         <li class="nav-item">
-                            <a class="nav-link" href="/dashboard/saldo">Sejarah Saldo anda</a>
+                            <a class="nav-link" href="/dashboard/saldo">Riwayat Saldo</a>
                         </li>
 
                     @break
@@ -51,7 +51,7 @@
                     @break
                 @endswitch
                 <li class="nav-item">
-                    <a href="{{ route('profile.edit') }}" class="nav-link">Profil Anda</a>
+                    <a href="{{ route('profile.edit') }}" class="nav-link">Profil</a>
                 </li>
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="post">
