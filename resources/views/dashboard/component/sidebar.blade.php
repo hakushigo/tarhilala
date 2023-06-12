@@ -2,10 +2,10 @@
 
     <ul class="nav nav-pills flex-column mb-auto">
 
+        <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Home</a></li>
+
         @switch(Illuminate\Support\Facades\Auth::user()->tipe_akun)
             @case(0)
-                <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Home</a></li>
-
                 <li class="nav-item">
                     <button class="nav-link dropdown-toggle text-black" data-bs-toggle="collapse" data-bs-target="#sampah-collapse" aria-expanded="true">
                         Pengelolaan Sampah
