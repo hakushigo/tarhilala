@@ -41,17 +41,17 @@
                                 <br>
                                 <ul style="list-style: none">
                                     <li>
-                                        <h2 class="h5">alamat bank sampah</h2>
+                                        <h2 class="h5">Alamat Bank Sampah</h2>
                                         <p>{{ $unit->alamat_unit }}</p>
                                     </li>
                                     <li>
-                                        <h2 class="h5">kecamatan asal bank sampah</h2>
+                                        <h2 class="h5">Kecamatan asal Bank Sampah</h2>
                                         <p>{{ $unit->kecamatan_unit }}</p>
                                     </li>
                                     <li class="pt-4">
                                         <p>
                                             <small>
-                                                <i>lihat cerita mereka <a href="{{ route('blog.by.author', ['selected' => $unit->id]) }}">disini</a></i>
+                                                <i>Lihat cerita mereka <a href="{{ route('blog.by.author', ['selected' => $unit->id]) }}" style="color:blue"							>disini</a></i>
                                             </small>
                                         </p>
                                     </li>
