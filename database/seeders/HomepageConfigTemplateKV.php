@@ -68,7 +68,7 @@ class HomepageConfigTemplateKV extends Seeder
             ['id' => 'judul_konten_4_sub_f', 'value' => 'Pemberian insentif'],
             ['id' => 'sub_konten_4_sub_f', 'value' => 'Setelah sampah diterima oleh pihak bank sampah maka sampah akan ditimbang dan dicatat, setelah itu akan diberikan insentif berupa uang atau hadiah sebagai bentuk apresiasi atas partisipasi mereka dalam program pengelolaan sampah yang baik.'],
 
-            ['id' => 'judul_daftar_blog', 'value' => 'Daftar Cerita Kami'],
+            ['id' => 'judul_daftar_cerita', 'value' => 'Daftar Cerita Kami'],
 
             ['id' => 'judul_brand_footer', 'value' => 'Tarhilala'],
             ['id' => 'subjudul_brand_footer', 'value' => 'Membantu toba menjadi lebih bersih'],

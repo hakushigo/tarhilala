@@ -232,21 +232,21 @@
 
                     <div class="row align-self-center gy-4 text-center d-flex justify-content-center">
 
-                        @forelse($currentBlog as $Blog)
+                        @forelse($currentCerita as $Cerita)
                             <div class="col-lg-4 col-md-6 col-sm-12" align="center">
-                                <a href="{{ route('blog.view', ['id' => $Blog->id]) }}" target="_blank" class="mx-3 my-5 card blog-item shadow">
-                                    <img class="card-img front-blog-cases" src="/images/{{ $Blog->image_header_url }}">
+                                <a href="{{ route('cerita.view', ['id' => $Cerita->id]) }}" target="_blank" class="mx-3 my-5 card cerita-item shadow">
+                                    <img class="card-img front-cerita-cases" src="/images/{{ $Cerita->image_header_url }}">
                                     <div class="card-body">
-                                        <h3 class="h4 fw-bolder">{{ $Blog->judul_blog }}</h3>
+                                        <h3 class="h4 fw-bolder">{{ $Cerita->judul_cerita }}</h3>
                                         <p>
-                                            <small class="font-italic mt-4"><i>oleh</i> <b>{{ \App\Models\Unit::where('id', $Blog->author)->first()->nama_unit }}</b> <i>dalam</i> <b>{{ \App\Models\KategoriBlog::where('id', $Blog->kategori)->first()->nama_kategori }}</b></small>
+                                            <small class="font-italic mt-4"><i>oleh</i> <b>{{ \App\Models\Unit::where('id', $Cerita->author)->first()->nama_unit }}</b> <i>dalam</i> <b>{{ \App\Models\KategoriCerita::where('id', $Cerita->kategori)->first()->nama_kategori }}</b></small>
                                         </p>
                                     </div>
                                 </a>
                             </div>
                         @empty
                             <div class="col-lg-4 col-md-6 col-sm-12">
-                                <a href="#" class="card blog-item shadow" style="color:black">
+                                <a href="#" class="card cerita-item shadow" style="color:black">
                                     <div class="card-body">
                                         <h3 class="h4 fw-bolder">kami belum memiliki cerita</h3>
                                         <p>

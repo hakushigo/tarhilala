@@ -18,24 +18,24 @@
 
 <main id="main">
         <div class="container">
-            <img class="col-12 blog-header-img" src="{{ url('/images').'/'.$blog->image_header_url }}">
+            <img class="col-12 cerita-header-img" src="{{ url('/images').'/'.$cerita->image_header_url }}">
             <div class="py-5 container text-left col-lg-7 col-md-10 col-md-12">
-                <h1 class="blog-header-title">
-                    {{ $blog->judul_blog }}
+                <h1 class="cerita-header-title">
+                    {{ $cerita->judul_cerita }}
                 </h1>
 
-                <div class="blog-detail pt-3">
-                    <p>oleh
+                <div class="cerita-detail pt-3">
+                    <p>Oleh
                         <b>{{ $author }}</b>
-                        dalam
+                        Dalam
                         <b>{{ $category }}</b>
                     </p>
                 </div>
 
                     <hr>
 
-                <div class="py-3 whole-blog-contents">
-                    {!! $blog->content !!}
+                <div class="py-3 whole-cerita-contents">
+                    {!! $cerita->content !!}
                 </div>
 
             </div>

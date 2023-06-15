@@ -6,44 +6,44 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="col-lg-12 col-md-12 col-sm-12 pt-1">
             <h1 class="h2 text-center">
-                Ubah Isi Blog
-                <span class="fw-bold">"{{ $Blog->judul_blog }}"</span>
+                Ubah Isi Cerita
+                <span class="fw-bold">"{{ $Cerita->judul_cerita }}"</span>
             </h1>
             <div class="d-flex justify-content-center">
-                <form class="form-group py-5 col-11" method="post" action="{{ route('blog.action.update', ['id' => $id]) }}" enctype="multipart/form-data">
+                <form class="form-group py-5 col-11" method="post" action="{{ route('cerita.action.update', ['id' => $id]) }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-5">
-                        <label>Judul blog</label>
+                        <label>Judul cerita</label>
                         <div class="input-group mt-2">
-                            <input type="text" min="0" value="{{ $Blog->judul_blog }}" name="judul_blog" class="form-control" required>
+                            <input type="text" min="0" value="{{ $Cerita->judul_cerita }}" name="judul_cerita" class="form-control" required>
                         </div>
                     </div>
                     <div class="mb-5">
-                        <label for="kategori">Kategori Blog</label>
+                        <label for="kategori">Kategori Cerita</label>
                         <select required name="kategori" class="form-select">
                             <option value="">pilih salah satu kategori</option>
                             @foreach($daftarKategori as $kategori)
-                                <option {{ $Blog->kategori == $kategori->id ? "selected" : "" }} value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
+                                <option {{ $Cerita->kategori == $kategori->id ? "selected" : "" }} value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="mb-5">
-                        <label>foto utama blog sekarang</label>
-                        <img class="img col-12 mt-2" src="{{ asset('images/'.$Blog->image_header_url) }}">
+                        <label>foto utama cerita sekarang</label>
+                        <img class="img col-12 mt-2" src="{{ asset('images/'.$Cerita->image_header_url) }}">
                     </div>
                     <div class="mb-5">
-                        <label>Foto utama blog baru</label>
+                        <label>Foto utama cerita baru</label>
                         <div class="input-group mt-2">
-                            <input type="file" min="0" name="blog_thumbnail" class="form-control">
+                            <input type="file" min="0" name="cerita_thumbnail" class="form-control">
                         </div>
                     </div>
 
                     <div class="mb-5">
-                        <label class="mb-2">Konten blog</label>
+                        <label class="mb-2">Konten cerita</label>
                         <!-- Create the editor container -->
                         <div style="height: 500px">
                             <div class="col-12" id="editor">
-                                {!! $Blog->content !!}
+                                {!! $Cerita->content !!}
                             </div>
                         </div>
 
@@ -53,7 +53,7 @@
 
                     <div class="mb-5">
                         <input type="submit" value="catat" class="btn btn-success">
-                        <a href="{{ route('blog.list') }}" class="btn btn-secondary">kembali ke dashboard</a>
+                        <a href="{{ route('cerita.list') }}" class="btn btn-secondary">kembali ke dashboard</a>
                     </div>
                 </form>
             </div>

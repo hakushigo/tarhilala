@@ -116,27 +116,27 @@
                         <input type="text" value="{{ $jk3 }}" min="0" name="judul_konten_3" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_3_sub_a">judul sub-Konten keempat yang pertama</label>
+                        <label for="judul_konten_3_sub_a">Judul sub-Konten keempat yang pertama</label>
                         <input type="text" value="{{ $jk3sa }}" min="0" name="judul_konten_3_sub_a" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_3_sub_b">judul sub-Konten keempat yang kedua</label>
+                        <label for="judul_konten_3_sub_b">Judul sub-Konten keempat yang kedua</label>
                         <input type="text" value="{{ $jk3sb }}" min="0" name="judul_konten_3_sub_b" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_3_sub_c">judul sub-Konten keempat yang ketiga</label>
+                        <label for="judul_konten_3_sub_c">Judul sub-Konten keempat yang ketiga</label>
                         <input type="text" value="{{ $jk3sc }}" min="0" name="judul_konten_3_sub_c" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_3_sub_d">judul sub-Konten keempat yang keempat</label>
+                        <label for="judul_konten_3_sub_d">Judul sub-Konten keempat yang keempat</label>
                         <input type="text" value="{{ $jk3sd }}" min="0" name="judul_konten_3_sub_d" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_3_sub_e">judul sub-Konten keempat yang kelima</label>
+                        <label for="judul_konten_3_sub_e">Judul sub-Konten keempat yang kelima</label>
                         <input type="text" value="{{ $jk3se }}" min="0" name="judul_konten_3_sub_e" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_3_sub_f">judul sub-Konten keempat yang keenam</label>
+                        <label for="judul_konten_3_sub_f">Judul sub-Konten keempat yang keenam</label>
                         <input type="text" value="{{ $jk3sf }}" min="0" name="judul_konten_3_sub_f" class="form-control" required>
                     </div>
 
@@ -146,58 +146,58 @@
                         <input type="text" value="{{ $jk4 }}" min="0" name="judul_konten_4" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_4_sub_a">judul sub-Konten kelima yang pertama</label>
+                        <label for="judul_konten_4_sub_a">Judul sub-Konten kelima yang pertama</label>
                         <input type="text" value="{{ $jk4sa }}" min="0" name="judul_konten_4_sub_a" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="sub_konten_4_sub_a">isi sub-Konten bagian kelima yang pertama</label>
+                        <label for="sub_konten_4_sub_a">Isi sub-Konten bagian kelima yang pertama</label>
                         <input type="text" value="{{ $sk4sa }}" min="0" name="sub_konten_4_sub_a" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_4_sub_b">judul sub-Konten kelima yang kedua</label>
+                        <label for="judul_konten_4_sub_b">Judul sub-Konten kelima yang kedua</label>
                         <input type="text" value="{{ $jk4sb }}" min="0" name="judul_konten_4_sub_b" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="sub_konten_4_sub_b">isi sub-Konten bagian kelima yang kedua</label>
+                        <label for="sub_konten_4_sub_b">Isi sub-Konten bagian kelima yang kedua</label>
                         <input type="text" value="{{ $sk4sb }}" min="0" name="sub_konten_4_sub_b" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_4_sub_c">judul sub-Konten kelima yang ketiga</label>
+                        <label for="judul_konten_4_sub_c">Judul sub-Konten kelima yang ketiga</label>
                         <input type="text" value="{{ $jk4sc }}" min="0" name="judul_konten_4_sub_c" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="sub_konten_4_sub_c">isi sub-Konten bagian kelima yang ketiga</label>
+                        <label for="sub_konten_4_sub_c">Isi sub-Konten bagian kelima yang ketiga</label>
                         <input type="text" value="{{ $sk4sc }}" min="0" name="sub_konten_4_sub_c" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_4_sub_d">judul sub-Konten kelima yang keempat</label>
+                        <label for="judul_konten_4_sub_d">Judul sub-Konten kelima yang keempat</label>
                         <input type="text" value="{{ $jk4sd }}" min="0" name="judul_konten_4_sub_d" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="sub_konten_4_sub_d">isi sub-Konten bagian kelima yang keempat</label>
+                        <label for="sub_konten_4_sub_d">Isi sub-Konten bagian kelima yang keempat</label>
                         <input type="text" value="{{ $sk4sd }}" min="0" name="sub_konten_4_sub_d" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_4_sub_e">judul sub-Konten kelima yang kelima</label>
+                        <label for="judul_konten_4_sub_e">Judul sub-Konten kelima yang kelima</label>
                         <input type="text" value="{{ $jk4se }}" min="0" name="judul_konten_4_sub_e" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="sub_konten_4_sub_e">isi sub-Konten bagian kelima yang kelima</label>
+                        <label for="sub_konten_4_sub_e">Isi sub-Konten bagian kelima yang kelima</label>
                         <input type="text" value="{{ $sk4se }}" min="0" name="sub_konten_4_sub_e" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="judul_konten_4_sub_f">judul sub-Konten kelima yang keenam</label>
+                        <label for="judul_konten_4_sub_f">Judul sub-Konten kelima yang keenam</label>
                         <input type="text" value="{{ $jk4sf }}" min="0" name="judul_konten_4_sub_f" class="form-control" required>
                     </div>
                     <div class="mb-5">
-                        <label for="sub_konten_4_sub_f">isi sub-Konten bagian kelima yang keenam</label>
+                        <label for="sub_konten_4_sub_f">Isi sub-Konten bagian kelima yang keenam</label>
                         <input type="text" value="{{ $sk4sf }}" min="0" name="sub_konten_4_sub_f" class="form-control" required>
                     </div>
 
 
                     <div class="mb-5">
-                        <label for="judul_daftar_blog">Judul Daftar Blog</label>
-                        <input type="text" value="{{ $jdb }}" min="0" name="judul_daftar_blog" class="form-control" required>
+                        <label for="judul_daftar_cerita">Judul Daftar Cerita</label>
+                        <input type="text" value="{{ $jdb }}" min="0" name="judul_daftar_cerita" class="form-control" required>
                     </div>
 
 

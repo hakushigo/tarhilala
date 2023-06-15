@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('blog', function (Blueprint $table) {
+        Schema::create('kategori_cerita', function (Blueprint $table) {
             $table->id();
-            $table->string('judul_blog');
-            $table->text('content');
-            $table->string('image_header_url');
-            $table->foreignId('author')->references('id')->on('unit')->onDelete('cascade');
-            $table->foreignId('kategori')->references('id')->on('kategori_blog')->onDelete('cascade');
+            $table->string('nama_kategori');
+            $table->foreignId('unit_id')->references('id')->on('unit');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog');
+        Schema::dropIfExists('kategori_cerita');
     }
 };

@@ -6,19 +6,19 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <h1>
-                Tulis blog
+                Tulis cerita
             </h1>
             <div class="d-flex justify-content-center">
-                <form class="form-group py-5 col-11" method="post" action="{{ route('blog.action.push') }}" enctype="multipart/form-data">
+                <form class="form-group py-5 col-11" method="post" action="{{ route('cerita.action.push') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-5">
-                        <label for="jumlah">Judul blog</label>
+                        <label for="jumlah">Judul cerita</label>
                         <div class="input-group mt-2">
-                            <input type="text" min="0" name="judul_blog" class="form-control" required>
+                            <input type="text" min="0" name="judul_cerita" class="form-control" required>
                         </div>
                     </div>
                     <div class="mb-5">
-                        <label for="kategori">Kategori Blog</label>
+                        <label for="kategori">Kategori cerita</label>
                         <select required name="kategori" class="form-select">
                             <option value="">pilih salah satu kategori</option>
                             @foreach($daftarKategori as $kategori)
@@ -27,14 +27,14 @@
                         </select>
                     </div>
                     <div class="mb-5">
-                        <label for="jumlah">Foto utama blog</label>
+                        <label for="jumlah">Foto utama cerita</label>
                         <div class="input-group mt-2">
-                            <input type="file" min="0" name="blog_thumbnail" class="form-control" required>
+                            <input type="file" min="0" name="cerita_thumbnail" class="form-control" required>
                         </div>
                     </div>
 
                     <div class="mb-5">
-                        <label for="jumlah" class="mb-2">Konten blog</label>
+                        <label for="jumlah" class="mb-2">Konten cerita</label>
                         <!-- Create the editor container -->
                         <div style="height: 500px">
                             <div class="col-12" id="editor"></div>
@@ -46,7 +46,7 @@
 
                     <div class="mb-5">
                         <input type="submit" value="catat" class="btn btn-success">
-                        <a href="{{ route('blog.list') }}" class="btn btn-secondary">kembali ke dashboard</a>
+                        <a href="{{ route('cerita.list') }}" class="btn btn-secondary">kembali ke dashboard</a>
                     </div>
                 </form>
             </div>

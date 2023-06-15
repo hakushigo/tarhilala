@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
+use App\Models\Cerita;
 use App\Models\Homepage;
 use App\Models\Unit;
 use Illuminate\Http\Request;
@@ -61,7 +61,7 @@ class HomepageController extends Controller
             'jk4sf' => Homepage::find('judul_konten_4_sub_f')->value,
             'sk4sf' => Homepage::find('sub_konten_4_sub_f')->value,
 
-            'jdb' => Homepage::find('judul_daftar_blog')->value,
+            'jdb' => Homepage::find('judul_daftar_cerita')->value,
 
             'jbf' => Homepage::find('judul_brand_footer')->value,
             'sjbf' => Homepage::find('subjudul_brand_footer')->value,
@@ -74,11 +74,11 @@ class HomepageController extends Controller
 
     function showHomepage(){
         $homepage_data = $this->GetHomepageDatas();
-        $currentBlog = Blog::orderBy('created_at', 'DESC')->take(6)->get();
+        $currentCerita = Cerita::orderBy('created_at', 'DESC')->take(6)->get();
         return view('.homepage.index', array_merge($homepage_data, [
-            'currentBlog' => $currentBlog
+            'currentCerita' => $currentCerita
         ]));
-    }  
+    }
 
     function showBankSampahInfos(){
         $daftarUnit = Unit::where('aktif', 1)->simplePaginate(5);
@@ -219,8 +219,8 @@ class HomepageController extends Controller
         }
 
         // Grupe 6a
-        if($request->input('judul_daftar_blog') != "") {
-            Homepage::where('id', 'judul_daftar_blog')->update(['value' => $request->input('judul_daftar_blog')]);
+        if($request->input('judul_daftar_cerita') != "") {
+            Homepage::where('id', 'judul_daftar_cerita')->update(['value' => $request->input('judul_daftar_cerita')]);
         }
 
         // Groupe 6b
