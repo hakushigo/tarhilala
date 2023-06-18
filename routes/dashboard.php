@@ -30,7 +30,7 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function (){
 
         Route::prefix('homepage')->group(function (){
             Route::get('/', [\App\Http\Controllers\HomepageController::class, 'ShowEditHomepage'])->name('admin.homepage.update.form'); // ini untuk formulir
-            Route::post('/push', [\App\Http\Controllers\HomepageController::class, 'pushHomepageUpdate'])->name('admin.homepage.update.push'); // ini untuk ngepush update
+            Route::post('/push/{section}', [\App\Http\Controllers\HomepageController::class, 'pushHomepageUpdate'])->name('admin.homepage.update.push'); // ini untuk ngepush update
         });
 
 

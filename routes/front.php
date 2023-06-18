@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [\App\Http\Controllers\HomepageController::class, 'showHomepage'])->name('homepage');
+Route::get('/', [\App\Http\Controllers\HomepageController::class, 'ShowHomepage'])->name('homepage');
 Route::get('/units', [\App\Http\Controllers\HomepageController::class, 'showBankSampahInfos'])->name('publicunitlist');
 
 Route::prefix('cerita')->group(function (){

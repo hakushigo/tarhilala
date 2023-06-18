@@ -1,235 +1,291 @@
 @extends('dashboard.component.dashboard')
 @section('dashboard.content')
     <div class="d-flex justify-content-center align-items-center">
-        <div class="col-lg-7 col-md-10 col-sm-12">
-            <h1>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1 class="h2">
                 Ubah Informasi di Halaman Beranda
             </h1>
-            <div class="d-flex justify-content-center">
-                <form class="form-group py-5 col-11" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push') }}">
-                    @csrf
-                    <div class="mb-5">
-                        <label for="judul_website">Judul Website</label>
-                        <input type="text" value="{{ $jw }}" min="0" name="judul_website" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_header">Isi Header</label>
-                        <input type="text" value="{{ $jh }}" min="0" name="judul_header" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="subjudul_header">Isi sub-Header</label>
-                        <input type="text" value="{{ $sjh }}" min="0" name="subjudul_header" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <p>
-                            <span>Gambar Header</span><br>
-                            <img src="{{ __('/homepage/'.$gk) }}" height="200px">
-                        </p>
-                        <input type="file" min="0" name="gambar_konten" class="form-control">
-                    </div>
 
-
-                    <div class="mb-5">
-                        <label for="judul_konten_1">Judul Konten Pertama</label>
-                        <input type="text" min="0" value="{{ $jk1 }}" name="judul_konten_1" class="form-control" required>
+            <div class="mt-4">
+                <div class="card shadow-sm col-lg-10 col-md-12 col-sm-12 mt-4">
+                    <div class="card-body">
+                        <h2 class="h5 fw-bold text-center">
+                            Judul Website
+                        </h2>
+                        <div class="justify-content-center">
+                            <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'website_title']) }}">
+                                @csrf
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_website">Judul Website</label>
+                                    <input type="text" value="" min="0" name="judul_website" class="form-control" required>
+                                </div>
+                                <div class="mb-3 mx-3">
+                                    <input type="submit" value="Ubah" class="btn btn-success">
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="mb-5">
-                        <label for="subjudul_konten_1">Subjudul Konten Pertama</label>
-                        <input type="text" value="{{ $sjk1 }}" min="0" name="subjudul_konten_1" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="subjudul_konten_1_sub_a">Isi Konten Pertama</label>
-                        <input type="text" value="{{ $sjk1sa }}" min="0" name="subjudul_konten_1_sub_a" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <p>
-                            <span>Gambar Konten Pertama</span><br>
-                            <img src="{{ __('/homepage/'.$gk1) }}" height="200px">
-                        </p>
-                        <input type="file" min="0" name="gambar_konten_1" class="form-control">
-                    </div>
-
-
-                    <div class="mb-5">
-                        <label for="judul_konten_2_a">Judul kecil konten Kedua </label>
-                        <input type="text" value="{{ $jk2a }}" min="0" name="judul_konten_2_a" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_2_b">Judul besar konten kedua</label>
-                        <input type="text" value="{{ $jk2b }}" min="0" name="judul_konten_2_b" class="form-control" required>
-                    </div>
-
-
-                    <div class="mb-5">
-                        <p>
-                            <span>Gambar sub-Konten kedua yang sebelah kiri</span><br>
-                            <img src="{{ __('/homepage/'.$gk2sa) }}" height="200px">
-                        </p>
-                        <input type="file" min="0" name="gambar_konten_2_sub_a" class="form-control">
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_2_sub_a">Judul sub-Konten kedua yang sebelah kiri</label>
-                        <input type="text" value="{{ $jk2sa }}" min="0" name="judul_konten_2_sub_a" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="subjudul_konten_2_sub_a">Isi sub-Konten kedua yang sebelah kiri</label>
-                        <input type="text" value="{{ $sjk2sa }}" min="0" name="subjudul_konten_2_sub_a" class="form-control" required>
-                    </div>
-
-
-                    <div class="mb-5">
-                        <p>
-                            <span>Gambar sub-Konten kedua yang di tengah</span><br>
-                            <img src="{{ __('/homepage/'.$gk2sb) }}" height="200px">
-                        </p>
-                        <input type="file" min="0" name="gambar_konten_2_sub_b" class="form-control">
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_2_sub_b">Judul sub-Konten kedua di tengah</label>
-                        <input type="text" value="{{ $jk2sb }}" min="0" name="judul_konten_2_sub_b" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="subjudul_konten_2_sub_b">Isi sub-Konten kedua di tengah</label>
-                        <input type="text" value="{{ $sjk2sb }}" min="0" name="subjudul_konten_2_sub_b" class="form-control" required>
-                    </div>
-
-
-                    <div class="mb-5">
-                        <p>
-                            <span>Gambar sub-Konten kedua di kanan</span><br>
-                            <img src="{{ __('/homepage/'.$gk2sc) }}" height="200px">
-                        </p>
-                        <input type="file" min="0" name="gambar_konten_2_sub_c" class="form-control">
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_2_sub_c">Judul sub-Konten kedua di kanan</label>
-                        <input type="text" value="{{ $jk2sc }}" min="0" name="judul_konten_2_sub_c" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="subjudul_konten_2_sub_c">Isi sub-Konten kedua di kanan</label>
-                        <input type="text" value="{{ $sjk2sc }}" min="0" name="subjudul_konten_2_sub_c" class="form-control" required>
-                    </div>
-
-
-                    <div class="mb-5">
-                        <label for="judul_konten_3">Judul Konten keempat</label>
-                        <input type="text" value="{{ $jk3 }}" min="0" name="judul_konten_3" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_3_sub_a">Judul sub-Konten keempat yang pertama</label>
-                        <input type="text" value="{{ $jk3sa }}" min="0" name="judul_konten_3_sub_a" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_3_sub_b">Judul sub-Konten keempat yang kedua</label>
-                        <input type="text" value="{{ $jk3sb }}" min="0" name="judul_konten_3_sub_b" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_3_sub_c">Judul sub-Konten keempat yang ketiga</label>
-                        <input type="text" value="{{ $jk3sc }}" min="0" name="judul_konten_3_sub_c" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_3_sub_d">Judul sub-Konten keempat yang keempat</label>
-                        <input type="text" value="{{ $jk3sd }}" min="0" name="judul_konten_3_sub_d" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_3_sub_e">Judul sub-Konten keempat yang kelima</label>
-                        <input type="text" value="{{ $jk3se }}" min="0" name="judul_konten_3_sub_e" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_3_sub_f">Judul sub-Konten keempat yang keenam</label>
-                        <input type="text" value="{{ $jk3sf }}" min="0" name="judul_konten_3_sub_f" class="form-control" required>
-                    </div>
-
-
-                    <div class="mb-5">
-                        <label for="judul_konten_4">Judul Konten bagian kelima</label>
-                        <input type="text" value="{{ $jk4 }}" min="0" name="judul_konten_4" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_4_sub_a">Judul sub-Konten kelima yang pertama</label>
-                        <input type="text" value="{{ $jk4sa }}" min="0" name="judul_konten_4_sub_a" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="sub_konten_4_sub_a">Isi sub-Konten bagian kelima yang pertama</label>
-                        <input type="text" value="{{ $sk4sa }}" min="0" name="sub_konten_4_sub_a" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_4_sub_b">Judul sub-Konten kelima yang kedua</label>
-                        <input type="text" value="{{ $jk4sb }}" min="0" name="judul_konten_4_sub_b" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="sub_konten_4_sub_b">Isi sub-Konten bagian kelima yang kedua</label>
-                        <input type="text" value="{{ $sk4sb }}" min="0" name="sub_konten_4_sub_b" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_4_sub_c">Judul sub-Konten kelima yang ketiga</label>
-                        <input type="text" value="{{ $jk4sc }}" min="0" name="judul_konten_4_sub_c" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="sub_konten_4_sub_c">Isi sub-Konten bagian kelima yang ketiga</label>
-                        <input type="text" value="{{ $sk4sc }}" min="0" name="sub_konten_4_sub_c" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_4_sub_d">Judul sub-Konten kelima yang keempat</label>
-                        <input type="text" value="{{ $jk4sd }}" min="0" name="judul_konten_4_sub_d" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="sub_konten_4_sub_d">Isi sub-Konten bagian kelima yang keempat</label>
-                        <input type="text" value="{{ $sk4sd }}" min="0" name="sub_konten_4_sub_d" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_4_sub_e">Judul sub-Konten kelima yang kelima</label>
-                        <input type="text" value="{{ $jk4se }}" min="0" name="judul_konten_4_sub_e" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="sub_konten_4_sub_e">Isi sub-Konten bagian kelima yang kelima</label>
-                        <input type="text" value="{{ $sk4se }}" min="0" name="sub_konten_4_sub_e" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="judul_konten_4_sub_f">Judul sub-Konten kelima yang keenam</label>
-                        <input type="text" value="{{ $jk4sf }}" min="0" name="judul_konten_4_sub_f" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="sub_konten_4_sub_f">Isi sub-Konten bagian kelima yang keenam</label>
-                        <input type="text" value="{{ $sk4sf }}" min="0" name="sub_konten_4_sub_f" class="form-control" required>
-                    </div>
-
-
-                    <div class="mb-5">
-                        <label for="judul_daftar_cerita">Judul Daftar Cerita</label>
-                        <input type="text" value="{{ $jdb }}" min="0" name="judul_daftar_cerita" class="form-control" required>
-                    </div>
-
-
-                    <div class="mb-5">
-                        <label for="judul_brand_footer">Judul Bagian Footer</label>
-                        <input type="text" value="{{ $jbf }}" min="0" name="judul_brand_footer" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="subjudul_brand_footer">Subjudul Bagian Footer</label>
-                        <input type="text" value="{{ $sjbf }}" min="0" name="subjudul_brand_footer" class="form-control" required>
-                    </div>
-
-
-                    <div class="mb-5">
-                        <label for="profil_footer_alamat">Alamat Untuk Bagian Footer</label>
-                        <input type="text" value="{{ $pfa }}" min="0" name="profil_footer_alamat" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="profil_footer_nophone">Nomor Telepon Untuk Bagian Footer</label>
-                        <input type="text" value="{{ $pfnp }}" min="0" name="profil_footer_nophone" class="form-control" required>
-                    </div>
-                    <div class="mb-5">
-                        <label for="profil_footer_alamat_email">Alamat Surel Untuk Bagian Footer</label>
-                        <input type="text" value="{{ $pfae }}" min="0" name="profil_footer_alamat_email" class="form-control" required>
-                    </div>
-
-                    <div class="mb-5">
-                        <input type="submit" value="Update Data" class="btn btn-success">
-                        <a href="/dashboard" class="btn btn-secondary">Kembali ke Dashboard</a>
-                    </div>
-                </form>
+                </div>
             </div>
+
+
+            <div class="mt-4">
+                <div class="card shadow-sm col-lg-10 col-md-12 col-sm-12 mt-4">
+                    <div class="card-body">
+                        <h2 class="h5 fw-bold text-center">
+                            Isi Header
+                        </h2>
+                        <div class="justify-content-center">
+                            <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'header']) }}">
+                                @csrf
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_website">Judul Header</label>
+                                    <input type="text" value="" min="0" name="judul_header" class="form-control" required>
+                                </div>
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_website">Sub-judul Header</label>
+                                    <input type="text" value="" min="0" name="subjudul_header" class="form-control" required>
+                                </div>
+                                <div class="mb-3 mx-3">
+{{--                                    <img class="col-12 rounded-1" style="height: 200px; width: auto" src="https://picsum.photos/1920/1080">--}}
+{{--                                    <br><br>--}}
+                                    <label for="judul_website">Sub-judul Header</label>
+                                    <input type="file" value="" min="0" name="bgheader" class="form-control" required>
+                                </div>
+                                <div class="mb-3 mx-3">
+                                    <input type="submit" value="Ubah" class="btn btn-success">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class="card shadow-sm col-lg-10 col-md-12 col-sm-12 mt-4">
+                    <div class="card-body">
+                        <h2 class="h5 fw-bold text-center">
+                            Bagian I Website
+                        </h2>
+
+                        <div class="justify-content-center">
+                            <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'bagian_1']) }}">
+                                @csrf
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_website">Gambar Utama</label>
+                                    <input type="file" value="" min="0" name="gambar_bagian_1" class="form-control" required>
+                                </div>
+
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_website">Judul Kecil</label>
+                                    <input type="text" value="" min="0" name="judul_kecil_bagian_1" class="form-control" required>
+                                </div>
+
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_website">Judul Utama</label>
+                                    <input type="text" value="" min="0" name="judul_bagian_1" class="form-control" required>
+                                </div>
+
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_website">Isi Teks Bagian I</label>
+                                    <textarea rows="5" type="text" value="" min="0" name="konten_bagian_1" class="form-control" required>
+                                    </textarea>
+                                </div>
+
+                                <div class="mb-3 mx-3">
+                                    <input type="submit" value="Ubah" class="btn btn-success">
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class="card shadow-sm col-lg-10 col-md-12 col-sm-12 mt-4">
+                    <div class="card-body">
+                        <h2 class="h5 fw-bold text-center">
+                            Bagian II Website
+                        </h2>
+
+                        <div class="justify-content-center">
+                            <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'bagian_2']) }}">
+                                @csrf
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_kecil_bagian_2">Judul Kecil Bagian</label>
+                                    <input type="text" value="" min="0" name="judul_kecil_bagian_2" class="form-control" required>
+                                </div>
+
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_bagian_2">Judul Bagian</label>
+                                    <input type="text" value="" min="0" name="judul_bagian_2" class="form-control" required>
+                                </div>
+
+                                <div class="mx-3 mb-3">
+                                    <button class="btn btn-success" type="button" onclick="addsectiononepart2()">tambahkan bagian konten!</button>
+                                </div>
+
+                                <div id="target-bagian-2"></div>
+
+                                <div class="mb-3 mx-3">
+                                    <input type="submit" value="Ubah" class="btn btn-success">
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class="card shadow-sm col-lg-10 col-md-12 col-sm-12 mt-4">
+                    <div class="card-body">
+                        <h2 class="h5 fw-bold text-center">
+                            Bagian III Website
+                        </h2>
+
+                        <div class="justify-content-center">
+                            <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'bagian_3']) }}">
+                                @csrf
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_website">Judul Bagian</label>
+                                    <input type="text" value="" min="0" name="judul_bagian_3" class="form-control" required>
+                                </div>
+
+                                <div class="mx-3 mb-3">
+                                    <button class="btn btn-success" type="button" onclick="addsectiononepart3()">tambahkan bagian konten!</button>
+                                </div>
+
+                                <div id="target-bagian-3"></div>
+
+                                <div class="mb-3 mx-3">
+                                    <input type="submit" value="Ubah" class="btn btn-success">
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class="card shadow-sm col-lg-10 col-md-12 col-sm-12 mt-4">
+                    <div class="card-body">
+                        <h2 class="h5 fw-bold text-center">
+                            Bagian IV Website
+                        </h2>
+
+                        <div class="justify-content-center">
+                            <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'bagian_4']) }}">
+                                @csrf
+                                <div class="mb-3 mx-3">
+                                    <label for="judul_bagian_4">Judul Bagian</label>
+                                    <input type="text" value="" min="0" name="judul_bagian_4" class="form-control" required>
+                                </div>
+
+                                <div class="mx-3 mb-3">
+                                    <button class="btn btn-success" type="button" onclick="addsectiononepart4()">tambahkan bagian konten!</button>
+                                </div>
+
+                                <div id="target-bagian-4"></div>
+
+                                <div class="mb-3 mx-3">
+                                    <input type="submit" value="Ubah" class="btn btn-success">
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <template id="bagian-2-section-template">
+        <div class="card mx-3 mb-3">
+            <div class="card-body my-2">
+                <div class="mb-3 mx-3">
+                    <label for="judul_website">Judul Bagian</label>
+                    <input type="text" value="" min="0" name="judul_konten_bagian_2[]" class="form-control" required>
+                </div>
+                <div class="mb-3 mx-3">
+                    <label for="judul_website">Konten Bagian</label>
+                    <textarea type="text" row="5" value="" min="0" name="isi_konten_bagian_2[]" class="form-control" required></textarea>
+                </div>
+                <div class="mb-3 mx-3">
+                    {{--                    <img class="col-12 rounded-1" style="height: 200px; width: auto" src="https://picsum.photos/1920/1080">--}}
+                    {{--                    <br><br>--}}
+                    <label for="judul_website">Gambar Bagian</label>
+                    <input type="file" value="" min="0" name="gambar_konten_bagian_2[]" class="form-control" required>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="bagian-3-section-template">
+        <div class="card mx-3 mb-3">
+            <div class="card-body my-2">
+                <div class="mb-3 mx-3">
+                    <label for="judul_website">Konten Bagian</label>
+                    <input type="text" value="" min="0" name="konten_bagian_3[]" class="form-control" required>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="bagian-4-section-template">
+        <div class="card mx-3 mb-3">
+            <div class="card-body my-2">
+                <div class="mb-3 mx-3">
+                    <label for="judul_website">Judul Bagian</label>
+                    <input type="text" value="" min="0" name="judul_konten_bagian_4[]" class="form-control" required>
+                </div>
+                <div class="mb-3 mx-3">
+                    <label for="judul_website">Isi Bagian</label>
+                    <textarea rows="5" value="" min="0" name="isi_konten_bagian_4[]" class="form-control" required></textarea>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        function addsectiononepart2(){
+            let template = document.querySelector('#bagian-2-section-template');
+            let target = document.querySelector('#target-bagian-2');
+
+            // first copy the template
+            let template_copied = template.cloneNode(true)
+            template_copied.class
+
+            // append to the child
+            target.appendChild(template_copied.content)
+        }
+
+        function addsectiononepart3(){
+            let template = document.querySelector('#bagian-3-section-template');
+            let target = document.querySelector('#target-bagian-3');
+
+            // first copy the template
+            let template_copied = template.cloneNode(true)
+            template_copied.class
+
+            // append to the child
+            target.appendChild(template_copied.content)
+        }
+
+        function addsectiononepart4(){
+            let template = document.querySelector('#bagian-4-section-template');
+            let target = document.querySelector('#target-bagian-4');
+
+            // first copy the template
+            let template_copied = template.cloneNode(true)
+            template_copied.class
+
+            // append to the child
+            target.appendChild(template_copied.content)
+        }
+
+    </script>
 @endsection
