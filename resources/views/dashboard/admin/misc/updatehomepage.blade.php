@@ -16,7 +16,7 @@
                             <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'website_title']) }}">
                                 @csrf
                                 <div class="mb-3 mx-3">
-                                    <label for="judul_website">Judul Website</label>
+                                    <label>Judul Website</label>
                                     <input type="text" value="" min="0" name="judul_website" class="form-control" required>
                                 </div>
                                 <div class="mb-3 mx-3">
@@ -39,17 +39,17 @@
                             <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'header']) }}">
                                 @csrf
                                 <div class="mb-3 mx-3">
-                                    <label for="judul_website">Judul Header</label>
+                                    <label>Judul Header</label>
                                     <input type="text" value="" min="0" name="judul_header" class="form-control" required>
                                 </div>
                                 <div class="mb-3 mx-3">
-                                    <label for="judul_website">Sub-judul Header</label>
+                                    <label>Sub-judul Header</label>
                                     <input type="text" value="" min="0" name="subjudul_header" class="form-control" required>
                                 </div>
                                 <div class="mb-3 mx-3">
 {{--                                    <img class="col-12 rounded-1" style="height: 200px; width: auto" src="https://picsum.photos/1920/1080">--}}
 {{--                                    <br><br>--}}
-                                    <label for="judul_website">Sub-judul Header</label>
+                                    <label>Sub-judul Header</label>
                                     <input type="file" value="" min="0" name="bgheader" class="form-control" required>
                                 </div>
                                 <div class="mb-3 mx-3">
@@ -72,22 +72,22 @@
                             <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'bagian_1']) }}">
                                 @csrf
                                 <div class="mb-3 mx-3">
-                                    <label for="judul_website">Gambar Utama</label>
+                                    <label>Gambar Utama</label>
                                     <input type="file" value="" min="0" name="gambar_bagian_1" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3 mx-3">
-                                    <label for="judul_website">Judul Kecil</label>
+                                    <label>Judul Kecil</label>
                                     <input type="text" value="" min="0" name="judul_kecil_bagian_1" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3 mx-3">
-                                    <label for="judul_website">Judul Utama</label>
+                                    <label>Judul Utama</label>
                                     <input type="text" value="" min="0" name="judul_bagian_1" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3 mx-3">
-                                    <label for="judul_website">Isi Teks Bagian I</label>
+                                    <label>Isi Teks Bagian I</label>
                                     <textarea rows="5" type="text" value="" min="0" name="konten_bagian_1" class="form-control" required>
                                     </textarea>
                                 </div>
@@ -149,7 +149,7 @@
                             <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'bagian_3']) }}">
                                 @csrf
                                 <div class="mb-3 mx-3">
-                                    <label for="judul_website">Judul Bagian</label>
+                                    <label>Judul Bagian</label>
                                     <input type="text" value="" min="0" name="judul_bagian_3" class="form-control" required>
                                 </div>
 
@@ -200,6 +200,81 @@
                 </div>
             </div>
 
+
+            <div class="mt-4">
+                <div class="card shadow-sm col-lg-10 col-md-12 col-sm-12 mt-4">
+                    <div class="card-body">
+                        <h2 class="h5 fw-bold text-center">
+                            Isi Footer
+                        </h2>
+                        <div class="justify-content-center">
+                            <form class="form-group py-3" enctype="multipart/form-data" method="post" action="{{ route('admin.homepage.update.push', ['section' => 'footer']) }}">
+                                @csrf
+                                <div class="mb-3 mx-3">
+                                    <label>Judul</label>
+                                    <input type="text" value="" min="0" name="judul_footer" class="form-control" required>
+                                </div>
+                                <div class="mb-3 mx-3">
+                                    <label>Sub-Judul</label>
+                                    <input type="text" value="" min="0" name="subjudul_footer" class="form-control" required>
+                                </div>
+                                <div class="card mx-3 mb-3">
+                                    <div class="card-body my-2">
+                                        <div class="mx-3 mb-3">
+                                            <h4>Detail anda</h4>
+                                        </div>
+                                        <div class="mb-3 mx-3">
+                                            <label>Alamat</label>
+                                            <input type="text" value="" min="0" name="alanat" class="form-control" required>
+                                        </div>
+                                        <div class="mb-3 mx-3">
+                                            <label>No Telepon</label>
+                                            <input type="text" value="" min="0" name="no_phone" class="form-control" required>
+                                        </div>
+                                        <div class="mb-3 mx-3">
+                                            <label>Alamat Email</label>
+                                            <input type="text" value="" min="0" name="email_addr" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mx-3 mb-3">
+                                    <div class="card-body my-2">
+                                        <div class="mx-3 mb-3">
+                                            <h4>Informasi Sosial Media</h4>
+                                        </div>
+                                        <div class="mb-3 mx-3">
+                                            <label>Alamat tautan Facebook</label>
+                                            <input type="url" value="" min="0" name="fb" class="form-control" required>
+                                        </div>
+                                        <div class="mb-3 mx-3">
+                                            <label>Alamat tautan Twitter</label>
+                                            <input type="url" value="" min="0" name="twitter" class="form-control" required>
+                                        </div>
+                                        <div class="mb-3 mx-3">
+                                            <label>Alamat tautan Instagram</label>
+                                            <input type="url" value="" min="0" name="insta" class="form-control" required>
+                                        </div>
+                                        <div class="mb-3 mx-3">
+                                            <label>Alamat tautan Linkedin</label>
+                                            <input type="url" value="" min="0" name="linkedin" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 mx-3">
+                                    <label>Catatan Hak Cipta</label>
+                                    <input type="text" value="" min="0" name="catatan_hakcipta" class="form-control" required>
+                                </div>
+
+                                <div class="mb-3 mx-3">
+                                    <input type="submit" value="Ubah" class="btn btn-success">
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -207,17 +282,17 @@
         <div class="card mx-3 mb-3">
             <div class="card-body my-2">
                 <div class="mb-3 mx-3">
-                    <label for="judul_website">Judul Bagian</label>
+                    <label>Judul Bagian</label>
                     <input type="text" value="" min="0" name="judul_konten_bagian_2[]" class="form-control" required>
                 </div>
                 <div class="mb-3 mx-3">
-                    <label for="judul_website">Konten Bagian</label>
+                    <label>Konten Bagian</label>
                     <textarea type="text" row="5" value="" min="0" name="isi_konten_bagian_2[]" class="form-control" required></textarea>
                 </div>
                 <div class="mb-3 mx-3">
                     {{--                    <img class="col-12 rounded-1" style="height: 200px; width: auto" src="https://picsum.photos/1920/1080">--}}
                     {{--                    <br><br>--}}
-                    <label for="judul_website">Gambar Bagian</label>
+                    <label>Gambar Bagian</label>
                     <input type="file" value="" min="0" name="gambar_konten_bagian_2[]" class="form-control" required>
                 </div>
             </div>
@@ -228,7 +303,7 @@
         <div class="card mx-3 mb-3">
             <div class="card-body my-2">
                 <div class="mb-3 mx-3">
-                    <label for="judul_website">Konten Bagian</label>
+                    <label>Konten Bagian</label>
                     <input type="text" value="" min="0" name="konten_bagian_3[]" class="form-control" required>
                 </div>
             </div>
@@ -239,11 +314,11 @@
         <div class="card mx-3 mb-3">
             <div class="card-body my-2">
                 <div class="mb-3 mx-3">
-                    <label for="judul_website">Judul Bagian</label>
+                    <label>Judul Bagian</label>
                     <input type="text" value="" min="0" name="judul_konten_bagian_4[]" class="form-control" required>
                 </div>
                 <div class="mb-3 mx-3">
-                    <label for="judul_website">Isi Bagian</label>
+                    <label>Isi Bagian</label>
                     <textarea rows="5" value="" min="0" name="isi_konten_bagian_4[]" class="form-control" required></textarea>
                 </div>
             </div>

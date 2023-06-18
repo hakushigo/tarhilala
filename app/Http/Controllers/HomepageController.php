@@ -68,6 +68,51 @@ class HomepageController extends Controller
                 }
                 break;
 
+            case 'footer' :
+
+                /**
+                 * {
+                 *      "judul":"Tarhilala",
+                 *      "subjudul":"Membantu toba lebih",
+                 *      "profil":{
+                 *          "alamat":"Jl. Lintas Balige - Siantar, Desa Tambunan, Lumban Pea",
+                 *          "no_phone":"+1 234 567890",
+                 *          "email_addr":"email@example.com"
+                 *      },
+                 *      "social_media_url":{
+                 *          "facebook":"#",
+                 *          "twitter":"#",
+                 *          "instagram":"#",
+                 *          "linkedin":"#"
+                 *      },
+                 *      "catatan_hakcipta":""
+                 *  }
+                 */
+
+                Homepage::where('id', 'footer')->update([
+
+                    'value' => json_encode([
+                        'judul' => $request->judul_footer,
+                        'subjudul' => $request->subjudul_footer,
+                        'profil' => [
+                            'alamat' => $request->alanat,
+                            'no_phone' => $request->no_phone,
+                            'email_addr' => $request->email_addr,
+                        ],
+                        'social_media_url' => [
+                            'facebook' => $request->fb,
+                            'twitter' => $request->twitter,
+                            'instagram' => $request->insta,
+                            'linkedin' => $request->linkedin,
+                        ],
+                        'catatan_hakcipta' => $request->catatan_hakcipta
+                    ])
+                ]);
+
+
+
+                break;
+
             case 'bagian_1' :
                 if($request->has('gambar_bagian_1') && $request->judul_kecil_bagian_1 != null && $request->judul_bagian_1 != null && $request->konten_bagian_1) {
 
