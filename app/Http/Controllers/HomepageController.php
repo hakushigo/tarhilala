@@ -35,7 +35,18 @@ class HomepageController extends Controller
     }
 
     function ShowEditHomepage(Request $request){
-        return view('dashboard.admin.misc.updatehomepage', ['request' => $request]);
+        return view('dashboard.admin.misc.updatehomepage', [
+                'request' => $request,
+                "head" => json_decode(Homepage::where('id', 'head')->first()->value, true),
+                "contenta" => json_decode(Homepage::where('id', 'content-a')->first()->value, true),
+                "contentb" => json_decode(Homepage::where('id', 'content-b')->first()->value, true),
+                "contentc" => json_decode(Homepage::where('id', 'content-c')->first()->value, true),
+                "contentd" => json_decode(Homepage::where('id', 'content-d')->first()->value, true),
+                "cerita_section_title" => Homepage::where('id', 'cerita-section-title')->first()->value, true,
+                "currentCerita" => Cerita::orderBy('created_at', 'DESC')->take(6)->get(),
+                "judul_website" => Homepage::where('id', 'judul_website')->first()->value,
+                "footer" => json_decode(Homepage::where('id', 'footer')->first()->value, true)
+            ]);
     }
 
     function pushHomepageUpdate(Request $request, $section){
@@ -195,16 +206,22 @@ class HomepageController extends Controller
                             'cards' => $cards
                         ])
                     ]);
-
-                }else{
-                    echo 'harman';
                 }
 
                 break;
 
+            case 'judul_bagian_cerita' :
+
+                if($request->nama_judul_bagian_cerita != null){
+                    Homepage::where('id', 'cerita-section-title')->update([
+                        'value' => $request->nama_judul_bagian_cerita
+                    ]);
+                }
+
+                break;
         }
 
-//        return redirect(route('admin.homepage.update.form'));
+        return redirect(route('admin.homepage.update.form'));
     }
 
 }
